@@ -49,23 +49,23 @@ const HomePage = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center max-w-7xl mx-auto min-h-[80vh] lg:min-h-[70vh]">
                             
                             {/* Left side - Oana's Photo */}
-                            <div className="relative order-2 lg:order-1 flex items-center justify-center">
-                                <div className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
+                            <div className="relative order-2 lg:order-1 flex items-center justify-center mb-8 lg:mb-0">
+                                <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
                                     <img 
                                         src="/3DX_2399web.jpg" 
                                         alt="Oana Tenea - Psihoterapeut"
-                                        className="w-full h-full object-cover object-center"
+                                        className="w-full h-full object-cover"
                                         style={{
-                                            objectPosition: '50% 20%'
+                                            objectPosition: '50% 25%'
                                         }}
                                     />
                                     {/* Elegant overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
                                 </div>
                                 
                                 {/* Decorative elements */}
-                                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-amber-200 to-orange-200 rounded-full opacity-60 blur-xl"></div>
-                                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-yellow-200 to-amber-200 rounded-full opacity-40 blur-2xl"></div>
+                                <div className="absolute -top-4 -right-4 w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-amber-200 to-orange-200 rounded-full opacity-60 blur-xl"></div>
+                                <div className="absolute -bottom-6 -left-6 w-24 h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-yellow-200 to-amber-200 rounded-full opacity-40 blur-2xl"></div>
                             </div>
                             
                             {/* Right side - Text content */}
@@ -130,55 +130,6 @@ const HomePage = () => {
                                         >
                                             Despre mine
                                         </Link>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Right side - Professional badge floating over the photo */}
-                            <div className="lg:col-span-6 xl:col-span-7 relative animate-slide-up lg:block hidden" style={{ animationDelay: '0.1s' }}>
-                                <div className="flex justify-end pr-8">
-                                    {/* Premium floating credential badge */}
-                                    <div className="bg-white/95 backdrop-blur-md rounded-[1.5rem] shadow-2xl p-6 border border-white/30 max-w-sm">
-                                        <div className="text-center">
-                                            <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                            </div>
-                                            <h3 className="font-bold text-gray-900 text-xl mb-2">Oana Tenea</h3>
-                                            <p className="text-orange-600 font-semibold mb-4">Psihoterapeut Certificat</p>
-                                            <div className="space-y-2 text-sm text-gray-600">
-                                                <div className="flex items-center justify-center gap-2">
-                                                    <span>📍</span>
-                                                    <span>București & Online</span>
-                                                </div>
-                                                <div className="flex items-center justify-center gap-2">
-                                                    <span>🎓</span>
-                                                    <span>Licențiat în Psihologie</span>
-                                                </div>
-                                                <div className="flex items-center justify-center gap-2">
-                                                    <span>💙</span>
-                                                    <span>Specializare Anxietate & Depresie</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Mobile floating badge - elegant and compact */}
-                        <div className="lg:hidden mt-8 flex justify-center animate-slide-up" style={{ animationDelay: '0.3s' }}>
-                            <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-5 border border-white/30">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 className="font-bold text-gray-900 text-lg">Oana Tenea</h3>
-                                        <p className="text-orange-600 font-medium">Psihoterapeut • București</p>
                                     </div>
                                 </div>
                             </div>
