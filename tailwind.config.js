@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
@@ -29,3 +29,5 @@ module.exports = {
     require('@tailwindcss/forms'), // Plugin pentru stilizarea formularelor
   ],
 }
+
+export default config
