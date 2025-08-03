@@ -1,16 +1,54 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { blogPosts } from '../mockData';
 import { existingBlogPosts } from '../seo/blogMigration';
-import { smartLivingArticles } from '../data/smartLivingArticles';
+import { useSmartLivingSync } from '../hooks/useSmartLivingSync';
 import SEO from '../components/SEO';
 import WorkingHours from '../components/WorkingHours';
 
 const BlogListPage = () => {
-    // Combină blogurile noi cu cele migrate și SmartLiving
-    const allPosts = [...blogPosts, ...existingBlogPosts, ...smartLivingArticles].sort((a, b) => 
-        new Date(b.publishDate) - new Date(a.publishDate)
-    );
+    const { 
+        getAllArticles, 
+        checkForNewArticles, 
+        isChecking, 
+        lastCheck, 
+        newArticlesCount,
+        clearNewArticlesCount,
+        startAutoSync 
+    } = useSmartLivingSync();
+
+    // Combine all articles (original + migrated + synced)
+    const [allPosts, setAllPosts] = useState([]);
+    
+    useEffect(() => {
+        const loadAllArticles = () => {
+            // Get articles from all sources
+            const combinedArticles = [
+                ...blogPosts, 
+                ...existingBlogPosts, 
+                ...getAllArticles()
+            ].sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+            
+            setAllPosts(combinedArticles);
+        };
+
+        loadAllArticles();
+        
+        // Start auto-sync on component mount (check every 24 hours)
+        startAutoSync(24);
+
+        // Listen for article updates
+        const handleArticleUpdate = () => {
+            loadAllArticles();
+            clearNewArticlesCount();
+        };
+
+        window.addEventListener('smartliving-articles-updated', handleArticleUpdate);
+        
+        return () => {
+            window.removeEventListener('smartliving-articles-updated', handleArticleUpdate);
+        };
+    }, [getAllArticles, startAutoSync, clearNewArticlesCount]);
 
     const [selectedCategory, setSelectedCategory] = useState('All');
     
@@ -50,21 +88,70 @@ const BlogListPage = () => {
                         
                         {/* SmartLiving Partnership Notice */}
                         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 max-w-4xl mx-auto">
-                            <div className="flex items-center justify-center mb-4">
-                                <div className="bg-blue-500 p-3 rounded-full mr-4">
-                                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                    </svg>
+                            <div className="flex items-center justify-between mb-4">
+                                <div className="flex items-center">
+                                    <div className="bg-blue-500 p-3 rounded-full mr-4">
+                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                        </svg>
+                                    </div>
+                                    <div className="text-left">
+                                        <h3 className="text-lg font-bold text-blue-800 mb-2">
+                                            Colaborare SmartLiving.ro
+                                        </h3>
+                                        <p className="text-blue-700 text-sm">
+                                            Articolele mele publicate pe SmartLiving.ro sunt marcate cu 
+                                            <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium ml-2">SmartLiving</span>
+                                            și te redirecționează către publicația originală.
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className="text-left">
-                                    <h3 className="text-lg font-bold text-blue-800 mb-2">
-                                        Colaborare SmartLiving.ro
-                                    </h3>
-                                    <p className="text-blue-700 text-sm">
-                                        Articolele mele publicate pe SmartLiving.ro sunt marcate cu 
-                                        <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium ml-2">SmartLiving</span>
-                                        și te redirecționează către publicația originală.
-                                    </p>
+                                
+                                {/* Sync Status */}
+                                <div className="text-right">
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <Link
+                                            to="/admin/smartliving"
+                                            className="bg-gray-500 text-white px-3 py-1 rounded-full text-xs hover:bg-gray-600 flex items-center gap-1"
+                                        >
+                                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+                                            Administrare
+                                        </Link>
+                                        <button
+                                            onClick={checkForNewArticles}
+                                            disabled={isChecking}
+                                            className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs hover:bg-blue-600 disabled:opacity-50 flex items-center gap-1"
+                                        >
+                                            {isChecking ? (
+                                                <>
+                                                    <svg className="w-3 h-3 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                                    </svg>
+                                                    Verifică...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                                    </svg>
+                                                    Verifică articole noi
+                                                </>
+                                            )}
+                                        </button>
+                                        {newArticlesCount > 0 && (
+                                            <span className="bg-red-500 text-white px-2 py-1 rounded-full text-xs">
+                                                {newArticlesCount} noi
+                                            </span>
+                                        )}
+                                    </div>
+                                    {lastCheck && (
+                                        <p className="text-xs text-blue-600">
+                                            Ultima verificare: {lastCheck.toLocaleDateString('ro-RO')}
+                                        </p>
+                                    )}
                                 </div>
                             </div>
                         </div>

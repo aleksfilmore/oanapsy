@@ -12,6 +12,7 @@ import LegalPage from './pages/LegalPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import ResourcesPage from './pages/ResourcesPage';
 import AdminPage from './pages/AdminPage';
+import SmartLivingSyncAdmin from './components/SmartLivingSyncAdmin';
 import SEO from './components/SEO';
 
 function App() {
@@ -29,8 +30,9 @@ function App() {
           description="Oana Tenea, psihoterapeut cu experiență în Vaslui și online. Oferă consiliere psihologică, terapie de cuplu și suport pentru anxietate, depresie și alte provocări emoționale."
         />
         <Routes>
-          {/* Admin route without header/footer */}
+          {/* Admin routes without header/footer */}
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/admin/smartliving" element={<SmartLivingSyncAdmin />} />
           
           {/* Regular routes with header/footer */}
           <Route path="*" element={
