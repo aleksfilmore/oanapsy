@@ -36,42 +36,36 @@ const HomePage = () => {
                         transform: translateY(0);
                     }
                 }
-                
-                .hero-section {
-                    background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 50%, #F59E0B 100%);
-                }
             `}</style>
             
             <div className="overflow-hidden">
-                {/* Hero Section - 50/50 Layout: Oana photo | Text content */}
-                <section className="relative min-h-screen flex items-center overflow-hidden hero-section">
-                    <div className="container mx-auto px-4 sm:px-6 relative z-10 py-6 sm:py-8 md:py-16">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center max-w-7xl mx-auto min-h-[80vh] lg:min-h-[70vh]">
+                {/* Hero Section - Oana as background with optimized mobile positioning */}
+                <section className="relative min-h-screen flex items-center overflow-hidden">
+                    {/* Background Image with smart positioning */}
+                    <div className="absolute inset-0 z-0">
+                        <img 
+                            src="/3DX_2399web.jpg" 
+                            alt="Oana Tenea - Psihoterapeut"
+                            className="w-full h-full object-cover"
+                            style={{
+                                objectPosition: 'center top', // Mobile: center top
+                                objectFit: 'cover'
+                            }}
+                        />
+                        {/* Gradient overlays for text readability */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-amber-500/80 via-amber-400/60 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:hidden"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent"></div>
+                    </div>
+
+                    {/* Content Container */}
+                    <div className="container mx-auto px-4 sm:px-6 relative z-10 py-8 sm:py-16">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto min-h-[80vh]">
                             
-                            {/* Left side - Oana's Photo - FIRST on mobile */}
-                            <div className="relative order-1 lg:order-1 flex items-center justify-center mb-6 lg:mb-0">
-                                <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-lg xl:max-w-xl aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
-                                    <img 
-                                        src="/3DX_2399web.jpg" 
-                                        alt="Oana Tenea - Psihoterapeut"
-                                        className="w-full h-full object-cover"
-                                        style={{
-                                            objectPosition: '50% 25%'
-                                        }}
-                                    />
-                                    {/* Elegant overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
-                                </div>
-                                
-                                {/* Decorative elements - smaller on mobile */}
-                                <div className="absolute -top-2 -right-2 lg:-top-4 lg:-right-4 w-16 h-16 lg:w-24 lg:h-24 bg-gradient-to-br from-amber-200 to-orange-200 rounded-full opacity-60 blur-xl"></div>
-                                <div className="absolute -bottom-4 -left-4 lg:-bottom-6 lg:-left-6 w-20 h-20 lg:w-32 lg:h-32 bg-gradient-to-br from-yellow-200 to-amber-200 rounded-full opacity-40 blur-2xl"></div>
-                            </div>
-                            
-                            {/* Right side - Text content - SECOND on mobile, more concise */}
-                            <div className="order-2 lg:order-2 animate-slide-up flex items-center">
-                                <div className="w-full bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-10 shadow-2xl border border-white/30">
-                                    <div className="mb-3 sm:mb-6">
+                            {/* Left side - Content Card (Mobile: center, Desktop: left) */}
+                            <div className="lg:order-1 animate-slide-up flex items-center justify-center lg:justify-start">
+                                <div className="w-full max-w-md lg:max-w-lg bg-white/95 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl border border-white/30">
+                                    <div className="mb-4 sm:mb-6">
                                         <span className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800 rounded-full font-medium text-xs sm:text-sm border border-amber-200">
                                             💛 Psihoterapie & Consiliere
                                         </span>
@@ -134,12 +128,17 @@ const HomePage = () => {
                                         </Link>
                                         <Link 
                                             to="/despre"
-                                            className="inline-flex items-center justify-center px-5 sm:px-8 py-2.5 sm:py-4 border-2 border-gray-300 text-gray-700 bg-white/80 hover:bg-white font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 hover:border-orange-300 text-sm sm:text-base"
+                                            className="inline-flex items-center justify-center px-5 sm:px-8 py-2.5 sm:py-4 border-2 border-white text-gray-700 bg-white/80 hover:bg-white font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 hover:border-orange-300 text-sm sm:text-base"
                                         >
                                             Despre mine
                                         </Link>
                                     </div>
                                 </div>
+                            </div>
+
+                            {/* Right side - Empty space on desktop for Oana's photo visibility */}
+                            <div className="hidden lg:block lg:order-2">
+                                {/* This space allows Oana's photo to be visible on desktop */}
                             </div>
                         </div>
                     </div>
