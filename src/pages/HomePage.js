@@ -20,121 +20,113 @@ const HomePage = () => {
                 description="Bine ai venit pe site-ul psihoterapeutului Oana Tenea. Oferă consiliere psihologică, terapie de cuplu și suport pentru anxietate și depresie în Vaslui și online."
             />
             
-            {/* CSS for responsive background positioning to ensure Oana's head is visible */}
+            {/* CSS for animations and styling */}
             <style jsx>{`
-                .hero-background {
-                    background-position: center 20% !important;
+                .animate-slide-up {
+                    animation: slideUp 0.8s ease-out forwards;
                 }
-                @media (max-width: 1024px) {
-                    .hero-background {
-                        background-position: 55% 15% !important;
-                        background-size: 110% !important;
+                
+                @keyframes slideUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(30px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
                     }
                 }
-                @media (max-width: 768px) {
-                    .hero-background {
-                        background-position: 60% 12% !important;
-                        background-size: 115% !important;
-                    }
-                }
-                @media (max-width: 640px) {
-                    .hero-background {
-                        background-position: 65% 10% !important;
-                        background-size: 125% !important;
-                    }
-                }
-                @media (max-width: 480px) {
-                    .hero-background {
-                        background-position: 70% 8% !important;
-                        background-size: 135% !important;
-                    }
-                }
-                @media (max-width: 380px) {
-                    .hero-background {
-                        background-position: 72% 6% !important;
-                        background-size: 145% !important;
-                    }
+                
+                .hero-section {
+                    background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 50%, #F59E0B 100%);
                 }
             `}</style>
             
             <div className="overflow-hidden">
-                {/* Hero Section with Oana's photo as background - Optimized for all devices */}
-                <section className="relative min-h-screen flex items-center overflow-hidden">
-                    {/* Background Image - Oana's photo */}
-                    <div 
-                        className="absolute inset-0 bg-cover bg-no-repeat hero-background"
-                        style={{
-                            backgroundImage: `url('/3DX_2399web.jpg')`,
-                            backgroundPosition: 'center 25%',
-                            backgroundSize: 'cover'
-                        }}
-                    >
-                        {/* Dynamic overlay for optimal text readability */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/10 to-transparent md:from-black/25 md:via-transparent"></div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent md:hidden"></div>
-                    </div>
-                    
+                {/* Hero Section - 50/50 Layout: Oana photo | Text content */}
+                <section className="relative min-h-screen flex items-center overflow-hidden hero-section">
                     <div className="container mx-auto px-4 sm:px-6 relative z-10 py-6 sm:py-8 md:py-16">
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center max-w-7xl mx-auto">
-                            {/* Content - Responsive positioning */}
-                            <div className="lg:col-span-7 xl:col-span-6 animate-slide-up">
-                                <div className="bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-[2rem] p-5 sm:p-6 md:p-8 lg:p-10 shadow-2xl border border-white/30 max-w-lg sm:max-w-xl lg:max-w-none mx-auto">
-                                    <div className="mb-3 sm:mb-4 md:mb-6">
-                                        <span className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800 rounded-full font-medium text-xs sm:text-sm border border-amber-200">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center max-w-7xl mx-auto min-h-[80vh] lg:min-h-[70vh]">
+                            
+                            {/* Left side - Oana's Photo */}
+                            <div className="relative order-2 lg:order-1 flex items-center justify-center">
+                                <div className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
+                                    <img 
+                                        src="/3DX_2399web.jpg" 
+                                        alt="Oana Tenea - Psihoterapeut"
+                                        className="w-full h-full object-cover object-center"
+                                        style={{
+                                            objectPosition: '50% 20%'
+                                        }}
+                                    />
+                                    {/* Elegant overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                                </div>
+                                
+                                {/* Decorative elements */}
+                                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-amber-200 to-orange-200 rounded-full opacity-60 blur-xl"></div>
+                                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-yellow-200 to-amber-200 rounded-full opacity-40 blur-2xl"></div>
+                            </div>
+                            
+                            {/* Right side - Text content */}
+                            <div className="order-1 lg:order-2 animate-slide-up flex items-center">
+                                <div className="w-full bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border border-white/30">
+                                    <div className="mb-4 sm:mb-6">
+                                        <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800 rounded-full font-medium text-sm border border-amber-200">
                                             💛 Consiliere psihologică & Psihoterapie
                                         </span>
                                     </div>
                                     
-                                    <h1 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight mb-3 sm:mb-4 md:mb-6">
+                                    <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
                                         Un pas către
                                         <span className="block text-transparent bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text">
                                             vindecarea ta
                                         </span>
                                     </h1>
                                     
-                                    <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-5 sm:mb-6 md:mb-8">
+                                    <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6 sm:mb-8">
                                         Sunt <strong className="text-gray-900">Oana Tenea</strong>, psihoterapeut cu experiență în consiliere psihologică, 
                                         terapie de cuplu și suport pentru anxietate, depresie și alte provocări emoționale.
                                     </p>
                                     
                                     {/* Credentials with responsive design */}
-                                    <div className="mb-5 sm:mb-6 md:mb-8 space-y-2 sm:space-y-2.5 md:space-y-3">
-                                        <div className="flex items-center gap-2.5 sm:gap-3 text-gray-700">
-                                            <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
-                                                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <div className="mb-6 sm:mb-8 space-y-3">
+                                        <div className="flex items-center gap-3 text-gray-700">
+                                            <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                                 </svg>
                                             </div>
-                                            <span className="font-medium text-xs sm:text-sm md:text-base">Psihoterapeut autorizat</span>
+                                            <span className="font-medium">Psihoterapeut autorizat</span>
                                         </div>
-                                        <div className="flex items-center gap-2.5 sm:gap-3 text-gray-700">
-                                            <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
-                                                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <div className="flex items-center gap-3 text-gray-700">
+                                            <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                                                 </svg>
                                             </div>
-                                            <span className="font-medium text-xs sm:text-sm md:text-base">Consultații în București și online</span>
+                                            <span className="font-medium">Consultații în București și online</span>
                                         </div>
-                                        <div className="flex items-center gap-2.5 sm:gap-3 text-gray-700">
-                                            <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
-                                                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <div className="flex items-center gap-3 text-gray-700">
+                                            <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
                                                 </svg>
                                             </div>
-                                            <span className="font-medium text-xs sm:text-sm md:text-base">Abordare empată și profesională</span>
+                                            <span className="font-medium">Abordare empată și profesională</span>
                                         </div>
                                     </div>
                                     
-                                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                                    <div className="flex flex-col sm:flex-row gap-4">
                                         <Link 
                                             to="/contact"
-                                            className="inline-flex items-center justify-center px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold rounded-xl sm:rounded-2xl hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
+                                            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold rounded-2xl hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105"
                                         >
                                             Programează o consultație
                                         </Link>
                                         <Link 
                                             to="/despre"
-                                            className="inline-flex items-center justify-center px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 border-2 border-gray-300 text-gray-700 bg-white/80 hover:bg-white font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 hover:border-orange-300 text-sm sm:text-base"
+                                            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-300 text-gray-700 bg-white/80 hover:bg-white font-semibold rounded-2xl transition-all duration-300 hover:border-orange-300"
                                         >
                                             Despre mine
                                         </Link>
