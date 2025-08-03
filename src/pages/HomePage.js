@@ -41,12 +41,12 @@ const HomePage = () => {
             <div className="overflow-hidden">
                 {/* Hero Section - Oana as background with optimized mobile positioning */}
                 <section className="relative min-h-screen flex items-center overflow-hidden">
-                    {/* Background Image with smart positioning */}
+                    {/* Background Image with smart positioning and subtle blur */}
                     <div className="absolute inset-0 z-0">
                         <img 
                             src="/3DX_2399web.jpg" 
                             alt="Oana Tenea - Psihoterapeut"
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover filter blur-[1px]"
                             style={{
                                 objectPosition: 'center top', // Mobile: center top
                                 objectFit: 'cover'
