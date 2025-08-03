@@ -28,8 +28,90 @@ const AdminDashboard = () => {
         }
     };
 
+    const [showAddBlogForm, setShowAddBlogForm] = useState(false);
+    const [newBlogData, setNewBlogData] = useState({
+        title: '',
+        excerpt: '',
+        content: '',
+        category: 'Sănătate Mentală',
+        tags: '',
+        metaDescription: '',
+        readingTime: 5
+    });
+
+    const blogCategories = [
+        'Sănătate Mentală',
+        'Anxietate', 
+        'Relații',
+        'Dezvoltare Personală',
+        'Parentaj',
+        'Terapie',
+        'Autocunoaștere'
+    ];
+
     const handleAddBlog = () => {
-        alert('Funcționalitatea de adăugare articol nou va fi implementată în curând.');
+        setShowAddBlogForm(true);
+    };
+
+    const handleSaveBlog = () => {
+        if (!newBlogData.title || !newBlogData.excerpt || !newBlogData.content) {
+            alert('Titlul, excerpt-ul și conținutul sunt obligatorii!');
+            return;
+        }
+
+        // Create slug from title
+        const slug = newBlogData.title
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
+            .replace(/[^a-z0-9\s-]/g, '') // Remove special chars
+            .replace(/\s+/g, '-') // Replace spaces with hyphens
+            .replace(/-+/g, '-') // Replace multiple hyphens
+            .trim();
+
+        const newBlog = {
+            id: Math.max(...blogList.map(b => b.id), 0) + 1,
+            slug: slug,
+            title: newBlogData.title,
+            excerpt: newBlogData.excerpt,
+            content: newBlogData.content,
+            category: newBlogData.category,
+            tags: newBlogData.tags.split(',').map(tag => tag.trim()).filter(tag => tag),
+            metaDescription: newBlogData.metaDescription || newBlogData.excerpt,
+            readingTime: newBlogData.readingTime,
+            publishDate: new Date().toISOString().split('T')[0],
+            imageUrl: '/images/default-blog.jpg'
+        };
+
+        setBlogList(prev => [newBlog, ...prev]);
+        
+        // Reset form
+        setNewBlogData({
+            title: '',
+            excerpt: '',
+            content: '',
+            category: 'Sănătate Mentală',
+            tags: '',
+            metaDescription: '',
+            readingTime: 5
+        });
+        setShowAddBlogForm(false);
+        
+        alert('Articolul a fost adăugat cu succes!');
+        updateStats();
+    };
+
+    const handleCancelAddBlog = () => {
+        setShowAddBlogForm(false);
+        setNewBlogData({
+            title: '',
+            excerpt: '',
+            content: '',
+            category: 'Sănătate Mentală',
+            tags: '',
+            metaDescription: '',
+            readingTime: 5
+        });
     };
 
     // Handler functions for appointments management
@@ -304,6 +386,135 @@ const AdminDashboard = () => {
                     ➕ Articol nou
                 </button>
             </div>
+
+            {/* Add Blog Form */}
+            {showAddBlogForm && (
+                <div className="bg-white rounded-xl shadow-soft p-6 border border-blue-200">
+                    <div className="flex justify-between items-center mb-6">
+                        <h4 className="text-lg font-semibold text-gray-900">Adaugă Articol Nou</h4>
+                        <button 
+                            onClick={handleCancelAddBlog}
+                            className="text-gray-500 hover:text-gray-700"
+                        >
+                            ✕
+                        </button>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="md:col-span-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                Titlu articol *
+                            </label>
+                            <input
+                                type="text"
+                                value={newBlogData.title}
+                                onChange={(e) => setNewBlogData(prev => ({...prev, title: e.target.value}))}
+                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="Introduceti titlul articolului..."
+                            />
+                        </div>
+                        
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                Categorie
+                            </label>
+                            <select
+                                value={newBlogData.category}
+                                onChange={(e) => setNewBlogData(prev => ({...prev, category: e.target.value}))}
+                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            >
+                                {blogCategories.map(category => (
+                                    <option key={category} value={category}>{category}</option>
+                                ))}
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                Timp de citit (minute)
+                            </label>
+                            <input
+                                type="number"
+                                min="1"
+                                max="60"
+                                value={newBlogData.readingTime}
+                                onChange={(e) => setNewBlogData(prev => ({...prev, readingTime: parseInt(e.target.value) || 5}))}
+                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            />
+                        </div>
+                        
+                        <div className="md:col-span-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                Excerpt (descriere scurtă) *
+                            </label>
+                            <textarea
+                                value={newBlogData.excerpt}
+                                onChange={(e) => setNewBlogData(prev => ({...prev, excerpt: e.target.value}))}
+                                rows={3}
+                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="Descrierea scurtă a articolului (150-200 caractere)..."
+                            />
+                        </div>
+                        
+                        <div className="md:col-span-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                Tags (separate prin virgulă)
+                            </label>
+                            <input
+                                type="text"
+                                value={newBlogData.tags}
+                                onChange={(e) => setNewBlogData(prev => ({...prev, tags: e.target.value}))}
+                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="anxietate, relaxare, mindfulness..."
+                            />
+                        </div>
+                        
+                        <div className="md:col-span-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                Meta Description (SEO)
+                            </label>
+                            <textarea
+                                value={newBlogData.metaDescription}
+                                onChange={(e) => setNewBlogData(prev => ({...prev, metaDescription: e.target.value}))}
+                                rows={2}
+                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="Descrierea pentru motoarele de căutare (opțional - se va folosi excerpt-ul dacă nu este completat)..."
+                            />
+                        </div>
+                        
+                        <div className="md:col-span-2">
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                                Conținut articol * (HTML)
+                            </label>
+                            <textarea
+                                value={newBlogData.content}
+                                onChange={(e) => setNewBlogData(prev => ({...prev, content: e.target.value}))}
+                                rows={12}
+                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 font-mono text-sm"
+                                placeholder="Conținutul complet al articolului în format HTML..."
+                            />
+                            <p className="text-xs text-gray-500 mt-1">
+                                Folosește HTML pentru formatare: &lt;h2&gt;, &lt;h3&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;strong&gt;, etc.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div className="flex justify-end gap-3 mt-6">
+                        <button
+                            onClick={handleCancelAddBlog}
+                            className="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50"
+                        >
+                            Anulează
+                        </button>
+                        <button
+                            onClick={handleSaveBlog}
+                            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+                        >
+                            Salvează Articol
+                        </button>
+                    </div>
+                </div>
+            )}
             
             <div className="bg-white rounded-xl shadow-soft overflow-hidden">
                 <div className="overflow-x-auto">
@@ -335,7 +546,7 @@ const AdminDashboard = () => {
                                         <div className="text-sm text-gray-500">{post.excerpt.substring(0, 60)}...</div>
                                     </td>
                                     <td className="px-6 py-4 text-sm text-gray-900">
-                                        {new Date(post.publishedAt).toLocaleDateString('ro-RO')}
+                                        {new Date(post.publishDate).toLocaleDateString('ro-RO')}
                                     </td>
                                     <td className="px-6 py-4">
                                         <div className="flex flex-wrap gap-1">
