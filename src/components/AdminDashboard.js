@@ -7,6 +7,7 @@ const AdminDashboard = () => {
     const [blogList] = useState(blogPosts);
     const [appointments, setAppointments] = useState([]);
     const [therapyRequests, setTherapyRequests] = useState([]);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [stats, setStats] = useState({
         totalPosts: 0,
         pendingRequests: 0,

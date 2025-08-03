@@ -231,7 +231,7 @@ const AdminCalendar = ({ appointments = [], onAppointmentClick, onDateClick }) =
                 </div>
 
                 {/* Week days header */}
-                <div className="grid grid-cols-8 bg-gray-100">
+                <div className="hidden md:grid grid-cols-8 bg-gray-100">
                     <div className="p-3 border-r border-gray-200"></div>
                     {weekDays.map((date, index) => (
                         <div key={index} className="p-3 text-center border-r border-gray-200 last:border-r-0">
@@ -245,8 +245,22 @@ const AdminCalendar = ({ appointments = [], onAppointmentClick, onDateClick }) =
                     ))}
                 </div>
 
+                {/* Mobile week notification */}
+                <div className="md:hidden bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-center">
+                    <div className="text-yellow-600 font-medium mb-2">📱 Vizualizare optimizată pentru mobil</div>
+                    <div className="text-sm text-yellow-700">
+                        Pentru o experiență completă a vederii săptămânale, vă recomandăm să folosiți un dispozitiv cu ecran mai mare.
+                    </div>
+                    <button
+                        onClick={() => setView('month')}
+                        className="mt-3 bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors text-sm"
+                    >
+                        Comutați la vizualizarea lunară
+                    </button>
+                </div>
+
                 {/* Time slots */}
-                <div className="grid grid-cols-8">
+                <div className="hidden md:grid grid-cols-8">
                     {timeSlots.map(time => (
                         <React.Fragment key={time}>
                             <div className="p-3 border-r border-b border-gray-200 bg-gray-50 font-medium text-gray-600">
