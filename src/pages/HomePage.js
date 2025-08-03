@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { blogPosts } from '../mockData';
+import { useSmartLivingSync } from '../hooks/useSmartLivingSync';
 import SEO from '../components/SEO';
 import BreathingExercise from '../components/BreathingExercise';
 import InstagramFeed from '../components/InstagramFeedNew';
 import SelfAssessmentQuiz from '../components/SelfAssessmentQuiz';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
-import InteractiveFAQ from '../components/InteractiveFAQ';
 
 const HomePage = () => {
+    const { getAllArticles } = useSmartLivingSync();
+    
+    // Get latest articles from all sources
+    const allArticles = getAllArticles().slice(0, 3);
+
     return (
         <>
             <SEO 
@@ -129,42 +133,58 @@ const HomePage = () => {
                             </p>
                         </div>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                            {blogPosts.slice(0, 3).map((post, index) => (
-                                <article 
-                                    key={post.id} 
-                                    className="group bg-warm-white rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all duration-300 transform hover:-translate-y-2"
-                                    style={{ animationDelay: `${index * 0.1}s` }}
-                                >
-                                    <div className="flex items-center space-x-3 mb-6">
-                                        {post.tags.slice(0, 2).map(tag => 
-                                            <span key={tag} className="bg-sage/20 text-sage-deep px-4 py-2 rounded-full font-medium text-sm">
-                                                {tag}
-                                            </span>
-                                        )}
-                                        <span className="text-warm-gray text-sm flex items-center">
-                                            <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                                            </svg>
-                                            {post.readingTime} min
-                                        </span>
-                                    </div>
-                                    <h3 className="font-display text-xl font-bold text-deep-earth mb-4 group-hover:text-terracotta transition-colors line-clamp-2">
-                                        {post.title}
-                                    </h3>
-                                    <p className="text-warm-gray mb-6 line-clamp-3 leading-relaxed">
-                                        {post.excerpt}
-                                    </p>
-                                    <Link 
-                                        to={`/blog/${post.slug}`}
-                                        className="inline-flex items-center text-terracotta hover:text-warm-orange font-semibold group-hover:translate-x-2 transition-all duration-300"
+                            {allArticles.map((post, index) => {
+                                const isExternalArticle = post.source === 'SmartLiving.ro';
+                                const LinkComponent = isExternalArticle ? 'a' : Link;
+                                const linkProps = isExternalArticle 
+                                    ? { href: post.externalUrl, target: '_blank', rel: 'noopener noreferrer' }
+                                    : { to: `/blog/${post.slug || post.newSlug}` };
+
+                                return (
+                                    <article 
+                                        key={post.id} 
+                                        className="group bg-warm-white rounded-3xl p-8 shadow-soft hover:shadow-medium transition-all duration-300 transform hover:-translate-y-2"
+                                        style={{ animationDelay: `${index * 0.1}s` }}
                                     >
-                                        Citește mai mult
-                                        <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                        </svg>
-                                    </Link>
-                                </article>
-                            ))}
+                                        <div className="flex items-center justify-between mb-6">
+                                            <div className="flex items-center space-x-2">
+                                                <span className="bg-sage/20 text-sage-deep px-3 py-1 rounded-full font-medium text-xs">
+                                                    {post.category}
+                                                </span>
+                                                {isExternalArticle && (
+                                                    <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center">
+                                                        <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                        </svg>
+                                                        SmartLiving
+                                                    </span>
+                                                )}
+                                            </div>
+                                            <span className="text-warm-gray text-sm flex items-center">
+                                                <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                                                </svg>
+                                                {post.readingTime} min
+                                            </span>
+                                        </div>
+                                        <h3 className="font-display text-xl font-bold text-deep-earth mb-4 group-hover:text-terracotta transition-colors line-clamp-2">
+                                            {post.title}
+                                        </h3>
+                                        <p className="text-warm-gray mb-6 line-clamp-3 leading-relaxed">
+                                            {post.excerpt || post.metaDescription}
+                                        </p>
+                                        <LinkComponent 
+                                            {...linkProps}
+                                            className="inline-flex items-center text-terracotta hover:text-warm-orange font-semibold group-hover:translate-x-2 transition-all duration-300"
+                                        >
+                                            {isExternalArticle ? 'Citește pe SmartLiving' : 'Citește mai mult'}
+                                            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </LinkComponent>
+                                    </article>
+                                );
+                            })}
                         </div>
                         <div className="text-center">
                             <Link 
@@ -268,9 +288,6 @@ const HomePage = () => {
 
                 {/* Testimonials Section */}
                 <TestimonialsCarousel />
-
-                {/* FAQ Section */}
-                <InteractiveFAQ />
 
                 {/* Instagram Feed Section */}
                 <InstagramFeed />

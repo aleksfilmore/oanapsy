@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { blogPosts } from '../mockData';
 import { existingBlogPosts } from '../seo/blogMigration';
 import { handleLegacyRedirects } from '../utils/redirects';
 import SEO from '../components/SEO';
 
-const BlogPostPage = ({ setPage }) => {
+const BlogPostPage = () => {
     const { slug } = useParams();
     const navigate = useNavigate();
 
@@ -35,7 +35,7 @@ const BlogPostPage = ({ setPage }) => {
                             Articolul pe care îl cauți nu există sau a fost șters.
                         </p>
                         <button 
-                            onClick={() => setPage('blog')}
+                            onClick={() => navigate('/blog')}
                             className="mt-6 px-6 py-3 bg-terracotta text-white font-semibold rounded-lg hover:bg-terracotta/90 transition-colors"
                         >
                             Înapoi la Blog
@@ -63,13 +63,13 @@ const BlogPostPage = ({ setPage }) => {
                     <div className="max-w-4xl mx-auto">
                         {/* Navigation */}
                         <div className="mb-8">
-                            <button 
-                                onClick={() => setPage('blog')}
+                            <Link 
+                                to="/blog"
                                 className="text-terracotta hover:underline flex items-center"
                             >
                                 <span className="mr-2">&larr;</span>
                                 Înapoi la Blog
-                            </button>
+                            </Link>
                         </div>
 
                         {/* Article Header */}
@@ -119,12 +119,12 @@ const BlogPostPage = ({ setPage }) => {
                             <p className="text-charcoal-text/80 dark:text-cream-text/80 mb-6">
                                 Dacă acest articol a rezonat cu tine și simți că ai nevoie de ajutor profesional, sunt aici să te sprijin.
                             </p>
-                            <button 
-                                onClick={() => setPage('contact')}
+                            <Link 
+                                to="/contact"
                                 className="px-8 py-3 bg-terracotta text-white font-semibold rounded-lg hover:bg-terracotta/90 transition-colors"
                             >
                                 Programează o consultație
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

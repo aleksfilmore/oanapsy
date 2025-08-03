@@ -98,13 +98,13 @@ const InstagramFeedNew = () => {
 
   if (loading) {
     return (
-      <section className="py-16 bg-gradient-to-br from-slate-800 to-gray-900">
+      <section className="py-16 bg-gradient-to-br from-warm-beige to-sage-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-deep-earth mb-4">
               @psihoterapeut.oanatenea
             </h2>
-            <p className="text-gray-300 text-lg">Urmărește-mă pe Instagram pentru insights zilnice</p>
+            <p className="text-warm-gray text-lg">Urmărește-mă pe Instagram pentru insights zilnice</p>
           </div>
           
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -125,12 +125,12 @@ const InstagramFeedNew = () => {
 
   if (error) {
     return (
-      <section className="py-16 bg-gradient-to-br from-slate-800 to-gray-900">
+      <section className="py-16 bg-gradient-to-br from-warm-beige to-sage-100">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-deep-earth mb-4">
             @psihoterapeut.oanatenea
           </h2>
-          <p className="text-gray-300 mb-8">
+          <p className="text-warm-gray mb-8">
             Urmărește-mă pe Instagram pentru insights zilnice despre psihologie și wellbeing
           </p>
           <a
@@ -150,13 +150,13 @@ const InstagramFeedNew = () => {
   }
 
   return (
-    <section className="py-16 bg-gradient-to-br from-slate-800 to-gray-900">
+    <section className="py-16 bg-gradient-to-br from-warm-beige to-sage-100">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-deep-earth mb-4">
             @psihoterapeut.oanatenea
           </h2>
-          <p className="text-gray-300 text-lg mb-6">
+          <p className="text-warm-gray text-lg mb-6">
             Urmărește-mă pe Instagram pentru insights zilnice despre psihologie și wellbeing
           </p>
           <a
