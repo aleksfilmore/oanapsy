@@ -9,6 +9,7 @@ import BlogListPage from './pages/BlogListPage';
 import BlogPostPage from './pages/BlogPostPage';
 import ContactPage from './pages/ContactPage';
 import LegalPage from './pages/LegalPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import SEO from './components/SEO';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/termeni-si-conditii" element={<LegalPage />} />
+            <Route path="/politica-confidentialitate" element={<PrivacyPolicyPage />} />
             {/* Redirects pentru URL-uri vechi */}
             <Route path="/cum-le-vorbim-copiilor-despre-mos-craciun-sau-mos-nicolae/" 
               element={<Navigate to="/blog/cum-le-vorbim-copiilor-despre-mos-craciun-sau-mos-nicolae" replace />} />
