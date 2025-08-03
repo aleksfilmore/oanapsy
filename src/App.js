@@ -10,6 +10,7 @@ import BlogPostPage from './pages/BlogPostPage';
 import ContactPage from './pages/ContactPage';
 import LegalPage from './pages/LegalPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import ResourcesPage from './pages/ResourcesPage';
 import SEO from './components/SEO';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/despre" element={<AboutPage />} />
             <Route path="/servicii" element={<ServicesPage />} />
+            <Route path="/resurse" element={<ResourcesPage />} />
             <Route path="/blog" element={<BlogListPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/contact" element={<ContactPage />} />

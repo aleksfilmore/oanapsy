@@ -4,6 +4,9 @@ import { blogPosts } from '../mockData';
 import SEO from '../components/SEO';
 import BreathingExercise from '../components/BreathingExercise';
 import InstagramFeed from '../components/InstagramFeedNew';
+import SelfAssessmentQuiz from '../components/SelfAssessmentQuiz';
+import TestimonialsCarousel from '../components/TestimonialsCarousel';
+import InteractiveFAQ from '../components/InteractiveFAQ';
 
 const HomePage = () => {
     return (
@@ -246,6 +249,28 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
+
+                {/* Self-Assessment Quiz Section */}
+                <section className="py-20 bg-gradient-to-br from-sage-50 to-terracotta/10">
+                    <div className="container mx-auto px-6">
+                        <div className="text-center mb-16 animate-slide-up">
+                            <h2 className="font-display text-3xl md:text-4xl font-bold text-deep-earth mb-4">
+                                Evaluează-ți 
+                                <span className="text-terracotta"> starea de bine</span>
+                            </h2>
+                            <p className="text-xl text-warm-gray max-w-2xl mx-auto">
+                                Un scurt chestionar pentru a înțelege mai bine nevoile tale emoționale
+                            </p>
+                        </div>
+                        <SelfAssessmentQuiz />
+                    </div>
+                </section>
+
+                {/* Testimonials Section */}
+                <TestimonialsCarousel />
+
+                {/* FAQ Section */}
+                <InteractiveFAQ />
 
                 {/* Instagram Feed Section */}
                 <InstagramFeed />
