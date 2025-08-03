@@ -139,7 +139,7 @@ const ServicesPage = () => {
                                     <h2 className="text-2xl font-bold text-sage-800">Ședințe în Cabinet</h2>
                                 </div>
                                 <p className="text-sage-600 mb-6 leading-relaxed">
-                                    Te întâmpesc în cabinetul meu din București, într-un mediu calm și primitor, special amenajat pentru a facilita un dialog deschis și autentic. Aici poți vorbi liber despre orice te preocupă.
+                                    Te întampin în cabinetul meu din București, într-un mediu calm și primitor, special amenajat pentru a facilita un dialog deschis și autentic. Aici poți vorbi liber despre orice te preocupă.
                                 </p>
                                 <div className="space-y-4">
                                     <div className="flex items-center text-sage-700">
@@ -216,7 +216,7 @@ const ServicesPage = () => {
                                         Personalizat și adaptat
                                     </h3>
                                     <p className="text-sage-600 leading-relaxed">
-                                        Nu există soluții universale. Îmi adaptez metodele în funcție de personalitatea ta, stilul de învățare și obiectivele specifice. Combinez elemente din terapia cognitiv-comportamentală, mindfulness și alte abordări dovedite științific.
+                                        Nu există soluții universale. Îmi adaptez metodele în funcție de personalitatea ta, stilul de învățare și obiectivele specifice. Combin elemente din terapia cognitiv-comportamentală, mindfulness și alte abordări dovedite științific.
                                     </p>
                                 </div>
                                 
