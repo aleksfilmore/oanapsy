@@ -1,7 +1,6 @@
 import React from 'react';
 import SEO from '../components/SEO';
 import SelfAssessmentQuiz from '../components/SelfAssessmentQuiz';
-import TherapyProgressTracker from '../components/TherapyProgressTracker';
 import MentalHealthResources from '../components/MentalHealthResources';
 import InteractiveFAQ from '../components/InteractiveFAQ';
 
@@ -38,16 +37,11 @@ const ResourcesPage = () => {
                                 în călătoria ta către echilibrul interior și bunăstarea emoțională.
                             </p>
                             
-                            <div className="grid md:grid-cols-4 gap-6 mb-10">
+                            <div className="grid md:grid-cols-3 gap-6 mb-10">
                                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
                                     <div className="text-3xl mb-3">🧠</div>
                                     <h3 className="font-semibold text-white mb-2">Auto-evaluare</h3>
                                     <p className="text-white/80 text-sm">Teste pentru a-ți înțelege starea emoțională</p>
-                                </div>
-                                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-                                    <div className="text-3xl mb-3">📊</div>
-                                    <h3 className="font-semibold text-white mb-2">Progres tracker</h3>
-                                    <p className="text-white/80 text-sm">Urmărește-ți evoluția în timp</p>
                                 </div>
                                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
                                     <div className="text-3xl mb-3">📚</div>
@@ -75,12 +69,6 @@ const ResourcesPage = () => {
                                 🧠 Auto-evaluare
                             </a>
                             <a 
-                                href="#progress-tracker" 
-                                className="bg-terracotta text-white px-6 py-3 rounded-full hover:bg-terracotta/90 transition-colors"
-                            >
-                                📊 Progres Tracker
-                            </a>
-                            <a 
                                 href="#resources" 
                                 className="bg-golden-honey text-white px-6 py-3 rounded-full hover:bg-golden-honey/90 transition-colors"
                             >
@@ -99,11 +87,6 @@ const ResourcesPage = () => {
                 {/* Self Assessment Section */}
                 <div id="self-assessment">
                     <SelfAssessmentQuiz />
-                </div>
-
-                {/* Progress Tracker Section */}
-                <div id="progress-tracker">
-                    <TherapyProgressTracker />
                 </div>
 
                 {/* Mental Health Resources Section */}
