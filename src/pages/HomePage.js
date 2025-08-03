@@ -48,9 +48,9 @@ const HomePage = () => {
                     <div className="container mx-auto px-4 sm:px-6 relative z-10 py-6 sm:py-8 md:py-16">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center max-w-7xl mx-auto min-h-[80vh] lg:min-h-[70vh]">
                             
-                            {/* Left side - Oana's Photo */}
-                            <div className="relative order-2 lg:order-1 flex items-center justify-center mb-8 lg:mb-0">
-                                <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
+                            {/* Left side - Oana's Photo - FIRST on mobile */}
+                            <div className="relative order-1 lg:order-1 flex items-center justify-center mb-6 lg:mb-0">
+                                <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-lg xl:max-w-xl aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
                                     <img 
                                         src="/3DX_2399web.jpg" 
                                         alt="Oana Tenea - Psihoterapeut"
@@ -63,51 +63,59 @@ const HomePage = () => {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
                                 </div>
                                 
-                                {/* Decorative elements */}
-                                <div className="absolute -top-4 -right-4 w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-amber-200 to-orange-200 rounded-full opacity-60 blur-xl"></div>
-                                <div className="absolute -bottom-6 -left-6 w-24 h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-yellow-200 to-amber-200 rounded-full opacity-40 blur-2xl"></div>
+                                {/* Decorative elements - smaller on mobile */}
+                                <div className="absolute -top-2 -right-2 lg:-top-4 lg:-right-4 w-16 h-16 lg:w-24 lg:h-24 bg-gradient-to-br from-amber-200 to-orange-200 rounded-full opacity-60 blur-xl"></div>
+                                <div className="absolute -bottom-4 -left-4 lg:-bottom-6 lg:-left-6 w-20 h-20 lg:w-32 lg:h-32 bg-gradient-to-br from-yellow-200 to-amber-200 rounded-full opacity-40 blur-2xl"></div>
                             </div>
                             
-                            {/* Right side - Text content */}
-                            <div className="order-1 lg:order-2 animate-slide-up flex items-center">
-                                <div className="w-full bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border border-white/30">
-                                    <div className="mb-4 sm:mb-6">
-                                        <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800 rounded-full font-medium text-sm border border-amber-200">
-                                            💛 Consiliere psihologică & Psihoterapie
+                            {/* Right side - Text content - SECOND on mobile, more concise */}
+                            <div className="order-2 lg:order-2 animate-slide-up flex items-center">
+                                <div className="w-full bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-10 shadow-2xl border border-white/30">
+                                    <div className="mb-3 sm:mb-6">
+                                        <span className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800 rounded-full font-medium text-xs sm:text-sm border border-amber-200">
+                                            💛 Psihoterapie & Consiliere
                                         </span>
                                     </div>
                                     
-                                    <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
+                                    <h1 className="font-display text-xl sm:text-2xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight mb-3 sm:mb-6">
                                         Un pas către
                                         <span className="block text-transparent bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text">
                                             vindecarea ta
                                         </span>
                                     </h1>
                                     
-                                    <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6 sm:mb-8">
-                                        Sunt <strong className="text-gray-900">Oana Tenea</strong>, psihoterapeut cu experiență în consiliere psihologică, 
-                                        terapie de cuplu și suport pentru anxietate, depresie și alte provocări emoționale.
+                                    {/* Mobile: Shorter text, Desktop: Full text */}
+                                    <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-8">
+                                        <span className="block lg:hidden">
+                                            Sunt <strong className="text-gray-900">Oana Tenea</strong>, psihoterapeut certificat. 
+                                            Te ajut cu anxietate, depresie și provocări emoționale.
+                                        </span>
+                                        <span className="hidden lg:block">
+                                            Sunt <strong className="text-gray-900">Oana Tenea</strong>, psihoterapeut cu experiență în consiliere psihologică, 
+                                            terapie de cuplu și suport pentru anxietate, depresie și alte provocări emoționale.
+                                        </span>
                                     </p>
                                     
-                                    {/* Credentials with responsive design */}
-                                    <div className="mb-6 sm:mb-8 space-y-3">
-                                        <div className="flex items-center gap-3 text-gray-700">
-                                            <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
-                                                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    {/* Credentials - simplified for mobile */}
+                                    <div className="mb-4 sm:mb-8 space-y-2 sm:space-y-3">
+                                        <div className="flex items-center gap-2 sm:gap-3 text-gray-700 text-sm sm:text-base">
+                                            <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                                 </svg>
                                             </div>
                                             <span className="font-medium">Psihoterapeut autorizat</span>
                                         </div>
-                                        <div className="flex items-center gap-3 text-gray-700">
-                                            <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
-                                                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <div className="flex items-center gap-2 sm:gap-3 text-gray-700 text-sm sm:text-base">
+                                            <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                                                 </svg>
                                             </div>
-                                            <span className="font-medium">Consultații în București și online</span>
+                                            <span className="font-medium">București și online</span>
                                         </div>
-                                        <div className="flex items-center gap-3 text-gray-700">
+                                        {/* Third credential only on larger screens */}
+                                        <div className="hidden sm:flex items-center gap-3 text-gray-700">
                                             <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
                                                 <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
@@ -117,16 +125,16 @@ const HomePage = () => {
                                         </div>
                                     </div>
                                     
-                                    <div className="flex flex-col sm:flex-row gap-4">
+                                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                                         <Link 
                                             to="/contact"
-                                            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold rounded-2xl hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105"
+                                            className="inline-flex items-center justify-center px-5 sm:px-8 py-2.5 sm:py-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold rounded-xl sm:rounded-2xl hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
                                         >
-                                            Programează o consultație
+                                            Programează consultație
                                         </Link>
                                         <Link 
                                             to="/despre"
-                                            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-300 text-gray-700 bg-white/80 hover:bg-white font-semibold rounded-2xl transition-all duration-300 hover:border-orange-300"
+                                            className="inline-flex items-center justify-center px-5 sm:px-8 py-2.5 sm:py-4 border-2 border-gray-300 text-gray-700 bg-white/80 hover:bg-white font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 hover:border-orange-300 text-sm sm:text-base"
                                         >
                                             Despre mine
                                         </Link>
