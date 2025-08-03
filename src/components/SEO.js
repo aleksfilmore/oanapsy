@@ -47,13 +47,13 @@ const SEO = ({
       <meta name="twitter:image" content={imageUrl} />
 
       {/* Article-specific meta tags */}
-      {type === 'article' && (
+      {type === 'article' && publishDate && (
         <>
           <meta property="article:author" content={author} />
           <meta property="article:published_time" content={publishDate} />
           {category && <meta property="article:section" content={category} />}
-          {tags.map((tag, index) => (
-            <meta key={index} property="article:tag" content={tag} />
+          {tags && tags.length > 0 && tags.map((tag, index) => (
+            <meta key={`tag-${index}`} property="article:tag" content={String(tag)} />
           ))}
         </>
       )}

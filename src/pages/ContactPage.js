@@ -262,7 +262,7 @@ const ContactPage = () => {
                                 </div>
                                 <div className="mt-6 p-4 bg-golden-honey/20 rounded-lg">
                                     <p className="text-sm text-sage-700">
-                                        💡 <strong>Sfat:</strong> Programările se fac cu minim 24h înainte. Pentru urgențe, scrieți prin email.
+                                        💡 <strong>Sfat:</strong> Programările se fac cu minim 48h înainte. Pentru urgențe, scrieți prin email.
                                     </p>
                                 </div>
                             </div>
