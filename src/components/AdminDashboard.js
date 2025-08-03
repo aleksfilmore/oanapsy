@@ -436,9 +436,9 @@ const AdminDashboard = () => {
                             {/* Mobile menu button */}
                             <button
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                                className="md:hidden bg-gray-100 p-2 rounded-lg hover:bg-gray-200 transition-colors"
+                                className="md:hidden bg-slate-700 text-white p-3 rounded-lg hover:bg-slate-800 transition-colors shadow-lg"
                             >
-                                <span className="text-lg">☰</span>
+                                <span className="text-xl">☰</span>
                             </button>
                         </div>
                         <div className="flex items-center space-x-4">
