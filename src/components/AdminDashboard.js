@@ -4,7 +4,7 @@ import AdminCalendar from './AdminCalendar';
 
 const AdminDashboard = () => {
     const [activeTab, setActiveTab] = useState('overview');
-    const [blogList] = useState(blogPosts);
+    const [blogList, setBlogList] = useState(blogPosts);
     const [appointments, setAppointments] = useState([]);
     const [therapyRequests, setTherapyRequests] = useState([]);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,87 +15,188 @@ const AdminDashboard = () => {
         thisMonthAppointments: 0
     });
 
+    // Handler functions for blog management
+    const handleEditBlog = (postId) => {
+        alert(`Editare articol cu ID: ${postId}\n\nFuncționalitatea de editare va fi implementată în curând.`);
+    };
+
+    const handleDeleteBlog = (postId) => {
+        if (window.confirm('Sigur doriți să ștergeți acest articol?')) {
+            setBlogList(prev => prev.filter(post => post.id !== postId));
+            alert('Articolul a fost șters cu succes!');
+            updateStats();
+        }
+    };
+
+    const handleAddBlog = () => {
+        alert('Funcționalitatea de adăugare articol nou va fi implementată în curând.');
+    };
+
+    // Handler functions for appointments management
+    // Advanced appointment management functions
+    const handleEditAppointment = (appointmentId) => {
+        const appointment = appointments.find(apt => apt.id === appointmentId);
+        if (!appointment) return;
+
+        const newDate = prompt(`Modificare programare pentru ${appointment.clientName}\n\nData actuală: ${appointment.date}\nIntroduceți noua dată (YYYY-MM-DD):`, appointment.date);
+        if (!newDate || !newDate.trim()) return;
+
+        const newTime = prompt(`Ora actuală: ${appointment.time}\nIntroduceți noua oră (HH:MM):`, appointment.time);
+        if (!newTime || !newTime.trim()) return;
+
+        const newNotes = prompt(`Note actuale: ${appointment.notes || ''}\nActualizați notele (opțional):`, appointment.notes || '');
+
+        setAppointments(prev => prev.map(apt => 
+            apt.id === appointmentId ? { 
+                ...apt, 
+                date: newDate.trim(),
+                time: newTime.trim(),
+                notes: newNotes?.trim() || apt.notes,
+                status: 'confirmed'
+            } : apt
+        ));
+        alert('Programarea a fost modificată și confirmată cu succes!');
+        updateStats();
+    };
+
+    const handleRejectAppointment = (appointmentId) => {
+        const appointment = appointments.find(apt => apt.id === appointmentId);
+        if (!appointment) return;
+
+        const reason = prompt(`Refuzare programare pentru ${appointment.clientName}\n\nMotivul refuzării (va fi comunicat clientului):`, 'Din păcate nu pot onora această programare în momentul solicitat.');
+        if (!reason || !reason.trim()) return;
+
+        if (window.confirm(`Sigur doriți să refuzați programarea pentru ${appointment.clientName}?`)) {
+            setAppointments(prev => prev.map(apt => 
+                apt.id === appointmentId ? { 
+                    ...apt, 
+                    status: 'rejected',
+                    rejectionReason: reason.trim(),
+                    rejectedAt: new Date().toISOString()
+                } : apt
+            ));
+            alert('Programarea a fost refuzată. Clientul va fi notificat automat.');
+            updateStats();
+        }
+    };
+
+    const handleCancelAppointment = (appointmentId) => {
+        const appointment = appointments.find(apt => apt.id === appointmentId);
+        if (!appointment) return;
+
+        if (window.confirm(`Sigur doriți să ștergeți definitiv programarea pentru ${appointment.clientName}?`)) {
+            setAppointments(prev => prev.filter(apt => apt.id !== appointmentId));
+            alert('Programarea a fost ștearsă cu succes!');
+            updateStats();
+        }
+    };
+
+    const handleConfirmAppointment = (appointmentId) => {
+        const appointment = appointments.find(apt => apt.id === appointmentId);
+        if (!appointment) return;
+
+        setAppointments(prev => prev.map(apt => 
+            apt.id === appointmentId ? { 
+                ...apt, 
+                status: 'confirmed',
+                confirmedAt: new Date().toISOString()
+            } : apt
+        ));
+        alert(`Programarea pentru ${appointment.clientName} a fost confirmată!`);
+        updateStats();
+    };
+
+    const handleAddAppointment = () => {
+        const clientName = prompt('Numele clientului:');
+        const date = prompt('Data (YYYY-MM-DD):', '2025-08-05');
+        const time = prompt('Ora (HH:MM):', '10:00');
+        const type = prompt('Tipul ședinței:', 'Terapie individuală');
+        
+        if (clientName && date && time && type) {
+            const newAppointment = {
+                id: Date.now(),
+                clientName: clientName.trim(),
+                date: date.trim(),
+                time: time.trim(),
+                type: type.trim(),
+                duration: '50 min',
+                status: 'confirmed',
+                notes: 'Programare adăugată manual'
+            };
+            setAppointments(prev => [...prev, newAppointment]);
+            alert('Programarea a fost adăugată cu succes!');
+            updateStats();
+        }
+    };
+
+    // Handler functions for therapy requests
+    const handleContactRequest = (requestId) => {
+        const request = therapyRequests.find(req => req.id === requestId);
+        if (window.confirm(`Contactare ${request.name}\n\nTelefon: ${request.phone}\nEmail: ${request.email}\n\nMarcați ca și contactat?`)) {
+            setTherapyRequests(prev => prev.map(req => 
+                req.id === requestId ? { ...req, status: 'contacted' } : req
+            ));
+            alert('Cererea a fost marcată ca și contactată!');
+            updateStats();
+        }
+    };
+
+    const handleScheduleRequest = (requestId) => {
+        const request = therapyRequests.find(req => req.id === requestId);
+        const date = prompt(`Programare pentru ${request.name}\n\nData (YYYY-MM-DD):`, '2025-08-05');
+        const time = prompt('Ora (HH:MM):', '10:00');
+        
+        if (date && time) {
+            const newAppointment = {
+                id: Date.now(),
+                clientName: request.name,
+                date: date.trim(),
+                time: time.trim(),
+                type: request.type,
+                duration: '50 min',
+                status: 'confirmed',
+                notes: `Programat din cererea #${requestId}`
+            };
+            setAppointments(prev => [...prev, newAppointment]);
+            setTherapyRequests(prev => prev.map(req => 
+                req.id === requestId ? { ...req, status: 'contacted' } : req
+            ));
+            alert('Programarea a fost creată cu succes!');
+            updateStats();
+        }
+    };
+
+    const handleAddNotes = (requestId) => {
+        const request = therapyRequests.find(req => req.id === requestId);
+        const notes = prompt(`Adăugare notițe pentru ${request.name}:`, '');
+        if (notes && notes.trim()) {
+            alert(`Notițe adăugate pentru ${request.name}:\n\n"${notes.trim()}"\n\nFuncționalitatea completă de notițe va fi implementată în curând.`);
+        }
+    };
+
+    // Helper function to update stats
+    const updateStats = () => {
+        setTimeout(() => {
+            setStats(prevStats => ({
+                totalPosts: blogList.length,
+                pendingRequests: therapyRequests.filter(r => r.status === 'pending').length,
+                upcomingAppointments: appointments.filter(a => a.status === 'confirmed').length,
+                thisMonthAppointments: appointments.length
+            }));
+        }, 100);
+    };
+
     // Sample data initialization
     useEffect(() => {
-        // Sample therapy requests
-        const sampleRequests = [
-            {
-                id: 1,
-                name: 'Maria Popescu',
-                email: 'maria.popescu@email.com',
-                phone: '0721234567',
-                type: 'Terapie individuală',
-                urgency: 'Normal',
-                message: 'Doresc să încep terapia pentru anxietate și atacuri de panică.',
-                date: '2025-08-01',
-                status: 'pending'
-            },
-            {
-                id: 2,
-                name: 'Alexandru și Ana Ionescu',
-                email: 'alex.ionescu@email.com',
-                phone: '0734567890',
-                type: 'Terapie de cuplu',
-                urgency: 'Urgent',
-                message: 'Avem probleme grave de comunicare și conflicte frecvente.',
-                date: '2025-08-02',
-                status: 'contacted'
-            },
-            {
-                id: 3,
-                name: 'Cristina Dumitrescu',
-                email: 'cristina.d@email.com',
-                phone: '0745678901',
-                type: 'Terapie individuală',
-                urgency: 'Normal',
-                message: 'Trec printr-o perioadă dificilă după despărțire.',
-                date: '2025-08-03',
-                status: 'pending'
-            }
-        ];
-
-        // Sample appointments
-        const sampleAppointments = [
-            {
-                id: 1,
-                clientName: 'Maria Popescu',
-                date: '2025-08-05',
-                time: '10:00',
-                type: 'Terapie individuală',
-                duration: '50 min',
-                status: 'confirmed',
-                notes: 'Prima ședință - evaluare inițială'
-            },
-            {
-                id: 2,
-                clientName: 'Alexandru și Ana Ionescu',
-                date: '2025-08-05',
-                time: '14:00',
-                type: 'Terapie de cuplu',
-                duration: '80 min',
-                status: 'confirmed',
-                notes: 'Ședința a 3-a - lucru pe comunicare'
-            },
-            {
-                id: 3,
-                clientName: 'Mihai Georgescu',
-                date: '2025-08-06',
-                time: '11:00',
-                type: 'Terapie individuală',
-                duration: '50 min',
-                status: 'pending',
-                notes: 'Ședința a 5-a - progres în gestionarea anxietății'
-            }
-        ];
-
-        setTherapyRequests(sampleRequests);
-        setAppointments(sampleAppointments);
+        // Initialize with empty data - real data will come from backend
+        setTherapyRequests([]);
+        setAppointments([]);
         
         setStats({
             totalPosts: blogList.length,
-            pendingRequests: sampleRequests.filter(r => r.status === 'pending').length,
-            upcomingAppointments: sampleAppointments.filter(a => a.status === 'confirmed').length,
-            thisMonthAppointments: sampleAppointments.length
+            pendingRequests: 0,
+            upcomingAppointments: 0,
+            thisMonthAppointments: 0
         });
     }, [blogList.length]);
 
@@ -196,7 +297,10 @@ const AdminDashboard = () => {
         <div className="space-y-6">
             <div className="flex justify-between items-center">
                 <h3 className="text-xl font-semibold text-gray-900">Gestionare articole blog</h3>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                <button 
+                    onClick={handleAddBlog}
+                    className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+                >
                     ➕ Articol nou
                 </button>
             </div>
@@ -246,8 +350,18 @@ const AdminDashboard = () => {
                                         {post.readingTime} min
                                     </td>
                                     <td className="px-6 py-4 text-sm">
-                                        <button className="text-blue-600 hover:text-blue-900 mr-3">Editează</button>
-                                        <button className="text-red-600 hover:text-red-900">Șterge</button>
+                                        <button 
+                                            onClick={() => handleEditBlog(post.id)}
+                                            className="text-blue-600 hover:text-blue-900 mr-3 font-medium"
+                                        >
+                                            Editează
+                                        </button>
+                                        <button 
+                                            onClick={() => handleDeleteBlog(post.id)}
+                                            className="text-red-600 hover:text-red-900 font-medium"
+                                        >
+                                            Șterge
+                                        </button>
                                     </td>
                                 </tr>
                             ))}
@@ -262,7 +376,10 @@ const AdminDashboard = () => {
         <div className="space-y-6">
             <div className="flex justify-between items-center">
                 <h3 className="text-xl font-semibold text-gray-900">Gestionare programări</h3>
-                <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                <button 
+                    onClick={handleAddAppointment}
+                    className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors"
+                >
                     ➕ Programare nouă
                 </button>
             </div>
@@ -308,14 +425,49 @@ const AdminDashboard = () => {
                                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                                             appointment.status === 'confirmed' 
                                                 ? 'bg-green-100 text-green-800' 
+                                                : appointment.status === 'rejected'
+                                                ? 'bg-red-100 text-red-800'
                                                 : 'bg-orange-100 text-orange-800'
                                         }`}>
-                                            {appointment.status === 'confirmed' ? 'Confirmat' : 'În așteptare'}
+                                            {appointment.status === 'confirmed' ? 'Confirmat' : 
+                                             appointment.status === 'rejected' ? 'Refuzat' : 'În așteptare'}
                                         </span>
                                     </td>
                                     <td className="px-6 py-4 text-sm">
-                                        <button className="text-blue-600 hover:text-blue-900 mr-3">Editează</button>
-                                        <button className="text-red-600 hover:text-red-900">Anulează</button>
+                                        <div className="flex flex-wrap gap-2">
+                                            {appointment.status === 'pending' && (
+                                                <>
+                                                    <button 
+                                                        onClick={() => handleConfirmAppointment(appointment.id)}
+                                                        className="bg-green-500 text-white px-2 py-1 rounded text-xs hover:bg-green-600"
+                                                        title="Confirmă programarea"
+                                                    >
+                                                        ✓ Confirmă
+                                                    </button>
+                                                    <button 
+                                                        onClick={() => handleRejectAppointment(appointment.id)}
+                                                        className="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600"
+                                                        title="Refuză programarea"
+                                                    >
+                                                        ✗ Refuză
+                                                    </button>
+                                                </>
+                                            )}
+                                            <button 
+                                                onClick={() => handleEditAppointment(appointment.id)}
+                                                className="bg-blue-500 text-white px-2 py-1 rounded text-xs hover:bg-blue-600"
+                                                title="Modifică data/ora"
+                                            >
+                                                📅 Modifică
+                                            </button>
+                                            <button 
+                                                onClick={() => handleCancelAppointment(appointment.id)}
+                                                className="bg-gray-500 text-white px-2 py-1 rounded text-xs hover:bg-gray-600"
+                                                title="Șterge programarea"
+                                            >
+                                                🗑️ Șterge
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                             ))}
@@ -369,13 +521,22 @@ const AdminDashboard = () => {
                         </div>
                         
                         <div className="flex gap-3">
-                            <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                            <button 
+                                onClick={() => handleContactRequest(request.id)}
+                                className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+                            >
                                 📞 Contactează
                             </button>
-                            <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                            <button 
+                                onClick={() => handleScheduleRequest(request.id)}
+                                className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors"
+                            >
                                 📅 Programează
                             </button>
-                            <button className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors">
+                            <button 
+                                onClick={() => handleAddNotes(request.id)}
+                                className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors"
+                            >
                                 📝 Notițe
                             </button>
                         </div>
@@ -387,15 +548,32 @@ const AdminDashboard = () => {
 
     const renderCalendar = () => {
         const handleAppointmentClick = (appointment) => {
-            alert(`Programare: ${appointment.clientName}\nOra: ${appointment.time}\nTipul: ${appointment.type}\nStatus: ${appointment.status}`);
+            const action = window.confirm(`Programare: ${appointment.clientName}\nData: ${new Date(appointment.date).toLocaleDateString('ro-RO')}\nOra: ${appointment.time}\nTip: ${appointment.type}\nStatus: ${appointment.status}\n\nDoriți să editați această programare?`);
+            if (action) {
+                handleEditAppointment(appointment.id);
+            }
         };
 
         const handleDateClick = (date, time) => {
-            const dateStr = date.toLocaleDateString('ro-RO');
-            if (time) {
-                alert(`Clicați pentru a adăuga o programare pe ${dateStr} la ora ${time}`);
-            } else {
-                alert(`Clicați pentru a adăuga o programare pe ${dateStr}`);
+            const dateStr = date.toISOString().split('T')[0]; // Format YYYY-MM-DD
+            const clientName = prompt('Numele clientului:');
+            const appointmentTime = time || prompt('Ora (HH:MM):', '10:00');
+            const type = prompt('Tipul ședinței:', 'Terapie individuală');
+            
+            if (clientName && appointmentTime && type) {
+                const newAppointment = {
+                    id: Date.now(),
+                    clientName: clientName.trim(),
+                    date: dateStr,
+                    time: appointmentTime.trim(),
+                    type: type.trim(),
+                    duration: '50 min',
+                    status: 'confirmed',
+                    notes: 'Programare adăugată din calendar'
+                };
+                setAppointments(prev => [...prev, newAppointment]);
+                alert('Programarea a fost adăugată cu succes!');
+                updateStats();
             }
         };
 

@@ -8,6 +8,13 @@ export const useSmartLivingSync = () => {
   const [lastCheck, setLastCheck] = useState(null);
   const [newArticlesCount, setNewArticlesCount] = useState(0);
 
+  // Check if current user is admin
+  const isAdminUser = () => {
+    // Check if user is on admin page or has admin session
+    return window.location.pathname.includes('/admin') || 
+           sessionStorage.getItem('adminAuthenticated') === 'true';
+  };
+
   // Load synced articles from localStorage on mount
   useEffect(() => {
     const loadSyncedArticles = () => {
@@ -30,12 +37,17 @@ export const useSmartLivingSync = () => {
       setSyncedArticles(allArticles);
       setNewArticlesCount(prev => prev + newArticles.length);
       
-      // Show toast notification
-      showToast(`${newArticles.length} articole noi găsite pe SmartLiving!`);
+      // Show toast notification only for admin
+      if (isAdminUser()) {
+        showToast(`${newArticles.length} articole noi găsite pe SmartLiving!`);
+      }
     };
 
     const handleManualCheckNeeded = (event) => {
-      showToast('Verifică manual articolele noi pe SmartLiving', 'warning');
+      // Show warning only for admin
+      if (isAdminUser()) {
+        showToast('Verifică manual articolele noi pe SmartLiving', 'warning');
+      }
     };
 
     window.addEventListener('smartliving-articles-updated', handleNewArticles);
@@ -54,14 +66,20 @@ export const useSmartLivingSync = () => {
       const newArticles = await smartLivingSync.checkForNewArticles();
       setLastCheck(new Date());
       
-      if (newArticles.length === 0) {
-        showToast('Nu au fost găsite articole noi', 'info');
+      // Show notifications only for admin
+      if (isAdminUser()) {
+        if (newArticles.length === 0) {
+          showToast('Nu au fost găsite articole noi', 'info');
+        }
       }
       
       return newArticles;
     } catch (error) {
       console.error('Error checking for new articles:', error);
-      showToast('Eroare la verificarea articolelor noi', 'error');
+      // Show error only for admin
+      if (isAdminUser()) {
+        showToast('Eroare la verificarea articolelor noi', 'error');
+      }
       return [];
     } finally {
       setIsChecking(false);
@@ -71,13 +89,17 @@ export const useSmartLivingSync = () => {
   // Start automatic sync
   const startAutoSync = useCallback((intervalHours = 24) => {
     smartLivingSync.startPeriodicCheck(intervalHours);
-    showToast(`Sincronizare automată activată (la ${intervalHours}h)`);
+    if (isAdminUser()) {
+      showToast(`Sincronizare automată activată (la ${intervalHours}h)`);
+    }
   }, []);
 
   // Stop automatic sync
   const stopAutoSync = useCallback(() => {
     smartLivingSync.stopPeriodicCheck();
-    showToast('Sincronizare automată oprită');
+    if (isAdminUser()) {
+      showToast('Sincronizare automată oprită');
+    }
   }, []);
 
   // Add article manually from URL
@@ -93,11 +115,17 @@ export const useSmartLivingSync = () => {
       const updatedArticles = smartLivingSync.getSyncedArticles();
       setSyncedArticles(updatedArticles);
       
-      showToast('Articol adăugat cu succes!');
+      // Show success notification only for admin
+      if (isAdminUser()) {
+        showToast('Articol adăugat cu succes!');
+      }
       return article;
     } catch (error) {
       console.error('Error adding article:', error);
-      showToast('Eroare la adăugarea articolului', 'error');
+      // Show error only for admin
+      if (isAdminUser()) {
+        showToast('Eroare la adăugarea articolului', 'error');
+      }
       return null;
     } finally {
       setIsChecking(false);
