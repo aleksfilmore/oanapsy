@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import instagramAPI from '../utils/instagramAPI';
 
 const InstagramFeedNew = () => {
   const [posts, setPosts] = useState([]);
@@ -12,6 +13,14 @@ const InstagramFeedNew = () => {
       return index % 2 === 0 
         ? 'bg-gradient-to-br from-purple-600 via-pink-600 to-red-500' // Pink gradient pentru pozițiile pare (0, 2, 4...)
         : 'bg-gradient-to-br from-gray-900 via-gray-800 to-black'; // Black gradient pentru pozițiile impare (1, 3, 5...)
+    };
+
+    // Funcție pentru procesarea postărilor demo cu gradiente automate
+    const processInstagramPosts = (rawPosts) => {
+      return rawPosts.map((post, index) => ({
+        ...post,
+        backgroundColor: getBackgroundGradient(index)
+      }));
     };
 
     // Instagram posts cu linkuri corecte către contul real @psihoterapeut.oanatenea
@@ -84,13 +93,28 @@ const InstagramFeedNew = () => {
       }
     ];
 
-    // Simulez încărcarea datelor
+    // Simulez încărcarea datelor cu posibilitatea de actualizare automată
     const loadInstagramFeed = async () => {
       try {
         setLoading(true);
-        // Pentru demo, folosesc date reale de Instagram cu delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        setPosts(realInstagramPosts);
+        
+        // Încerc să folosesc API-ul real Instagram, cu fallback la date demo
+        let processedPosts;
+        
+        try {
+          // Uncomment pentru API real Instagram
+          // const rawPosts = await instagramAPI.fetchInstagramPosts(6);
+          // processedPosts = instagramAPI.formatInstagramPosts(rawPosts);
+          
+          // Pentru demo, folosesc postări cu gradiente automate
+          processedPosts = processInstagramPosts(realInstagramPosts);
+        } catch (apiError) {
+          console.warn('Instagram API indisponibil, folosesc date demo:', apiError);
+          // Fallback la postări demo cu gradiente automate
+          processedPosts = instagramAPI.formatInstagramPosts(instagramAPI.fallbackPosts);
+        }
+        
+        setPosts(processedPosts);
         setError(null);
       } catch (err) {
         setError('Nu am putut încărca postările Instagram');
@@ -101,6 +125,24 @@ const InstagramFeedNew = () => {
     };
 
     loadInstagramFeed();
+    
+    // Auto-refresh pentru postări noi la fiecare 5 minute
+    const interval = setInterval(() => {
+      loadInstagramFeed();
+    }, 5 * 60 * 1000); // 5 minute
+    
+    // Listener pentru update-uri în timp real (webhook Instagram)
+    const handleInstagramUpdate = () => {
+      console.log('Instagram update detected, refreshing feed...');
+      loadInstagramFeed();
+    };
+    
+    window.addEventListener('instagramUpdate', handleInstagramUpdate);
+    
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('instagramUpdate', handleInstagramUpdate);
+    };
   }, []);
 
   const formatDate = (timestamp) => {
