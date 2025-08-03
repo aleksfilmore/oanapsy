@@ -27,8 +27,8 @@ const InteractiveFAQ = () => {
         {
             id: 4,
             category: 'costuri',
-            question: "Cât costă o ședință de terapie?",
-            answer: "Tariful pentru o ședință individuală de 50 de minute este de 250 lei. Pentru terapia de cuplu (80 de minute), tariful este de 350 lei. Prima ședință de evaluare are același preț. Oferă reduceri pentru studenți și persoane în situații financiare dificile - nu ezita să discuți cu mine despre opțiuni."
+            question: "Cum pot afla informații despre tarife?",
+            answer: "Pentru informații detaliate despre tarife și opțiuni de plată, te rog să mă contactezi direct prin email sau telefon. Voi fi bucuroasă să discutăm despre aspectele financiare în cadrul unei conversații personalizate, ținând cont de nevoile tale specifice."
         },
         {
             id: 5,

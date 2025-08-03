@@ -101,7 +101,7 @@ const MentalHealthResources = () => {
                     type: 'book'
                 },
                 {
-                    name: 'Ineligența emoțională',
+                    name: 'Inteligența emoțională',
                     author: 'Daniel Goleman',
                     description: 'Importanța inteligenței emoționale în viață',
                     category: 'Psihologie',

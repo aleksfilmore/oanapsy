@@ -16,11 +16,11 @@ const AppointmentManager = ({ onSave, onCancel, existingAppointment = null }) =>
     });
 
     const appointmentTypes = [
-        { value: 'Terapie individuală', duration: '50 min', price: '250 lei' },
-        { value: 'Terapie de cuplu', duration: '80 min', price: '350 lei' },
-        { value: 'Consultație inițială', duration: '60 min', price: '250 lei' },
-        { value: 'Ședință online', duration: '50 min', price: '250 lei' },
-        { value: 'Reevaluare', duration: '60 min', price: '250 lei' }
+        { value: 'Terapie individuală', duration: '50 min' },
+        { value: 'Terapie de cuplu', duration: '80 min' },
+        { value: 'Consultație inițială', duration: '60 min' },
+        { value: 'Ședință online', duration: '50 min' },
+        { value: 'Reevaluare', duration: '60 min' }
     ];
 
     const timeSlots = [
@@ -191,7 +191,7 @@ const AppointmentManager = ({ onSave, onCancel, existingAppointment = null }) =>
                                 </select>
                                 {selectedType && (
                                     <p className="text-sm text-gray-600 mt-1">
-                                        Durată: {selectedType.duration} • Preț: {selectedType.price}
+                                        Durată: {selectedType.duration}
                                     </p>
                                 )}
                             </div>
