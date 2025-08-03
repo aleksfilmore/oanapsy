@@ -331,7 +331,7 @@ const HomePage = () => {
                                 <span className="block">primul pas?</span>
                             </h2>
                             <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                                Contactează-mă pentru o primă întâlnire gratuită și să discutăm cum te pot ajuta să-ți atingi obiectivele de sănătate mentală.
+                                Contactează-mă pentru a programa o consultație și să discutăm cum te pot ajuta să-ți atingi obiectivele de sănătate mentală.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Link 

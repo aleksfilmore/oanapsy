@@ -4,7 +4,6 @@ import { blogPosts } from '../mockData';
 import { existingBlogPosts } from '../seo/blogMigration';
 import { useSmartLivingSync } from '../hooks/useSmartLivingSync';
 import SEO from '../components/SEO';
-import WorkingHours from '../components/WorkingHours';
 
 const BlogListPage = () => {
     const { 
@@ -253,9 +252,6 @@ const BlogListPage = () => {
                             );
                         })}
                     </div>
-
-                    {/* Working Hours Section */}
-                    <WorkingHours />
 
                     {/* Call to Action */}
                     <div className="mt-20 bg-gradient-to-br from-white to-soft-yellow rounded-3xl p-8 md:p-12 shadow-warm border border-sage-100">
