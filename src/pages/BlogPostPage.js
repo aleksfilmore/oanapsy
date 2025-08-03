@@ -1,27 +1,63 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { blogPosts } from '../mockData';
+import { existingBlogPosts } from '../seo/blogMigration';
+import { handleLegacyRedirects } from '../utils/redirects';
+import SEO from '../components/SEO';
 
-const BlogPostPage = ({ post, setPage }) => {
+const BlogPostPage = ({ setPage }) => {
+    const { slug } = useParams();
+    const navigate = useNavigate();
+
+    // Caută articolul în datele existente
+    const allPosts = [...blogPosts, ...existingBlogPosts];
+    const post = allPosts.find(p => p.slug === slug || p.newSlug === slug);
+
+    useEffect(() => {
+        // Verifică redirects pentru URL-uri vechi
+        const redirectUrl = handleLegacyRedirects();
+        if (redirectUrl) {
+            navigate(redirectUrl, { replace: true });
+        }
+    }, [navigate]);
     if (!post) {
         return (
-            <div className="animate-fade-in bg-cream dark:bg-deep-earth py-20">
-                <div className="container mx-auto px-6 text-center">
-                    <h1 className="text-4xl font-bold text-charcoal-text dark:text-cream-text">Articol negăsit</h1>
-                    <p className="mt-4 text-charcoal-text/80 dark:text-cream-text/80">
-                        Articolul pe care îl cauți nu există sau a fost șters.
-                    </p>
-                    <button 
-                        onClick={() => setPage('blog')}
-                        className="mt-6 px-6 py-3 bg-terracotta text-white font-semibold rounded-lg hover:bg-terracotta/90 transition-colors"
-                    >
-                        Înapoi la Blog
-                    </button>
+            <>
+                <SEO 
+                    title="Articol negăsit"
+                    description="Articolul pe care îl cauți nu există sau a fost șters."
+                />
+                <div className="animate-fade-in bg-cream dark:bg-deep-earth py-20">
+                    <div className="container mx-auto px-6 text-center">
+                        <h1 className="text-4xl font-bold text-charcoal-text dark:text-cream-text">Articol negăsit</h1>
+                        <p className="mt-4 text-charcoal-text/80 dark:text-cream-text/80">
+                            Articolul pe care îl cauți nu există sau a fost șters.
+                        </p>
+                        <button 
+                            onClick={() => setPage('blog')}
+                            className="mt-6 px-6 py-3 bg-terracotta text-white font-semibold rounded-lg hover:bg-terracotta/90 transition-colors"
+                        >
+                            Înapoi la Blog
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </>
         );
     }
 
     return (
-        <div className="animate-fade-in bg-cream dark:bg-deep-earth py-20">
+        <>
+            <SEO 
+                title={post.title}
+                description={post.metaDescription || post.excerpt}
+                slug={post.slug || post.newSlug}
+                publishDate={post.publishDate}
+                type="article"
+                category={post.category}
+                tags={post.tags}
+                image={post.imageUrl}
+            />
+            <div className="animate-fade-in bg-cream dark:bg-deep-earth py-20">
             <div className="container mx-auto px-6">
                 <div className="max-w-4xl mx-auto">
                     {/* Navigation */}
@@ -89,7 +125,7 @@ const BlogPostPage = ({ post, setPage }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
