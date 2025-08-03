@@ -29,36 +29,107 @@ const HomePage = () => {
                     </div>
                     
                     <div className="container mx-auto px-6 relative z-10">
-                        <div className="max-w-4xl mx-auto text-center">
-                            <div className="mb-8 animate-slide-up">
+                        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+                            {/* Left side - Text content */}
+                            <div className="lg:text-left text-center animate-slide-up">
                                 <span className="inline-block px-4 py-2 bg-sage-100 text-sage-800 rounded-full font-medium text-sm mb-6">
                                     💛 Consiliere psihologică & Psihoterapie
                                 </span>
-                                <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-deep-earth leading-tight mb-6">
+                                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-deep-earth leading-tight mb-6">
                                     Un pas către
                                     <span className="block text-transparent bg-gradient-to-r from-terracotta to-warm-orange bg-clip-text">
                                         vindecarea ta
                                     </span>
                                 </h1>
-                                <p className="text-xl md:text-2xl text-warm-gray leading-relaxed mb-8">
-                                    Sunt Oana Tenea, psihoterapeut cu experiență în consiliere psihologică, 
+                                <p className="text-xl text-warm-gray leading-relaxed mb-8">
+                                    Sunt <strong className="text-deep-earth">Oana Tenea</strong>, psihoterapeut cu experiență în consiliere psihologică, 
                                     terapie de cuplu și suport pentru anxietate, depresie și alte provocări emoționale.
                                 </p>
+                                
+                                {/* Credentials */}
+                                <div className="mb-8 space-y-2">
+                                    <div className="flex items-center lg:justify-start justify-center gap-3 text-sage-700">
+                                        <svg className="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                        </svg>
+                                        <span className="font-medium">Psihoterapeut autorizat</span>
+                                    </div>
+                                    <div className="flex items-center lg:justify-start justify-center gap-3 text-sage-700">
+                                        <svg className="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                        </svg>
+                                        <span className="font-medium">Consultații online și în cabinet</span>
+                                    </div>
+                                    <div className="flex items-center lg:justify-start justify-center gap-3 text-sage-700">
+                                        <svg className="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+                                        </svg>
+                                        <span className="font-medium">Abordare empată și profesională</span>
+                                    </div>
+                                </div>
+                                
+                                <div className="flex flex-col sm:flex-row gap-4 lg:justify-start justify-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                                    <Link 
+                                        to="/contact"
+                                        className="px-8 py-4 bg-gradient-to-r from-terracotta to-warm-orange text-white font-semibold rounded-2xl hover:shadow-warm transition-all duration-300 transform hover:scale-105"
+                                    >
+                                        Programează o consultație
+                                    </Link>
+                                    <Link 
+                                        to="/despre"
+                                        className="px-8 py-4 border-2 border-sage-300 text-sage-700 font-semibold rounded-2xl hover:bg-sage-50 transition-colors duration-300"
+                                    >
+                                        Despre mine
+                                    </Link>
+                                </div>
                             </div>
-                            
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                                <Link 
-                                    to="/contact"
-                                    className="px-8 py-4 bg-gradient-to-r from-terracotta to-warm-orange text-white font-semibold rounded-2xl hover:shadow-warm transition-all duration-300 transform hover:scale-105"
-                                >
-                                    Programează o consultație
-                                </Link>
-                                <Link 
-                                    to="/despre"
-                                    className="px-8 py-4 border-2 border-sage-300 text-sage-700 font-semibold rounded-2xl hover:bg-sage-50 transition-colors duration-300"
-                                >
-                                    Despre mine
-                                </Link>
+
+                            {/* Right side - Image */}
+                            <div className="relative animate-slide-up" style={{ animationDelay: '0.1s' }}>
+                                <div className="relative">
+                                    {/* Decorative background */}
+                                    <div className="absolute -inset-4 bg-gradient-to-r from-terracotta to-warm-orange rounded-3xl opacity-20 blur-lg"></div>
+                                    
+                                    {/* Main image container */}
+                                    <div className="relative bg-white rounded-3xl p-6 shadow-2xl">
+                                        <img
+                                            src="/images/oana-profile.jpg"
+                                            alt="Oana Tenea - Psihoterapeut"
+                                            className="w-full h-96 object-cover rounded-2xl"
+                                            onError={(e) => {
+                                                e.target.style.display = 'none';
+                                                e.target.nextSibling.style.display = 'flex';
+                                            }}
+                                        />
+                                        {/* Fallback placeholder */}
+                                        <div className="w-full h-96 bg-gradient-to-br from-sage-100 to-terracotta/20 rounded-2xl flex items-center justify-center" style={{ display: 'none' }}>
+                                            <div className="text-center">
+                                                <div className="w-24 h-24 bg-terracotta/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                                    <svg className="w-12 h-12 text-terracotta" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                                                    </svg>
+                                                </div>
+                                                <h3 className="text-xl font-semibold text-deep-earth mb-2">Oana Tenea</h3>
+                                                <p className="text-sage-600">Psihoterapeut</p>
+                                            </div>
+                                        </div>
+                                        
+                                        {/* Floating credential badge */}
+                                        <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl shadow-lg p-4 border border-sage-100">
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-12 h-12 bg-gradient-to-r from-terracotta to-warm-orange rounded-full flex items-center justify-center">
+                                                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <p className="font-semibold text-deep-earth text-sm">Certificat</p>
+                                                    <p className="text-sage-600 text-xs">Psihoterapeut</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
