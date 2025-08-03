@@ -20,6 +20,7 @@ const BlogPostPage = ({ setPage }) => {
             navigate(redirectUrl, { replace: true });
         }
     }, [navigate]);
+
     if (!post) {
         return (
             <>
@@ -58,70 +59,73 @@ const BlogPostPage = ({ setPage }) => {
                 image={post.imageUrl}
             />
             <div className="animate-fade-in bg-cream dark:bg-deep-earth py-20">
-            <div className="container mx-auto px-6">
-                <div className="max-w-4xl mx-auto">
-                    {/* Navigation */}
-                    <div className="mb-8">
-                        <button 
-                            onClick={() => setPage('blog')}
-                            className="text-terracotta hover:underline flex items-center"
-                        >
-                            <span className="mr-2">&larr;</span>
-                            Înapoi la Blog
-                        </button>
-                    </div>
-
-                    {/* Article Header */}
-                    <div className="mb-8">
-                        <div className="flex items-center space-x-4 mb-4">
-                            {post.tags.map(tag => 
-                                <span key={tag} className="bg-sage/20 text-sage-dark dark:bg-sage/30 dark:text-sage-light px-3 py-1 rounded-full font-medium text-sm">
-                                    {tag}
-                                </span>
-                            )}
-                            <span className="text-charcoal-text/60 dark:text-cream-text/60 text-sm">
-                                {post.readingTime} minute de citit
-                            </span>
+                <div className="container mx-auto px-6">
+                    <div className="max-w-4xl mx-auto">
+                        {/* Navigation */}
+                        <div className="mb-8">
+                            <button 
+                                onClick={() => setPage('blog')}
+                                className="text-terracotta hover:underline flex items-center"
+                            >
+                                <span className="mr-2">&larr;</span>
+                                Înapoi la Blog
+                            </button>
                         </div>
-                        <h1 className="text-4xl md:text-5xl font-bold text-charcoal-text dark:text-cream-text leading-tight">
-                            {post.title}
-                        </h1>
-                        <p className="mt-4 text-xl text-charcoal-text/80 dark:text-cream-text/80 leading-relaxed">
-                            {post.excerpt}
-                        </p>
-                    </div>
 
-                    {/* Featured Image */}
-                    <div className="mb-8">
-                        <img 
-                            src={post.imageUrl} 
-                            alt={post.title} 
-                            className="w-full h-64 md:h-96 object-cover rounded-xl shadow-lg"
-                        />
-                    </div>
+                        {/* Article Header */}
+                        <div className="mb-8">
+                            <div className="flex items-center space-x-4 mb-4">
+                                {post.tags.map(tag => 
+                                    <span key={tag} className="bg-sage/20 text-sage-dark dark:bg-sage/30 dark:text-sage-light px-3 py-1 rounded-full font-medium text-sm">
+                                        {tag}
+                                    </span>
+                                )}
+                                <span className="text-charcoal-text/60 dark:text-cream-text/60 text-sm">
+                                    {post.readingTime} minute de citit
+                                </span>
+                            </div>
+                            <h1 className="text-4xl md:text-5xl font-bold text-charcoal-text dark:text-cream-text leading-tight">
+                                {post.title}
+                            </h1>
+                            <p className="mt-4 text-xl text-charcoal-text/80 dark:text-cream-text/80 leading-relaxed">
+                                {post.excerpt || post.metaDescription}
+                            </p>
+                        </div>
 
-                    {/* Article Content */}
-                    <div className="bg-ivory dark:bg-charcoal-text rounded-xl p-8 md:p-12 shadow-lg">
-                        <div 
-                            className="prose prose-lg max-w-none dark:prose-invert prose-headings:text-charcoal-text dark:prose-headings:text-cream-text prose-p:text-charcoal-text/90 dark:prose-p:text-cream-text/90 prose-strong:text-charcoal-text dark:prose-strong:text-cream-text prose-ul:text-charcoal-text/90 dark:prose-ul:text-cream-text/90 prose-li:text-charcoal-text/90 dark:prose-li:text-cream-text/90"
-                            dangerouslySetInnerHTML={{ __html: post.content }}
-                        />
-                    </div>
+                        {/* Featured Image */}
+                        {post.imageUrl && (
+                            <div className="mb-8">
+                                <img 
+                                    src={post.imageUrl} 
+                                    alt={post.title} 
+                                    className="w-full h-64 md:h-96 object-cover rounded-xl shadow-lg"
+                                />
+                            </div>
+                        )}
 
-                    {/* Call to Action */}
-                    <div className="mt-12 text-center bg-ivory dark:bg-charcoal-text rounded-xl p-8">
-                        <h3 className="text-2xl font-bold text-charcoal-text dark:text-cream-text mb-4">
-                            Ai nevoie de suport personalizat?
-                        </h3>
-                        <p className="text-charcoal-text/80 dark:text-cream-text/80 mb-6">
-                            Dacă acest articol a rezonat cu tine și simți că ai nevoie de ajutor profesional, sunt aici să te sprijin.
-                        </p>
-                        <button 
-                            onClick={() => setPage('contact')}
-                            className="px-8 py-3 bg-terracotta text-white font-semibold rounded-lg hover:bg-terracotta/90 transition-colors"
-                        >
-                            Programează o consultație
-                        </button>
+                        {/* Article Content */}
+                        <div className="bg-ivory dark:bg-charcoal-text rounded-xl p-8 md:p-12 shadow-lg">
+                            <div 
+                                className="prose prose-lg max-w-none dark:prose-invert prose-headings:text-charcoal-text dark:prose-headings:text-cream-text prose-p:text-charcoal-text/90 dark:prose-p:text-cream-text/90 prose-strong:text-charcoal-text dark:prose-strong:text-cream-text prose-ul:text-charcoal-text/90 dark:prose-ul:text-cream-text/90 prose-li:text-charcoal-text/90 dark:prose-li:text-cream-text/90"
+                                dangerouslySetInnerHTML={{ __html: post.content }}
+                            />
+                        </div>
+
+                        {/* Call to Action */}
+                        <div className="mt-12 text-center bg-ivory dark:bg-charcoal-text rounded-xl p-8">
+                            <h3 className="text-2xl font-bold text-charcoal-text dark:text-cream-text mb-4">
+                                Ai nevoie de suport personalizat?
+                            </h3>
+                            <p className="text-charcoal-text/80 dark:text-cream-text/80 mb-6">
+                                Dacă acest articol a rezonat cu tine și simți că ai nevoie de ajutor profesional, sunt aici să te sprijin.
+                            </p>
+                            <button 
+                                onClick={() => setPage('contact')}
+                                className="px-8 py-3 bg-terracotta text-white font-semibold rounded-lg hover:bg-terracotta/90 transition-colors"
+                            >
+                                Programează o consultație
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
