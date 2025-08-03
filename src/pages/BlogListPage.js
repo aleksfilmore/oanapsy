@@ -65,95 +65,109 @@ const BlogListPage = () => {
                     </div>
 
                     {/* Blog Posts Grid */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {allPosts.map(post => (
-                            <article 
-                                key={post.id} 
-                                className="bg-ivory dark:bg-charcoal-text rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group"
-                            >
-                                {/* Featured Image */}
-                                {post.imageUrl && (
-                                    <div className="h-48 overflow-hidden">
-                                        <img 
-                                            src={post.imageUrl} 
-                                            alt={post.title}
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                        />
-                                    </div>
-                                )}
-                                
-                                {/* Content */}
-                                <div className="p-6">
-                                    {/* Meta Information */}
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="bg-sage/20 text-sage-dark dark:bg-sage/30 dark:text-sage-light px-3 py-1 rounded-full text-sm font-medium">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                        {filteredPosts.map((post) => (
+                            <article key={post.id} className="group bg-white rounded-2xl overflow-hidden shadow-warm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-sage-100">
+                                <div className="relative overflow-hidden">
+                                    <img 
+                                        src={post.featuredImage || post.imageUrl} 
+                                        alt={post.title}
+                                        className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <div className="absolute top-4 left-4">
+                                        <span className="bg-gradient-to-r from-terracotta to-warm-orange text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md">
                                             {post.category}
                                         </span>
-                                        <span className="text-charcoal-text/60 dark:text-cream-text/60 text-sm">
-                                            {post.readingTime} min
-                                        </span>
                                     </div>
-
-                                    {/* Title */}
-                                    <h2 className="text-xl font-bold text-charcoal-text dark:text-cream-text mb-3 line-clamp-2 group-hover:text-terracotta dark:group-hover:text-terracotta transition-colors">
+                                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <div className="bg-white/90 backdrop-blur-sm p-2 rounded-full">
+                                            <svg className="w-5 h-5 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div className="p-6">
+                                    <div className="flex items-center text-sm text-sage-600 mb-4">
+                                        <div className="flex items-center">
+                                            <svg className="w-4 h-4 mr-2 text-warm-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z" />
+                                            </svg>
+                                            <time dateTime={post.publishDate}>
+                                                {formatDate(post.publishDate)}
+                                            </time>
+                                        </div>
+                                        <span className="mx-3 text-sage-300">•</span>
+                                        <div className="flex items-center">
+                                            <svg className="w-4 h-4 mr-2 text-warm-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <span>{post.readingTime} min</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <h2 className="text-xl font-bold text-sage-800 mb-3 group-hover:text-terracotta transition-colors duration-300 leading-tight">
                                         {post.title}
                                     </h2>
-
-                                    {/* Excerpt */}
-                                    <p className="text-charcoal-text/80 dark:text-cream-text/80 mb-4 line-clamp-3 leading-relaxed">
+                                    
+                                    <p className="text-sage-600 mb-4 line-clamp-3 leading-relaxed">
                                         {post.excerpt || post.metaDescription}
                                     </p>
 
                                     {/* Tags */}
-                                    <div className="flex flex-wrap gap-2 mb-4">
-                                        {post.tags.slice(0, 3).map(tag => (
-                                            <span 
-                                                key={tag} 
-                                                className="text-xs bg-terracotta/10 text-terracotta dark:bg-terracotta/20 dark:text-terracotta px-2 py-1 rounded-full"
-                                            >
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-
-                                    {/* Read More Link */}
+                                    {post.tags && post.tags.length > 0 && (
+                                        <div className="flex flex-wrap gap-2 mb-6">
+                                            {post.tags.slice(0, 3).map(tag => (
+                                                <span 
+                                                    key={tag} 
+                                                    className="text-xs bg-terracotta/10 text-terracotta px-3 py-1 rounded-full font-medium"
+                                                >
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    )}
+                                    
                                     <Link 
                                         to={`/blog/${post.slug || post.newSlug}`}
-                                        className="inline-flex items-center text-terracotta hover:underline font-semibold transition-colors"
+                                        className="inline-flex items-center bg-gradient-to-r from-terracotta to-warm-orange text-white px-6 py-3 rounded-full font-semibold hover:shadow-warm hover:scale-105 transition-all duration-300 w-full justify-center group"
                                     >
-                                        Citește articolul
-                                        <span className="ml-2">→</span>
+                                        <span>Citește articolul</span>
+                                        <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                        </svg>
                                     </Link>
-
-                                    {/* Publish Date */}
-                                    <div className="mt-4 pt-4 border-t border-sage/20">
-                                        <span className="text-charcoal-text/60 dark:text-cream-text/60 text-sm">
-                                            {new Date(post.publishDate).toLocaleDateString('ro-RO', {
-                                                year: 'numeric',
-                                                month: 'long',
-                                                day: 'numeric'
-                                            })}
-                                        </span>
-                                    </div>
                                 </div>
                             </article>
                         ))}
                     </div>
 
                     {/* Call to Action */}
-                    <div className="mt-16 text-center bg-ivory dark:bg-charcoal-text rounded-xl p-8 md:p-12">
-                        <h2 className="text-2xl md:text-3xl font-bold text-charcoal-text dark:text-cream-text mb-4">
-                            Vrei să primești articole noi direct în inbox?
-                        </h2>
-                        <p className="text-charcoal-text/80 dark:text-cream-text/80 mb-6 max-w-2xl mx-auto">
-                            Abonează-te la newsletter-ul meu pentru a primi săptămânal articole utile despre sănătate mentală și dezvoltare personală.
-                        </p>
-                        <Link 
-                            to="/contact"
-                            className="inline-block px-8 py-3 bg-terracotta text-white font-semibold rounded-lg hover:bg-terracotta/90 transition-colors"
-                        >
-                            Ia legătura cu mine
-                        </Link>
+                    <div className="mt-20 bg-gradient-to-br from-white to-soft-yellow rounded-3xl p-8 md:p-12 shadow-warm border border-sage-100">
+                        <div className="text-center">
+                            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-terracotta to-warm-orange rounded-full mb-6">
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-sage-800 mb-4">
+                                Vrei să primești articole noi?
+                            </h2>
+                            <p className="text-xl text-sage-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+                                Să discutăm despre cum te pot ajuta în călătoria ta spre o viață mai echilibrată și împlinită.
+                            </p>
+                            <Link 
+                                to="/contact"
+                                className="inline-flex items-center bg-gradient-to-r from-terracotta to-warm-orange text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-warm hover:scale-105 transition-all duration-300"
+                            >
+                                <span>Ia legătura cu mine</span>
+                                <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
