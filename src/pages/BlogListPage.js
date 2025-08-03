@@ -1,6 +1,10 @@
 import React from 'react';
 
-const BlogListPage = ({ posts, setPage, setSelectedPost }) => {
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { blogPosts } from '../mockData';
+import { existingBlogPosts } from '../seo/blogMigration';
+import SEO from '../components/SEO';
     return (
         <div className="animate-fade-in bg-cream dark:bg-deep-earth py-20">
             <div className="container mx-auto px-6">
