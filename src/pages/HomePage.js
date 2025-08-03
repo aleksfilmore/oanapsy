@@ -72,9 +72,9 @@ const HomePage = () => {
                                     </div>
                                     
                                     <h1 className="font-display text-xl sm:text-2xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight mb-3 sm:mb-6">
-                                        Un pas către
+                                        Primul pas către
                                         <span className="block text-transparent bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text">
-                                            vindecarea ta
+                                            tine
                                         </span>
                                     </h1>
                                     
