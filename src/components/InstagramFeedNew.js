@@ -98,16 +98,16 @@ const InstagramFeedNew = () => {
 
   if (loading) {
     return (
-      <section className="py-16 bg-gradient-to-br from-soft-yellow to-golden-honey/20">
+      <section className="py-16 bg-gradient-to-br from-slate-800 to-gray-900">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-sage-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               @psihoterapeut.oanatenea
             </h2>
-            <p className="text-sage-600 text-lg">Urmărește-mă pe Instagram pentru insights zilnice</p>
+            <p className="text-gray-300 text-lg">Urmărește-mă pe Instagram pentru insights zilnice</p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[1, 2, 3, 4, 5, 6].map((item) => (
               <div key={item} className="bg-white rounded-2xl shadow-lg overflow-hidden animate-pulse">
                 <div className="aspect-square bg-gray-200"></div>
@@ -125,12 +125,12 @@ const InstagramFeedNew = () => {
 
   if (error) {
     return (
-      <section className="py-16 bg-gradient-to-br from-soft-yellow to-golden-honey/20">
+      <section className="py-16 bg-gradient-to-br from-slate-800 to-gray-900">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-sage-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             @psihoterapeut.oanatenea
           </h2>
-          <p className="text-sage-600 mb-8">
+          <p className="text-gray-300 mb-8">
             Urmărește-mă pe Instagram pentru insights zilnice despre psihologie și wellbeing
           </p>
           <a
@@ -150,13 +150,13 @@ const InstagramFeedNew = () => {
   }
 
   return (
-    <section className="py-16 bg-gradient-to-br from-soft-yellow to-golden-honey/20">
+    <section className="py-16 bg-gradient-to-br from-slate-800 to-gray-900">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-sage-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             @psihoterapeut.oanatenea
           </h2>
-          <p className="text-sage-600 text-lg mb-6">
+          <p className="text-gray-300 text-lg mb-6">
             Urmărește-mă pe Instagram pentru insights zilnice despre psihologie și wellbeing
           </p>
           <a
@@ -173,14 +173,14 @@ const InstagramFeedNew = () => {
         </div>
         
         {/* Instagram-style text cards grid */}
-        <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {posts.slice(0, 3).map((post) => (
             <a
               key={post.id}
               href={post.permalink}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white rounded-xl shadow-warm overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02] border border-sage-100"
+              className="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] border border-gray-200"
             >
               {/* Instagram-style text card - smaller size */}
               <div className={`aspect-square flex items-center justify-center p-4 ${post.backgroundColor} relative overflow-hidden`}>
@@ -210,23 +210,23 @@ const InstagramFeedNew = () => {
               </div>
               
               {/* Post metadata - compact */}
-              <div className="p-4">
-                <div className="flex items-center justify-between text-xs text-sage-600 mb-2">
+              <div className="p-5 bg-white">
+                <div className="flex items-center justify-between text-sm text-gray-600 mb-3">
                   <div className="flex items-center">
-                    <svg className="w-3 h-3 mr-1 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 mr-1 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                     </svg>
                     <span className="font-medium">{post.likes}</span>
                   </div>
-                  <span className="text-xs">{formatDate(post.timestamp)}</span>
+                  <span className="text-sm">{formatDate(post.timestamp)}</span>
                 </div>
                 
-                {/* Hashtags - compact */}
-                <div className="flex flex-wrap gap-1 mb-2">
-                  {post.caption.match(/#\w+/g)?.slice(0, 2).map((hashtag, index) => (
+                {/* Hashtags */}
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {post.caption.match(/#\w+/g)?.slice(0, 3).map((hashtag, index) => (
                     <span 
                       key={index}
-                      className="text-xs bg-sage-100 text-sage-600 px-2 py-0.5 rounded-full"
+                      className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full font-medium"
                     >
                       {hashtag}
                     </span>
@@ -234,8 +234,8 @@ const InstagramFeedNew = () => {
                 </div>
                 
                 <div className="flex items-center justify-center">
-                  <span className="flex items-center hover:text-pink-500 transition-colors text-xs">
-                    <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span className="flex items-center text-gray-600 hover:text-pink-500 transition-colors text-sm font-medium">
+                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                     Vezi pe Instagram
@@ -246,12 +246,12 @@ const InstagramFeedNew = () => {
           ))}
         </div>
         
-        <div className="text-center mt-8">
+        <div className="text-center mt-10">
           <a
             href="https://instagram.com/psihoterapeut.oanatenea"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 border-2 border-sage-600 text-sage-600 font-semibold rounded-xl hover:bg-sage-600 hover:text-white transition-all duration-300"
+            className="inline-flex items-center px-8 py-3 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-gray-900 transition-all duration-300"
           >
             Vezi toate postările
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
