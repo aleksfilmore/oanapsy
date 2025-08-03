@@ -19,15 +19,46 @@ const HomePage = () => {
                 title="Psihoterapeut Oana Tenea - Consiliere și Suport Psihologic"
                 description="Bine ai venit pe site-ul psihoterapeutului Oana Tenea. Oferă consiliere psihologică, terapie de cuplu și suport pentru anxietate și depresie în Vaslui și online."
             />
+            
+            {/* CSS for responsive background positioning to ensure Oana's head is visible */}
+            <style jsx>{`
+                .hero-background {
+                    background-position: center 25% !important;
+                }
+                @media (max-width: 1024px) {
+                    .hero-background {
+                        background-position: 60% 20% !important;
+                    }
+                }
+                @media (max-width: 768px) {
+                    .hero-background {
+                        background-position: 65% 15% !important;
+                        background-size: 120% !important;
+                    }
+                }
+                @media (max-width: 640px) {
+                    .hero-background {
+                        background-position: 70% 10% !important;
+                        background-size: 130% !important;
+                    }
+                }
+                @media (max-width: 480px) {
+                    .hero-background {
+                        background-position: 75% 8% !important;
+                        background-size: 140% !important;
+                    }
+                }
+            `}</style>
+            
             <div className="overflow-hidden">
                 {/* Hero Section with Oana's photo as background */}
                 <section className="relative py-16 lg:py-24 min-h-screen flex items-center overflow-hidden">
                     {/* Background Image - Oana's photo */}
                     <div 
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                        className="absolute inset-0 bg-cover bg-no-repeat hero-background"
                         style={{
                             backgroundImage: `url('/3DX_2399web.jpg')`,
-                            backgroundPosition: 'center center',
+                            backgroundPosition: 'center 25%',
                             backgroundSize: 'cover'
                         }}
                     >
@@ -191,23 +222,22 @@ const HomePage = () => {
                                 <span className="text-terracotta"> blog</span>
                             </h2>
                             <div className="max-w-3xl mx-auto">
-                                <p className="text-xl text-gray-300 mb-4 leading-relaxed">
+                                <p className="text-xl text-gray-300 mb-6 leading-relaxed">
                                     Descoperă sfaturi practice și perspective profesionale pentru sănătatea ta mentală
                                 </p>
-                                <div className="bg-terracotta/20 border border-terracotta/30 rounded-2xl p-4 backdrop-blur-sm">
+                                <div className="bg-gradient-to-r from-blue-50/10 to-indigo-50/10 border border-blue-200/20 rounded-2xl p-4 backdrop-blur-sm">
                                     <div className="flex items-center justify-center gap-3 mb-2">
-                                        <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-                                            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center">
+                                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                                             </svg>
                                         </div>
-                                        <h3 className="text-lg font-bold text-white">
-                                            Colaborare SmartLiving.ro
+                                        <h3 className="text-sm font-medium text-blue-200">
+                                            În colaborare cu SmartLiving.ro
                                         </h3>
                                     </div>
-                                    <p className="text-gray-200 text-sm">
-                                        Oana este autor-contributor pe SmartLiving.ro, unde publică articole despre 
-                                        psihologie, relații și dezvoltare personală pentru o audiență largă.
+                                    <p className="text-gray-300 text-xs leading-relaxed">
+                                        Articole selectate despre psihologie, relații și dezvoltare personală pentru o audiență largă.
                                     </p>
                                 </div>
                             </div>
@@ -308,7 +338,7 @@ const HomePage = () => {
                                     to="/contact"
                                     className="px-8 py-4 bg-white text-terracotta font-bold rounded-2xl hover:bg-cream transition-all duration-300 shadow-warm transform hover:scale-105"
                                 >
-                                    Programează consultația gratuită
+                                    Programează o consultație
                                 </Link>
                                 <Link 
                                     to="/servicii"

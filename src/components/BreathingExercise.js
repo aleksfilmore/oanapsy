@@ -55,18 +55,18 @@ const BreathingExercise = () => {
         setCycle(0);
     };
 
-    const getCircleSize = () => {
+    const getSquareSize = () => {
         switch (phase) {
             case 'inhale':
-                return 'w-32 h-32';
+                return 'w-36 h-36';
             case 'hold':
-                return 'w-32 h-32';
+                return 'w-36 h-36';
             case 'exhale':
-                return 'w-20 h-20';
-            case 'pause':
-                return 'w-20 h-20';
-            default:
                 return 'w-24 h-24';
+            case 'pause':
+                return 'w-24 h-24';
+            default:
+                return 'w-28 h-28';
         }
     };
 
@@ -81,39 +81,39 @@ const BreathingExercise = () => {
             
             <div className="text-center relative z-10">
                 <div className="mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-sage to-terracotta rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-sage to-terracotta rounded-2xl mx-auto mb-4 flex items-center justify-center">
                         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>
                     </div>
                     <h3 className="text-2xl font-bold text-deep-earth mb-2">
-                        Exercițiu de Respirație
+                        Tehnica Respirației Pătrate
                     </h3>
                     <p className="text-warm-gray text-sm">
-                        Tehnica respirației pătrate pentru reducerea anxietății
+                        Pentru reducerea anxietății și relaxare profundă
                     </p>
                 </div>
                 
                 <div className="flex justify-center items-center mb-8">
                     <div className="relative">
-                        {/* Outer breathing ring */}
-                        <div className={`absolute inset-0 bg-gradient-to-r from-sage/30 to-terracotta/30 transition-all duration-1000 ease-in-out rounded-full ${isActive ? 'animate-pulse' : ''}`}></div>
+                        {/* Outer breathing ring - square */}
+                        <div className={`absolute -inset-4 bg-gradient-to-r from-sage/20 to-terracotta/20 transition-all duration-1000 ease-in-out rounded-3xl ${isActive ? 'animate-pulse' : ''}`}></div>
                         
-                        {/* Main breathing circle */}
+                        {/* Main breathing square */}
                         <div 
-                            className={`bg-gradient-to-br from-sage to-emerald-600 transition-all duration-1000 ease-in-out rounded-full flex items-center justify-center shadow-lg ${getCircleSize()}`}
+                            className={`bg-gradient-to-br from-sage to-emerald-600 transition-all duration-1000 ease-in-out rounded-2xl flex items-center justify-center shadow-2xl ${getSquareSize()}`}
                         >
-                            <div className="text-center">
-                                <div className="text-white font-bold text-base mb-1">
+                            <div className="text-center px-4 py-2">
+                                <div className="text-white font-bold text-lg mb-2">
                                     {isActive ? phases[phase].text : 'Gata să începi?'}
                                 </div>
                                 {isActive && (
-                                    <div className="text-white text-3xl font-bold animate-pulse">
+                                    <div className="text-white text-4xl font-bold animate-pulse mb-1">
                                         {timeLeft}
                                     </div>
                                 )}
                                 {!isActive && (
-                                    <div className="text-white text-sm opacity-90">
+                                    <div className="text-white text-sm opacity-90 leading-relaxed">
                                         Apasă pentru a începe
                                     </div>
                                 )}
