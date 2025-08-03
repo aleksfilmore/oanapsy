@@ -246,6 +246,9 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
+
+                {/* Instagram Feed Section */}
+                <InstagramFeed />
             </div>
         </>
     );
