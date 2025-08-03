@@ -12,7 +12,9 @@ export const existingBlogPosts = [
     tags: ['Parenting', 'Copii', 'Sărbători'],
     metaDescription: 'Dacă sărbătoriți Crăciunul, este important să luați în considerare cu atenție ceea ce le spunem copiilor despre Moș Crăciun.',
     readingTime: 8,
-    status: 'published'
+    status: 'published',
+    image: '/santa.jpg',
+    imageAlt: 'Copil cu Moș Crăciun - discuții despre sărbători'
   },
   {
     id: 2,
@@ -24,7 +26,9 @@ export const existingBlogPosts = [
     tags: ['Narcisism', 'Familie', 'Traumă'],
     metaDescription: 'Uneori, este greu de spus dacă o persoană este narcisistă sau are doar respect de sine. Narcisismul nu se referă la un nivel mare de încredere în sine.',
     readingTime: 12,
-    status: 'published'
+    status: 'published',
+    image: '/narcissistic-father.jpg',
+    imageAlt: 'Relația tată-copil - efectele narcisismului în familie'
   },
   {
     id: 3,
@@ -36,7 +40,9 @@ export const existingBlogPosts = [
     tags: ['Binge Eating', 'Traumă', 'Tulburări Alimentare'],
     metaDescription: 'Studiile au arătat că pacienții care au suferit un eveniment traumatizant au avut mai multe șanse să se implice în comportamente autodistructive.',
     readingTime: 10,
-    status: 'published'
+    status: 'published',
+    image: '/bingeatingdisorder-300x279-1.jpg',
+    imageAlt: 'Tulburări de alimentație - binge eating și trauma'
   },
   {
     id: 4,
@@ -48,7 +54,9 @@ export const existingBlogPosts = [
     tags: ['Parenting', 'Educație', 'Comportament'],
     metaDescription: 'Trebuie să interpretezi comportamentul copilului ca pe o reacție la propriul tău comportament.',
     readingTime: 7,
-    status: 'published'
+    status: 'published',
+    image: '/Screenshot-2020-02-06-at-14.08.49.png',
+    imageAlt: 'Relația părinte-copil - comportament și reacții'
   },
   {
     id: 5,
@@ -60,7 +68,9 @@ export const existingBlogPosts = [
     tags: ['Bullying', 'Școală', 'Agresiune'],
     metaDescription: 'Bullyingul este o experiență care produce incredibil de multă suferință! Bullyingul reprezintă o formă de abuz emoțional și fizic.',
     readingTime: 6,
-    status: 'published'
+    status: 'published',
+    image: '/OanaTenea.png',
+    imageAlt: 'Bullying în școli - fenomen și soluții'
   },
   {
     id: 6,
@@ -72,7 +82,9 @@ export const existingBlogPosts = [
     tags: ['Educație', 'Școală', 'Relația Profesor-Elev'],
     metaDescription: 'Despre importanța pregătirii profesorilor din școlile noastre din punct de vedere psihologic.',
     readingTime: 8,
-    status: 'published'
+    status: 'published',
+    image: '/OanaTenea.png',
+    imageAlt: 'Rolul profesorului ca mentor - educație și psihologie'
   },
   {
     id: 7,
@@ -84,7 +96,9 @@ export const existingBlogPosts = [
     tags: ['Psihoterapie', 'Timp', 'Proces Terapeutic'],
     metaDescription: 'Un demers terapeutic se bazează în mare parte pe voința proprie. Terapia durează aproximativ șase luni pentru îmbunătățire.',
     readingTime: 5,
-    status: 'published'
+    status: 'published',
+    image: '/3DX_2399web.jpg',
+    imageAlt: 'Psihoterapie - timpul și efortul necesar pentru vindecaare'
   },
   {
     id: 8,
@@ -96,7 +110,9 @@ export const existingBlogPosts = [
     tags: ['Relații', 'Psihologie', 'Atracție'],
     metaDescription: 'Atributul de "rău" implică ceva tabu, ceva ceea ce nu ai voie să faci în mod normal. Acest atribut pare destul de atractiv pentru unele femei.',
     readingTime: 9,
-    status: 'published'
+    status: 'published',
+    image: '/OanaTenea.png',
+    imageAlt: 'Psihologia relațiilor - atracția și dinamica cuplurilor'
   }
 ];
 
@@ -118,7 +134,12 @@ export const seoSchema = {
   siteUrl: 'https://oanatenea.ro',
   author: 'Oana Tenea',
   social: {
-    instagram: '@oana_tenea'
+    instagram: '@psihoterapeut.oanatenea'
+  },
+  contact: {
+    address: 'CALEA DOROBANTI 116-122, SECTOR 1 - BUCURESTI',
+    email: 'psihoterapeut@oanatenea.ro',
+    phone: null // Adaugă numărul de telefon dacă este disponibil
   },
   defaultImage: '/og-image.jpg'
 };

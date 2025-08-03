@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { blogPosts } from '../mockData';
 import SEO from '../components/SEO';
 import BreathingExercise from '../components/BreathingExercise';
+import InstagramFeed from '../components/InstagramFeed';
 
 const HomePage = () => {
     return (
