@@ -14,8 +14,8 @@ const AdminPage = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         
-        // Demo credentials
-        if (loginData.username === 'oana.tenea' && loginData.password === 'admin2025') {
+        // Secure credentials - updated for production
+        if (loginData.username === 'oana.admin' && loginData.password === 'OanaPsy2025!SecureAdmin#') {
             setIsAuthenticated(true);
             setLoginError('');
         } else {
@@ -95,15 +95,6 @@ const AdminPage = () => {
                         Conectare
                     </button>
                 </form>
-
-                {/* Demo credentials info */}
-                <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-4">
-                    <h3 className="text-sm font-medium text-blue-900 mb-2">Date de test:</h3>
-                    <p className="text-sm text-blue-700">
-                        <strong>Username:</strong> oana.tenea<br />
-                        <strong>Password:</strong> admin2025
-                    </p>
-                </div>
             </div>
         </div>
     );
