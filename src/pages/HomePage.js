@@ -43,15 +43,41 @@ const HomePage = () => {
                 <section className="relative min-h-screen flex items-center overflow-hidden">
                     {/* Background Image with smart positioning and subtle blur */}
                     <div className="absolute inset-0 z-0">
+                        {/* Primary method: IMG tag with error handling */}
                         <img 
                             src="/3DX_2399web.jpg" 
                             alt="Oana Tenea - Psihoterapeut"
                             className="w-full h-full object-cover filter blur-[1px]"
                             style={{
-                                objectPosition: 'center top', // Mobile: center top
+                                objectPosition: 'center top',
                                 objectFit: 'cover'
                             }}
+                            loading="eager"
+                            onError={(e) => {
+                                console.error('Hero image failed to load:', e);
+                                // Hide the img and show CSS background fallback
+                                e.target.style.display = 'none';
+                                e.target.nextElementSibling.style.display = 'block';
+                            }}
+                            onLoad={(e) => {
+                                console.log('Hero image loaded successfully');
+                                e.target.style.opacity = '1';
+                            }}
                         />
+                        
+                        {/* Fallback: CSS background image */}
+                        <div 
+                            className="w-full h-full bg-cover bg-center filter blur-[1px]"
+                            style={{
+                                backgroundImage: 'url(/3DX_2399web.jpg)',
+                                backgroundPosition: 'center top',
+                                display: 'none'
+                            }}
+                        ></div>
+                        
+                        {/* Ultimate fallback: gradient background */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-amber-100 to-orange-100 -z-10"></div>
+                        
                         {/* Gradient overlays for text readability */}
                         <div className="absolute inset-0 bg-gradient-to-r from-amber-500/80 via-amber-400/60 to-transparent"></div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:hidden"></div>
