@@ -99,13 +99,14 @@ const BreathingExercise = () => {
                         {/* Outer breathing ring - square */}
                         <div className={`absolute -inset-4 bg-gradient-to-r from-sage/20 to-terracotta/20 transition-all duration-1000 ease-in-out rounded-3xl ${isActive ? 'animate-pulse' : ''}`}></div>
                         
-                        {/* Main breathing square */}
-                        <div 
-                            className={`bg-gradient-to-br from-sage to-emerald-600 transition-all duration-1000 ease-in-out rounded-2xl flex items-center justify-center shadow-2xl ${getSquareSize()}`}
+                        {/* Main breathing square - clickable */}
+                        <button 
+                            onClick={!isActive ? startExercise : stopExercise}
+                            className={`bg-gradient-to-br from-sage to-emerald-600 transition-all duration-1000 ease-in-out rounded-2xl flex items-center justify-center shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-95 cursor-pointer ${getSquareSize()}`}
                         >
                             <div className="text-center px-4 py-2">
                                 <div className="text-white font-bold text-lg mb-2">
-                                    {isActive ? phases[phase].text : 'Gata să începi?'}
+                                    {isActive ? phases[phase].text : 'Începe exercițiul'}
                                 </div>
                                 {isActive && (
                                     <div className="text-white text-4xl font-bold animate-pulse mb-1">
@@ -114,11 +115,11 @@ const BreathingExercise = () => {
                                 )}
                                 {!isActive && (
                                     <div className="text-white text-sm opacity-90 leading-relaxed">
-                                        Apasă pentru a începe
+                                        Apasă aici ↑
                                     </div>
                                 )}
                             </div>
-                        </div>
+                        </button>
                     </div>
                 </div>
 
@@ -137,38 +138,19 @@ const BreathingExercise = () => {
                     </div>
                 )}
 
-                <div className="space-y-3">
+                {/* Instructions - updated */}
+                <div className="text-center">
                     {!isActive ? (
-                        <button
-                            onClick={startExercise}
-                            className="w-full px-6 py-4 bg-gradient-to-r from-terracotta to-warm-orange text-white font-semibold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 transform"
-                        >
-                            <span className="flex items-center justify-center gap-2">
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293H15M9 10v4a4 4 0 008 0v-4" />
-                                </svg>
-                                Începe Exercițiul
-                            </span>
-                        </button>
+                        <div className="text-sm text-warm-gray bg-soft-yellow/20 rounded-lg p-3">
+                            <p className="font-medium">💡 Cum funcționează:</p>
+                            <p className="mt-1">Apasă pătratul pentru a începe. Urmează instrucțiunile și respiră în ritmul indicat pentru a-ți calma mintea.</p>
+                        </div>
                     ) : (
-                        <button
-                            onClick={stopExercise}
-                            className="w-full px-6 py-4 bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
-                        >
-                            <span className="flex items-center justify-center gap-2">
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 10h6v4H9z" />
-                                </svg>
-                                Oprește
-                            </span>
-                        </button>
+                        <div className="text-sm text-warm-gray bg-sage/10 rounded-lg p-3">
+                            <p className="font-medium">🧘‍♀️ În desfășurare:</p>
+                            <p className="mt-1">Urmează pătratul și respiră în ritmul indicat. Apasă din nou pentru a opri.</p>
+                        </div>
                     )}
-                </div>
-
-                <div className="mt-6 text-xs text-warm-gray bg-soft-yellow/30 rounded-lg p-3">
-                    <p className="font-medium">💡 Cum funcționează:</p>
-                    <p className="mt-1">Urmează cercul și respiră în ritmul indicat pentru a-ți calma mintea și a reduce stresul.</p>
                 </div>
             </div>
         </div>

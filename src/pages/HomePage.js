@@ -237,7 +237,7 @@ const HomePage = () => {
                                         </h3>
                                     </div>
                                     <p className="text-gray-300 text-xs leading-relaxed">
-                                        Articole selectate despre psihologie, relații și dezvoltare personală pentru o audiență largă.
+                                        Articole publicate de Oana Tenea despre psihologie, relații și dezvoltare personală.
                                     </p>
                                 </div>
                             </div>

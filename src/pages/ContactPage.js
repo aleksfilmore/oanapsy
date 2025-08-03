@@ -271,16 +271,8 @@ Va multumesc!`;
                                 </h3>
                                 <div className="space-y-3 text-sage-600">
                                     <div className="flex justify-between">
-                                        <span className="font-medium">Luni - Vineri:</span>
-                                        <span>09:00 - 19:00</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="font-medium">Sâmbătă:</span>
-                                        <span>10:00 - 16:00</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="font-medium">Duminică:</span>
-                                        <span className="text-sage-400">Închis</span>
+                                        <span className="font-medium">Luni - Joi:</span>
+                                        <span>Disponibil</span>
                                     </div>
                                 </div>
                                 <div className="mt-6 p-4 bg-golden-honey/20 rounded-lg">
