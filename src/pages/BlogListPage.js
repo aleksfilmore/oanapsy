@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { blogPosts } from '../mockData';
 import { existingBlogPosts } from '../seo/blogMigration';
@@ -10,22 +10,58 @@ const BlogListPage = () => {
         new Date(b.publishDate) - new Date(a.publishDate)
     );
 
+    const [selectedCategory, setSelectedCategory] = useState('All');
+    
+    // Extract unique categories
+    const categories = ['All', ...new Set(allPosts.map(post => post.category))];
+    
+    // Filter posts based on selected category
+    const filteredPosts = selectedCategory === 'All' 
+        ? allPosts 
+        : allPosts.filter(post => post.category === selectedCategory);
+
+    const formatDate = (dateString) => {
+        return new Date(dateString).toLocaleDateString('ro-RO', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    };
+
     return (
         <>
             <SEO 
                 title="Blog - Articole despre Sănătate Mentală și Psihoterapie"
                 description="Descoperă articole utile despre sănătate mentală, anxietate, relații și dezvoltare personală scrise de psihoterapeutul Oana Tenea."
             />
-            <div className="animate-fade-in bg-cream dark:bg-deep-earth py-20">
+            <div className="animate-fade-in bg-gradient-to-br from-soft-yellow to-golden-honey/20 py-20">
                 <div className="container mx-auto px-6">
                     {/* Header */}
                     <div className="text-center mb-16">
-                        <h1 className="text-4xl md:text-5xl font-bold text-charcoal-text dark:text-cream-text mb-6">
-                            Blog
+                        <h1 className="text-4xl md:text-5xl font-bold text-sage-800 mb-6">
+                            Blog & Articole
                         </h1>
-                        <p className="text-xl text-charcoal-text/80 dark:text-cream-text/80 max-w-3xl mx-auto leading-relaxed">
+                        <p className="text-xl text-sage-600 max-w-3xl mx-auto leading-relaxed mb-8">
                             Articole despre sănătate mentală, relații și dezvoltare personală care te pot ajuta în călătoria ta spre bunăstare.
                         </p>
+                        <div className="w-24 h-1 bg-gradient-to-r from-terracotta to-warm-orange mx-auto rounded-full"></div>
+                    </div>
+
+                    {/* Category Filter */}
+                    <div className="flex flex-wrap justify-center gap-3 mb-12">
+                        {categories.map((category) => (
+                            <button
+                                key={category}
+                                onClick={() => setSelectedCategory(category)}
+                                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                                    selectedCategory === category
+                                        ? 'bg-gradient-to-r from-terracotta to-warm-orange text-white shadow-warm transform scale-105'
+                                        : 'bg-white text-sage-700 hover:bg-sage-50 hover:text-sage-800 shadow-md hover:shadow-lg'
+                                }`}
+                            >
+                                {category}
+                            </button>
+                        ))}
                     </div>
 
                     {/* Blog Posts Grid */}
