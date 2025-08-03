@@ -10,6 +10,7 @@ const Header = ({ isDarkMode, onToggleDarkMode }) => {
         { name: 'Acasă', path: '/' },
         { name: 'Despre Mine', path: '/despre' },
         { name: 'Servicii Psihoterapie', path: '/servicii' },
+        { name: 'Resurse', path: '/resurse' },
         { name: 'Blog', path: '/blog' },
         { name: 'Contact', path: '/contact' }
     ];
