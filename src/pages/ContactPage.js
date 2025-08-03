@@ -29,8 +29,31 @@ const ContactPage = () => {
             return;
         }
         
-        // Aici ar fi logica pentru trimiterea formularului
-        alert('Mesajul a fost trimis! Vă voi răspunde în cel mai scurt timp.');
+        // Create email content
+        const subject = `Programare psihoterapie - ${formData.sessionType}`;
+        const body = `Salut Oana,
+
+Ma numesc ${formData.name} si doresc sa programez o sedinta de psihoterapie.
+
+Tip sedinta: ${formData.sessionType}
+Email: ${formData.email}
+Telefon: ${formData.phone || 'Nu a fost furnizat'}
+
+Mesaj:
+${formData.message}
+
+Va multumesc!`;
+
+        // Create mailto URL
+        const mailtoUrl = `mailto:psihoterapeut@oanatenea.ro?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Open email client
+        window.location.href = mailtoUrl;
+        
+        // Show success message
+        alert('Se va deschide clientul de email pentru a trimite mesajul. Vă voi răspunde în cel mai scurt timp.');
+        
+        // Reset form
         setFormData({
             name: '',
             email: '',
