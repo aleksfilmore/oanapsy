@@ -431,10 +431,19 @@ const AdminDashboard = () => {
             <header className="bg-white shadow-sm border-b">
                 <div className="px-6 py-4">
                     <div className="flex justify-between items-center">
-                        <h1 className="text-2xl font-bold text-gray-900">Panou de administrare</h1>
                         <div className="flex items-center space-x-4">
-                            <span className="text-gray-600">Bună ziua, Oana!</span>
-                            <button className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors">
+                            <h1 className="text-xl md:text-2xl font-bold text-gray-900">Panou de administrare</h1>
+                            {/* Mobile menu button */}
+                            <button
+                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                                className="md:hidden bg-gray-100 p-2 rounded-lg hover:bg-gray-200 transition-colors"
+                            >
+                                <span className="text-lg">☰</span>
+                            </button>
+                        </div>
+                        <div className="flex items-center space-x-4">
+                            <span className="text-gray-600 hidden sm:block">Bună ziua, Oana!</span>
+                            <button className="bg-red-500 text-white px-3 py-2 md:px-4 rounded-lg hover:bg-red-600 transition-colors text-sm md:text-base">
                                 Deconectare
                             </button>
                         </div>
@@ -444,13 +453,16 @@ const AdminDashboard = () => {
 
             <div className="flex">
                 {/* Sidebar */}
-                <aside className="w-64 bg-white shadow-sm min-h-screen">
+                <aside className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:block w-full md:w-64 bg-white shadow-sm min-h-screen ${isMobileMenuOpen ? 'fixed z-50' : ''}`}>
                     <nav className="p-6">
                         <div className="space-y-2">
                             {tabs.map(tab => (
                                 <button
                                     key={tab.id}
-                                    onClick={() => setActiveTab(tab.id)}
+                                    onClick={() => {
+                                        setActiveTab(tab.id);
+                                        setIsMobileMenuOpen(false);
+                                    }}
                                     className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors ${
                                         activeTab === tab.id
                                             ? 'bg-blue-50 text-blue-700 border-blue-200'
@@ -465,8 +477,16 @@ const AdminDashboard = () => {
                     </nav>
                 </aside>
 
+                {/* Overlay for mobile */}
+                {isMobileMenuOpen && (
+                    <div 
+                        className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    />
+                )}
+
                 {/* Main Content */}
-                <main className="flex-1 p-6">
+                <main className="flex-1 p-3 md:p-6 w-full">
                     {renderContent()}
                 </main>
             </div>
