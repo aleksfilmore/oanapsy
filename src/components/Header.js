@@ -9,7 +9,7 @@ const Header = ({ isDarkMode, onToggleDarkMode }) => {
     const navLinks = [
         { name: 'Acasă', path: '/' },
         { name: 'Despre Mine', path: '/despre' },
-        { name: 'Servicii & Prețuri', path: '/servicii' },
+        { name: 'Servicii Psihoterapie', path: '/servicii' },
         { name: 'Blog', path: '/blog' },
         { name: 'Contact', path: '/contact' }
     ];
