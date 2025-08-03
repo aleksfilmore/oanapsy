@@ -39,6 +39,65 @@ html, body {
     animation: float 3s ease-in-out infinite;
   }
   
+  /* New micro-interaction animations */
+  .animate-button-press {
+    animation: buttonPress 0.15s ease-in-out;
+  }
+  
+  .animate-success-pulse {
+    animation: successPulse 0.6s ease-out;
+  }
+  
+  .animate-error-shake {
+    animation: errorShake 0.5s ease-in-out;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInFromLeft 0.6s ease-out;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInFromRight 0.6s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out;
+  }
+  
+  .animate-parallax-float {
+    animation: parallaxFloat 6s ease-in-out infinite;
+  }
+  
+  .animate-card-flip {
+    animation: cardFlip 0.8s ease-in-out;
+  }
+  
+  .animate-progress-fill {
+    animation: progressFill 1s ease-out forwards;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+  
+  /* Enhanced hover effects */
+  .hover-lift {
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .hover-scale {
+    transition: transform 0.2s ease-out;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -99,7 +158,87 @@ img {
   }
 }
 
+/* Advanced animations for micro-interactions */
+@keyframes buttonPress {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+@keyframes successPulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes slideInFromLeft {
+  0% { 
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% { 
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% { 
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes parallaxFloat {
+  0%, 100% { transform: translateY(0px) translateZ(0); }
+  50% { transform: translateY(-20px) translateZ(0); }
+}
+
+@keyframes cardFlip {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(-90deg); }
+  100% { transform: rotateY(0deg); }
+}
+
+@keyframes progressFill {
+  0% { width: 0%; }
+  100% { width: var(--progress-width, 100%); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(209, 122, 71, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(209, 122, 71, 0.8); }
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Enhanced focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #D17A47;
+  outline-offset: 2px;
+  border-radius: 4px;
 }

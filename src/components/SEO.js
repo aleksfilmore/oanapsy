@@ -90,6 +90,45 @@ const SEO = ({
           })
         })}
       </script>
+
+      {/* Therapy Practice Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "PsychologicalTreatment",
+          "name": "Oana Tenea - Psihoterapeut",
+          "description": "Servicii profesionale de psihoterapie și consiliere psihologică în Vaslui și online. Specializare în anxietate, depresie și terapie de cuplu.",
+          "url": siteUrl,
+          "telephone": "+40-xxx-xxx-xxx",
+          "email": "psihoterapeut@oanatenea.ro",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Vaslui",
+            "addressCountry": "RO"
+          },
+          "provider": {
+            "@type": "Person",
+            "name": "Oana Tenea",
+            "jobTitle": "Psihoterapeut",
+            "description": "Psihoterapeut cu experiență în tratarea anxietății, depresiei și problemelor de relație.",
+            "url": siteUrl,
+            "sameAs": [
+              "https://instagram.com/psihoterapeut.oanatenea"
+            ]
+          },
+          "serviceType": [
+            "Psihoterapie individuală",
+            "Terapie de cuplu",
+            "Consiliere psihologică",
+            "Tratament anxietate",
+            "Tratament depresie",
+            "Consiliere online"
+          ],
+          "availableLanguage": ["ro"],
+          "paymentAccepted": ["Cash", "Transfer bancar"],
+          "currenciesAccepted": "RON"
+        })}
+      </script>
     </Helmet>
   );
 };
