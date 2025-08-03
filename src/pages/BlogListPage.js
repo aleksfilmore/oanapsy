@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { blogPosts } from '../mockData';
 import { existingBlogPosts } from '../seo/blogMigration';
+import { smartLivingArticles } from '../data/smartLivingArticles';
 import SEO from '../components/SEO';
+import WorkingHours from '../components/WorkingHours';
 
 const BlogListPage = () => {
-    // Combină blogurile noi cu cele migrate
-    const allPosts = [...blogPosts, ...existingBlogPosts].sort((a, b) => 
+    // Combină blogurile noi cu cele migrate și SmartLiving
+    const allPosts = [...blogPosts, ...existingBlogPosts, ...smartLivingArticles].sort((a, b) => 
         new Date(b.publishDate) - new Date(a.publishDate)
     );
 
@@ -44,7 +46,28 @@ const BlogListPage = () => {
                         <p className="text-xl text-sage-600 max-w-3xl mx-auto leading-relaxed mb-8">
                             Articole despre sănătate mentală, relații și dezvoltare personală care te pot ajuta în călătoria ta spre bunăstare.
                         </p>
-                        <div className="w-24 h-1 bg-gradient-to-r from-terracotta to-warm-orange mx-auto rounded-full"></div>
+                        <div className="w-24 h-1 bg-gradient-to-r from-terracotta to-warm-orange mx-auto rounded-full mb-8"></div>
+                        
+                        {/* SmartLiving Partnership Notice */}
+                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6 max-w-4xl mx-auto">
+                            <div className="flex items-center justify-center mb-4">
+                                <div className="bg-blue-500 p-3 rounded-full mr-4">
+                                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                </div>
+                                <div className="text-left">
+                                    <h3 className="text-lg font-bold text-blue-800 mb-2">
+                                        Colaborare SmartLiving.ro
+                                    </h3>
+                                    <p className="text-blue-700 text-sm">
+                                        Articolele mele publicate pe SmartLiving.ro sunt marcate cu 
+                                        <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium ml-2">SmartLiving</span>
+                                        și te redirecționează către publicația originală.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Category Filter */}
@@ -66,65 +89,86 @@ const BlogListPage = () => {
 
                     {/* Blog Posts Grid */}
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                        {filteredPosts.map((post) => (
-                            <article key={post.id} className="group bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-sage-100">
-                                <div className="flex items-center justify-between mb-4">
-                                    <span className="bg-gradient-to-r from-terracotta to-warm-orange text-white px-3 py-1 rounded-full text-sm font-medium">
-                                        {post.category}
-                                    </span>
-                                    <div className="flex items-center text-sm text-sage-500">
-                                        <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                        <span>{post.readingTime} min</span>
-                                    </div>
-                                </div>
-                                
-                                <h2 className="text-lg font-bold text-sage-800 mb-3 group-hover:text-terracotta transition-colors duration-300 leading-tight line-clamp-2">
-                                    {post.title}
-                                </h2>
-                                
-                                <p className="text-sage-600 mb-4 line-clamp-3 leading-relaxed text-sm">
-                                    {post.excerpt || post.metaDescription}
-                                </p>
+                        {filteredPosts.map((post) => {
+                            const isExternalArticle = post.source === 'SmartLiving.ro';
+                            const LinkComponent = isExternalArticle ? 'a' : Link;
+                            const linkProps = isExternalArticle 
+                                ? { href: post.externalUrl, target: '_blank', rel: 'noopener noreferrer' }
+                                : { to: `/blog/${post.slug || post.newSlug}` };
 
-                                {/* Tags */}
-                                {post.tags && post.tags.length > 0 && (
-                                    <div className="flex flex-wrap gap-2 mb-4">
-                                        {post.tags.slice(0, 2).map(tag => (
-                                            <span 
-                                                key={tag} 
-                                                className="text-xs bg-terracotta/10 text-terracotta px-2 py-1 rounded-full font-medium"
-                                            >
-                                                {tag}
+                            return (
+                                <article key={post.id} className="group bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-sage-100">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <div className="flex items-center gap-2">
+                                            <span className="bg-gradient-to-r from-terracotta to-warm-orange text-white px-3 py-1 rounded-full text-sm font-medium">
+                                                {post.category}
                                             </span>
-                                        ))}
-                                    </div>
-                                )}
-
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center text-sm text-sage-500">
-                                        <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z" />
-                                        </svg>
-                                        <time dateTime={post.publishDate}>
-                                            {formatDate(post.publishDate)}
-                                        </time>
+                                            {isExternalArticle && (
+                                                <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center">
+                                                    <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                    </svg>
+                                                    SmartLiving
+                                                </span>
+                                            )}
+                                        </div>
+                                        <div className="flex items-center text-sm text-sage-500">
+                                            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <span>{post.readingTime} min</span>
+                                        </div>
                                     </div>
                                     
-                                    <Link 
-                                        to={`/blog/${post.slug || post.newSlug}`}
-                                        className="text-terracotta hover:text-warm-orange font-semibold text-sm transition-colors duration-300 flex items-center group"
-                                    >
-                                        <span>Citește</span>
-                                        <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                        </svg>
-                                    </Link>
-                                </div>
-                            </article>
-                        ))}
+                                    <h2 className="text-lg font-bold text-sage-800 mb-3 group-hover:text-terracotta transition-colors duration-300 leading-tight line-clamp-2">
+                                        {post.title}
+                                    </h2>
+                                    
+                                    <p className="text-sage-600 mb-4 line-clamp-3 leading-relaxed text-sm">
+                                        {post.excerpt || post.metaDescription}
+                                    </p>
+
+                                    {/* Tags */}
+                                    {post.tags && post.tags.length > 0 && (
+                                        <div className="flex flex-wrap gap-2 mb-4">
+                                            {post.tags.slice(0, 2).map(tag => (
+                                                <span 
+                                                    key={tag} 
+                                                    className="text-xs bg-terracotta/10 text-terracotta px-2 py-1 rounded-full font-medium"
+                                                >
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    )}
+
+                                    <div className="flex items-center justify-between">
+                                        <div className="flex items-center text-sm text-sage-500">
+                                            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z" />
+                                            </svg>
+                                            <time dateTime={post.publishDate}>
+                                                {formatDate(post.publishDate)}
+                                            </time>
+                                        </div>
+                                        
+                                        <LinkComponent 
+                                            {...linkProps}
+                                            className="text-terracotta hover:text-warm-orange font-semibold text-sm transition-colors duration-300 flex items-center group"
+                                        >
+                                            <span>{isExternalArticle ? 'Citește pe SmartLiving' : 'Citește'}</span>
+                                            <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </LinkComponent>
+                                    </div>
+                                </article>
+                            );
+                        })}
                     </div>
+
+                    {/* Working Hours Section */}
+                    <WorkingHours />
 
                     {/* Call to Action */}
                     <div className="mt-20 bg-gradient-to-br from-white to-soft-yellow rounded-3xl p-8 md:p-12 shadow-warm border border-sage-100">
