@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import SimpleCaptcha from '../components/SimpleCaptcha';
 import SEO from '../components/SEO';
+import { contactService } from '../services/contactService';
+import { formRateLimiter } from '../utils/security';
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -13,6 +15,10 @@ const ContactPage = () => {
 
     const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
     const [resetCaptcha, setResetCaptcha] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
+    const [submitMessage, setSubmitMessage] = useState('');
+    const [errors, setErrors] = useState([]);
 
     const handleChange = (e) => {
         setFormData({
