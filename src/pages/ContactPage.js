@@ -110,7 +110,7 @@ const ContactPage = () => {
                             Programare & Contact
                         </h1>
                         <p className="text-lg text-sage-600 max-w-3xl mx-auto">
-                            Primul pas către schimbare este să cerți ajutorul. Sunt aici să te ascult și să te sprijin în călătoria ta către o stare de bine.
+                            Sunt aici să te ascult și să te sprijin în călătoria ta către vindecarea emoțională.
                         </p>
                     </div>
 

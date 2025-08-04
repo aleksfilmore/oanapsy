@@ -10,7 +10,7 @@ const MentalHealthResources = () => {
             color: 'bg-red-500',
             items: [
                 {
-                    name: 'Serviciul de Urgență Naționale',
+                    name: 'Serviciul de Urgență Național',
                     contact: '112',
                     description: 'Pentru situații de urgență medicală sau psihiatrică',
                     available: '24/7',

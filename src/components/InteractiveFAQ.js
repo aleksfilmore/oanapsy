@@ -16,7 +16,7 @@ const InteractiveFAQ = () => {
             id: 2,
             category: 'programare',
             question: "Cum pot programa o ședință?",
-            answer: "Poți programa o ședință prin mai multe modalități: sună-mă direct la numărul de telefon afișat pe site, trimite-mi un email prin formularul de contact, sau folosește sistemul de programare online. De obicei răspund în maxim 24 de ore pentru a confirma programarea și a discuta detaliile ședinței."
+            answer: "Poți programa o ședință prin formularul de contact online. De obicei răspund în maxim 24 de ore pentru a confirma programarea și a discuta detaliile ședinței."
         },
         {
             id: 3,
@@ -70,7 +70,7 @@ const InteractiveFAQ = () => {
             id: 11,
             category: 'anulare',
             question: "Care este politica de anulare a ședințelor?",
-            answer: "Te rog să anulezi sau să reprogramezi ședințele cu cel puțin 24 de ore înainte. Anulările făcute cu mai puțin de 24 de ore notificare vor fi taxate 50% din valoarea ședinței, exceptând situațiile de urgență medicală. Această politică mă ajută să îmi gestionez timpul și să ofer slot-uri disponibile altor persoane."
+            answer: "Te rog să anulezi sau să reprogramezi ședințele cu cel puțin 24 de ore înainte. Anulările făcute cu mai puțin de 24 de ore notificare vor fi taxate 100% din valoarea ședinței. Această politică mă ajută să îmi gestionez timpul și să ofer slot-uri disponibile altor persoane."
         },
         {
             id: 12,
@@ -263,7 +263,7 @@ const InteractiveFAQ = () => {
                                 href="mailto:psihoterapeut@oanatenea.ro"
                                 className="bg-terracotta text-white px-6 py-3 rounded-xl font-medium hover:bg-terracotta/90 transition-colors"
                             >
-                                📧 Trimite un email
+                                📧 Trimite un mesaj
                             </a>
                             <a
                                 href="/contact"
