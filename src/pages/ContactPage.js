@@ -25,50 +25,72 @@ const ContactPage = () => {
             ...formData,
             [e.target.name]: e.target.value
         });
+        
+        // Resetează mesajele de eroare când utilizatorul modifică formularul
+        if (submitStatus === 'error') {
+            setSubmitStatus(null);
+            setSubmitMessage('');
+            setErrors([]);
+        }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         
+        // Resetează starea
+        setSubmitStatus(null);
+        setSubmitMessage('');
+        setErrors([]);
+        
         if (!isCaptchaVerified) {
-            alert('Te rog să completezi verificarea anti-spam.');
+            setSubmitStatus('error');
+            setSubmitMessage('Te rog să completezi verificarea anti-spam.');
             return;
         }
         
-        // Create email content
-        const subject = `Programare psihoterapie - ${formData.sessionType}`;
-        const body = `Salut Oana,
-
-Ma numesc ${formData.name} si doresc sa programez o sedinta de psihoterapie.
-
-Tip sedinta: ${formData.sessionType}
-Email: ${formData.email}
-Telefon: ${formData.phone || 'Nu a fost furnizat'}
-
-Mesaj:
-${formData.message}
-
-Va multumesc!`;
-
-        // Create mailto URL
-        const mailtoUrl = `mailto:psihoterapeut@oanatenea.ro?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        // Verifică rate limiting
+        const userIdentifier = formData.email || 'anonymous';
+        if (!formRateLimiter.isAllowed(userIdentifier)) {
+            const remainingTime = Math.ceil(formRateLimiter.getRemainingTime(userIdentifier) / 1000 / 60);
+            setSubmitStatus('error');
+            setSubmitMessage(`Ai trimis prea multe mesaje. Te rog să aștepți ${remainingTime} minute înainte să încerci din nou.`);
+            return;
+        }
         
-        // Open email client
-        window.location.href = mailtoUrl;
+        setIsSubmitting(true);
         
-        // Show success message
-        alert('Se va deschide clientul de email pentru a trimite mesajul. Vă voi răspunde în cel mai scurt timp.');
-        
-        // Reset form
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            message: '',
-            sessionType: 'individual'
-        });
-        setIsCaptchaVerified(false);
-        setResetCaptcha(prev => !prev); // Trigger captcha reset
+        try {
+            const result = await contactService.submitContactForm(formData);
+            
+            if (result.success) {
+                setSubmitStatus('success');
+                setSubmitMessage(result.message);
+                
+                // Resetează formularul
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    message: '',
+                    sessionType: 'individual'
+                });
+                setIsCaptchaVerified(false);
+                setResetCaptcha(prev => !prev);
+                
+            } else {
+                setSubmitStatus('error');
+                setSubmitMessage(result.message);
+                if (result.errors) {
+                    setErrors(result.errors);
+                }
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            setSubmitStatus('error');
+            setSubmitMessage('A apărut o eroare neașteptată. Te rog să încerci din nou sau să mă contactezi direct la psihoterapeut@oanatenea.ro');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleCaptchaVerify = (isVerified) => {
@@ -100,6 +122,38 @@ Va multumesc!`;
                             </h2>
                             
                             <form onSubmit={handleSubmit} className="space-y-6">
+                                {/* Status Messages */}
+                                {submitStatus === 'success' && (
+                                    <div className="bg-green-50 border border-green-200 rounded-lg p-4 animate-scale-in">
+                                        <div className="flex items-center">
+                                            <svg className="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <p className="text-green-800 font-medium">{submitMessage}</p>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {submitStatus === 'error' && (
+                                    <div className="bg-red-50 border border-red-200 rounded-lg p-4 animate-error-shake">
+                                        <div className="flex items-start">
+                                            <svg className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <div>
+                                                <p className="text-red-800 font-medium">{submitMessage}</p>
+                                                {errors.length > 0 && (
+                                                    <ul className="mt-2 text-red-700 text-sm list-disc list-inside">
+                                                        {errors.map((error, index) => (
+                                                            <li key={index}>{error}</li>
+                                                        ))}
+                                                    </ul>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-medium text-sage-700 mb-2">
                                         Nume complet *
@@ -190,17 +244,28 @@ Va multumesc!`;
                                 <button
                                     type="submit"
                                     className={`w-full px-6 py-4 font-semibold rounded-xl transition-all duration-300 transform ${
-                                        isCaptchaVerified 
+                                        isCaptchaVerified && !isSubmitting
                                             ? 'bg-gradient-to-r from-terracotta to-warm-orange text-white hover:from-terracotta/90 hover:to-warm-orange/90 hover:scale-[1.02] shadow-warm' 
                                             : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                                     }`}
-                                    disabled={!isCaptchaVerified}
+                                    disabled={!isCaptchaVerified || isSubmitting}
                                 >
                                     <span className="flex items-center justify-center">
-                                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                                        </svg>
-                                        Trimite mesajul
+                                        {isSubmitting ? (
+                                            <>
+                                                <svg className="w-5 h-5 mr-2 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                                </svg>
+                                                Se trimite...
+                                            </>
+                                        ) : (
+                                            <>
+                                                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                                                </svg>
+                                                Trimite mesajul
+                                            </>
+                                        )}
                                     </span>
                                 </button>
                             </form>
