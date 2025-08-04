@@ -3,12 +3,16 @@ import AdminDashboard from '../components/AdminDashboard';
 import SEO from '../components/SEO';
 
 const AdminPage = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(() => {
+        // Check if user is remembered on component mount
+        return localStorage.getItem('adminRemembered') === 'true';
+    });
     const [loginData, setLoginData] = useState({
         username: '',
         password: ''
     });
     const [loginError, setLoginError] = useState('');
+    const [rememberMe, setRememberMe] = useState(false);
 
     // Simple authentication (in production, this should be handled by a backend)
     const handleLogin = (e) => {
@@ -18,9 +22,22 @@ const AdminPage = () => {
         if (loginData.username === 'oana.admin' && loginData.password === 'OanaPsy2025!SecureAdmin#') {
             setIsAuthenticated(true);
             setLoginError('');
+            
+            // Handle remember me functionality
+            if (rememberMe) {
+                localStorage.setItem('adminRemembered', 'true');
+            } else {
+                localStorage.removeItem('adminRemembered');
+            }
         } else {
             setLoginError('Date de autentificare incorecte. Încercați din nou.');
         }
+    };
+
+    const handleLogout = () => {
+        setIsAuthenticated(false);
+        localStorage.removeItem('adminRemembered');
+        setLoginData({ username: '', password: '' });
     };
 
     const handleInputChange = (e) => {
@@ -82,6 +99,19 @@ const AdminPage = () => {
                         />
                     </div>
 
+                    <div className="flex items-center">
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                            checked={rememberMe}
+                            onChange={(e) => setRememberMe(e.target.checked)}
+                            className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                        />
+                        <label htmlFor="rememberMe" className="ml-2 block text-sm text-gray-700">
+                            Ține-mă minte
+                        </label>
+                    </div>
+
                     {loginError && (
                         <div className="bg-red-50 border border-red-200 rounded-lg p-3">
                             <p className="text-red-800 text-sm">{loginError}</p>
@@ -110,7 +140,7 @@ const AdminPage = () => {
                 description="Panou de administrare pentru gestionarea articolelor, programărilor și cererilor de terapie."
                 noIndex={true}
             />
-            <AdminDashboard />
+            <AdminDashboard onLogout={handleLogout} />
         </>
     );
 };

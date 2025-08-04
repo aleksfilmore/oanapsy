@@ -24,6 +24,11 @@ class ContactService {
   saveTherapyRequests() {
     try {
       localStorage.setItem('therapyRequests', JSON.stringify(this.therapyRequests));
+      
+      // Dispatch custom event to notify components about the update
+      window.dispatchEvent(new CustomEvent('therapyRequestsUpdated', {
+        detail: { requests: this.therapyRequests }
+      }));
     } catch (error) {
       console.error('Error saving therapy requests:', error);
     }
