@@ -97,13 +97,13 @@ const SEO = ({
           "@context": "https://schema.org",
           "@type": "PsychologicalTreatment",
           "name": "Oana Tenea - Psihoterapeut",
-          "description": "Servicii profesionale de psihoterapie și consiliere psihologică în Vaslui și online. Specializare în anxietate, depresie și terapie de cuplu.",
+          "description": "Servicii profesionale de psihoterapie și consiliere psihologică în București și online. Specializare în anxietate, depresie și terapie de cuplu.",
           "url": siteUrl,
           "telephone": "+40-xxx-xxx-xxx",
           "email": "psihoterapeut@oanatenea.ro",
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Vaslui",
+            "addressLocality": "București",
             "addressCountry": "RO"
           },
           "provider": {

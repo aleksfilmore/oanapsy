@@ -27,7 +27,7 @@ function App() {
       <div className={`${isDarkMode ? 'dark' : ''} min-h-screen transition-colors duration-300`}>
         <SEO 
           title="Psihoterapeut Oana Tenea - Consiliere și Suport Psihologic"
-          description="Oana Tenea, psihoterapeut cu experiență în Vaslui și online. Oferă consiliere psihologică, terapie de cuplu și suport pentru anxietate, depresie și alte provocări emoționale."
+          description="Oana Tenea, psihoterapeut cu experiență în București și online. Oferă consiliere psihologică, terapie de cuplu și suport pentru anxietate, depresie și alte provocări emoționale."
         />
         <Routes>
           {/* Admin routes without header/footer */}

@@ -17,7 +17,7 @@ const HomePage = () => {
         <>
             <SEO 
                 title="Psihoterapeut Oana Tenea - Consiliere și Suport Psihologic"
-                description="Bine ai venit pe site-ul psihoterapeutului Oana Tenea. Oferă consiliere psihologică, terapie de cuplu și suport pentru anxietate și depresie în Vaslui și online."
+                description="Bine ai venit pe site-ul psihoterapeutului Oana Tenea. Oferă consiliere psihologică, terapie de cuplu și suport pentru anxietate și depresie în București și online."
             />
             
             {/* CSS for animations and styling */}
