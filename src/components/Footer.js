@@ -98,13 +98,23 @@ const Footer = () => {
                         <div className="text-gray-300 text-sm mb-4 md:mb-0">
                             &copy; {new Date().getFullYear()} Oana Tenea. Toate drepturile rezervate.
                         </div>
-                        <div className="flex flex-col sm:flex-row gap-4 text-sm">
+                        <div className="flex flex-col items-center sm:items-end gap-4 text-sm">
+                            <a
+                                href="https://alfable.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-300 hover:text-white transition-colors duration-300"
+                            >
+                                Designed and curated by ALFable.com
+                            </a>
+                            <div className="flex flex-col sm:flex-row gap-4">
                             <Link to="/termeni-si-conditii" className="text-gray-200 hover:text-white transition-colors duration-300">
                                 Termeni și Condiții
                             </Link>
                             <Link to="/politica-confidentialitate" className="text-gray-200 hover:text-white transition-colors duration-300">
                                 Politică de Confidențialitate & GDPR
                             </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
