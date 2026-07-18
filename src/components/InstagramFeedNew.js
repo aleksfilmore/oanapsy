@@ -262,17 +262,25 @@ const InstagramFeedNew = () => {
               className="group relative bg-black rounded-lg overflow-hidden hover:opacity-90 transition-all duration-300 transform hover:scale-[1.02]"
             >
               {/* Instagram-style square post */}
-              <div className={`aspect-square flex items-center justify-center p-6 ${post.backgroundColor} relative overflow-hidden`}>
-                <div className={`text-center ${post.textColor} z-10 relative max-w-full`}>
-                  <p className="text-lg md:text-xl font-bold leading-tight mb-3 whitespace-pre-line">
-                    {post.caption.split('\n\n')[0]}
-                  </p>
-                  {post.caption.split('\n\n')[1] && (
-                    <p className="text-sm opacity-90 whitespace-pre-line line-clamp-3">
-                      {post.caption.split('\n\n')[1]}
+              <div className={`aspect-square flex items-center justify-center ${!post.mediaUrl ? 'p-6 ' + post.backgroundColor : 'bg-gray-900'} relative overflow-hidden`}>
+                {post.mediaUrl ? (
+                  <img 
+                    src={post.mediaUrl} 
+                    alt="Instagram Post" 
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className={`text-center ${post.textColor} z-10 relative max-w-full`}>
+                    <p className="text-lg md:text-xl font-bold leading-tight mb-3 whitespace-pre-line">
+                      {post.caption?.split('\n\n')[0] || ''}
                     </p>
-                  )}
-                </div>
+                    {post.caption?.split('\n\n')[1] && (
+                      <p className="text-sm opacity-90 whitespace-pre-line line-clamp-3">
+                        {post.caption.split('\n\n')[1]}
+                      </p>
+                    )}
+                  </div>
+                )}
                 
                 {/* Instagram play/view overlay */}
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
