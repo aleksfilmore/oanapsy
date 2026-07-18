@@ -23,75 +23,7 @@ const InstagramFeedNew = () => {
       }));
     };
 
-    // Instagram posts cu linkuri corecte către contul real @psihoterapeut.oanatenea
-    const realInstagramPosts = [
-      {
-        id: '1',
-        caption: '🌱 Psihoterapia nu este doar despre vorbire, ci despre înțelegere și vindecare.\n\nFiecare pas mic contează în călătoria către un eu mai autentic.\n\n#psihoterapie #mentalhealth #growth #vindecarea',
-        type: 'text',
-        backgroundColor: getBackgroundGradient(0), // Pink gradient
-        textColor: 'text-white',
-        permalink: 'https://instagram.com/psihoterapeut.oanatenea',
-        timestamp: '2025-01-15T10:00:00Z',
-        likes: '127',
-        postId: 'latest-post-1' // Va fi actualizat dinamic cu ID-ul real
-      },
-      {
-        id: '2',
-        caption: '💛 Când ne permitem să simțim, ne permitem să vindecăm.\n\nEmoțiile sunt ghiduri, nu dușmani. Ele ne ajută să înțelegem ce avem nevoie pentru a ne simți în siguranță și iubiți.\n\n#emotii #vindecarea #selfcompassion',
-        type: 'text',
-        backgroundColor: getBackgroundGradient(1), // Black gradient
-        textColor: 'text-white',
-        permalink: 'https://instagram.com/psihoterapeut.oanatenea',
-        timestamp: '2025-01-10T15:30:00Z',
-        likes: '89',
-        postId: 'latest-post-2'
-      },
-      {
-        id: '3',
-        caption: '✨ Fiecare pas mic către îngrijirea de sine contează.\n\nAi grija de tine cu aceeași compasiune cu care ai avea grija de un prieten drag.\n\n#selfcare #wellbeing #mindfulness #compasiune',
-        type: 'text',
-        backgroundColor: getBackgroundGradient(2), // Pink gradient
-        textColor: 'text-white',
-        permalink: 'https://instagram.com/psihoterapeut.oanatenea',
-        timestamp: '2025-01-05T12:00:00Z',
-        likes: '156',
-        postId: 'latest-post-3'
-      },
-      {
-        id: '4',
-        caption: '🌸 Anxietatea ne spune că ne pasă.\n\nÎnvață să asculți mesajul fără să îți pierzi echilibrul. Anxietatea poate fi transformată în înțelepciune.\n\n#anxietate #echilibru #mentalhealth',
-        type: 'text',
-        backgroundColor: getBackgroundGradient(3), // Black gradient
-        textColor: 'text-white',
-        permalink: 'https://instagram.com/psihoterapeut.oanatenea',
-        timestamp: '2025-01-01T14:20:00Z',
-        likes: '203',
-        postId: 'latest-post-4'
-      },
-      {
-        id: '5',
-        caption: '🧠 Relațiile sănătoase încep cu relația pe care o avem cu noi înșine.\n\nInvestește în propria ta înțelegere. Când te cunoști pe tine, poți fi autentic cu alții.\n\n#relatii #autointelegere #growth',
-        type: 'text',
-        backgroundColor: getBackgroundGradient(4), // Pink gradient
-        textColor: 'text-white',
-        permalink: 'https://instagram.com/psihoterapeut.oanatenea',
-        timestamp: '2024-12-28T11:45:00Z',
-        likes: '174',
-        postId: 'latest-post-5'
-      },
-      {
-        id: '6',
-        caption: '🌿 Vindecarea nu înseamnă să uiți, ci să integrezi experiențele într-un mod care te împuternicește.\n\nTrauma poate deveni o sursă de înțelepciune și reziliență.\n\n#vindecare #trauma #resilience',
-        type: 'text',
-        backgroundColor: getBackgroundGradient(5), // Black gradient
-        textColor: 'text-white',
-        permalink: 'https://instagram.com/psihoterapeut.oanatenea',
-        timestamp: '2024-12-25T09:30:00Z',
-        likes: '142',
-        postId: 'latest-post-6'
-      }
-    ];
+    // Datele demo sunt aduse acum din instagramAPI.fallbackPosts
 
     // Simulez încărcarea datelor cu posibilitatea de actualizare automată
     const loadInstagramFeed = async () => {
@@ -106,12 +38,11 @@ const InstagramFeedNew = () => {
           // const rawPosts = await instagramAPI.fetchInstagramPosts(6);
           // processedPosts = instagramAPI.formatInstagramPosts(rawPosts);
           
-          // Pentru demo, folosesc postări cu gradiente automate
-          processedPosts = processInstagramPosts(realInstagramPosts);
+          // Pentru demo, folosesc postări fallback extrase recent
+          processedPosts = instagramAPI.fallbackPosts;
         } catch (apiError) {
-          console.warn('Instagram API indisponibil, folosesc date demo:', apiError);
-          // Fallback la postări demo cu gradiente automate
-          processedPosts = instagramAPI.formatInstagramPosts(instagramAPI.fallbackPosts);
+          console.warn('Instagram API indisponibil:', apiError);
+          processedPosts = instagramAPI.fallbackPosts;
         }
         
         setPosts(processedPosts);

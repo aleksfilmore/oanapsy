@@ -246,18 +246,7 @@ const BlogListPage = () => {
                                         </div>
                                     )}
 
-                                    <div className="flex items-center justify-between pt-4 border-t border-sage-100">
-                                        <div className="flex items-center text-sm text-sage-500">
-                                            <div className="w-8 h-8 bg-gradient-to-r from-terracotta to-warm-orange rounded-full flex items-center justify-center mr-3">
-                                                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z" />
-                                                </svg>
-                                            </div>
-                                            <time dateTime={post.publishDate} className="font-medium">
-                                                {formatDate(post.publishDate)}
-                                            </time>
-                                        </div>
-                                        
+                                    <div className="flex items-center justify-end pt-4 border-t border-sage-100">
                                         <LinkComponent 
                                             {...linkProps}
                                             className="bg-gradient-to-r from-terracotta to-warm-orange text-white px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 flex items-center group hover:shadow-lg hover:scale-105"
