@@ -7,21 +7,6 @@ const InstagramFeedNew = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Funcție pentru generarea automată a gradientelor alternate
-    const getBackgroundGradient = (index) => {
-      // Alternez între pink gradient și black gradient
-      return index % 2 === 0 
-        ? 'bg-gradient-to-br from-purple-600 via-pink-600 to-red-500' // Pink gradient pentru pozițiile pare (0, 2, 4...)
-        : 'bg-gradient-to-br from-gray-900 via-gray-800 to-black'; // Black gradient pentru pozițiile impare (1, 3, 5...)
-    };
-
-    // Funcție pentru procesarea postărilor demo cu gradiente automate
-    const processInstagramPosts = (rawPosts) => {
-      return rawPosts.map((post, index) => ({
-        ...post,
-        backgroundColor: getBackgroundGradient(index)
-      }));
-    };
 
     // Datele demo sunt aduse acum din instagramAPI.fallbackPosts
 

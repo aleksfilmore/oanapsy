@@ -59,14 +59,6 @@ const BlogListPage = () => {
         ? allPosts 
         : allPosts.filter(post => post.category === selectedCategory);
 
-    const formatDate = (dateString) => {
-        return new Date(dateString).toLocaleDateString('ro-RO', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-    };
-
     return (
         <>
             <SEO 
