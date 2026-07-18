@@ -113,7 +113,7 @@ export const refreshAccessToken = async () => {
 export const fallbackPosts = [
   {
     id: 'fallback-1',
-    caption: '🌱 Psihoterapia nu este doar despre vorbire, ci despre înțelegere și vindecare.\n\nFiecare pas mic contează în călătoria către un eu mai autentic.\n\n#psihoterapie #mentalhealth #growth #vindecarea',
+    caption: '🌱 Cum știi dacă ești într-o relație sigură? Siguranța nu înseamnă doar lipsa conflictelor, ci certitudinea că poți fi tu însuți fără frica de a fi respins.\n\nFiecare pas mic contează în călătoria către un eu mai autentic.\n\n#psihoterapie #mentalhealth #relatii #vindecarea',
     type: 'text',
     backgroundColor: 'bg-gradient-to-br from-purple-600 via-pink-600 to-red-500',
     textColor: 'text-white',
@@ -124,7 +124,7 @@ export const fallbackPosts = [
   },
   {
     id: 'fallback-2',
-    caption: '💛 Când ne permitem să simțim, ne permitem să vindecăm.\n\nEmoțiile sunt ghiduri, nu dușmani. Ele ne ajută să înțelegem ce avem nevoie pentru a ne simți în siguranță și iubiți.\n\n#emotii #vindecarea #selfcompassion',
+    caption: '💛 De ce rămânem în relații toxice? Mintea noastră preferă adesea familiaritatea, chiar dacă este dureroasă, în locul necunoscutului.\n\nEmoțiile sunt ghiduri, nu dușmani. Ele ne ajută să înțelegem ce avem nevoie.\n\n#emotii #vindecarea #relatiitoxice',
     type: 'text',
     backgroundColor: 'bg-gradient-to-br from-gray-900 via-gray-800 to-black',
     textColor: 'text-white',
@@ -135,7 +135,7 @@ export const fallbackPosts = [
   },
   {
     id: 'fallback-3',
-    caption: '✨ Fiecare pas mic către îngrijirea de sine contează.\n\nAi grija de tine cu aceeași compasiune cu care ai avea grija de un prieten drag.\n\n#selfcare #wellbeing #mindfulness #compasiune',
+    caption: '✨ Trauma invizibilă a copilăriei: uneori, copiii învață să-și ascundă nevoile pentru a fi iubiți de un părinte instabil emoțional.\n\nAi grija de tine cu aceeași compasiune cu care ai avea grija de un prieten drag.\n\n#selfcare #wellbeing #mindfulness #copilulinterior',
     type: 'text',
     backgroundColor: 'bg-gradient-to-br from-purple-600 via-pink-600 to-red-500',
     textColor: 'text-white',

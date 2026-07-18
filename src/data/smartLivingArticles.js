@@ -1,6 +1,61 @@
 // Articles published on SmartLiving.ro by Oana Tenea
 export const smartLivingArticles = [
   {
+    id: 'sl-14',
+    title: 'De ce rămânem în relații toxice? „Mintea preferă să justifice, nu să renunțe“',
+    excerpt: 'De ce multe femei din relații toxice cred că este vina lor? Cum se formează autoînvinovățirea, ce istorii de viață o hrănesc și cum poate fi rupt acest ciclu.',
+    category: 'Relații',
+    readingTime: 9,
+    publishDate: '2025-01-15',
+    externalUrl: 'https://smartliving.ro/de-ce-ramanem-in-relatii-toxice-mintea-prefera-sa-justifice-nu-sa-renunte/',
+    tags: ['Relații Toxice', 'Abuz', 'Autoînvinovățire'],
+    source: 'SmartLiving.ro'
+  },
+  {
+    id: 'sl-15',
+    title: 'Trauma invizibilă a copilului care crește cu un părinte instabil emoțional. Ce învață să facă pentru a fi iubit',
+    excerpt: 'O boală psihică netratată are un impact devastator asupra copiilor. Cum să recunoaștem și să vindecăm aceste traume.',
+    category: 'Sănătate Emoțională',
+    readingTime: 10,
+    publishDate: '2025-01-10',
+    externalUrl: 'https://smartliving.ro/trauma-invizibila-a-copilului-care-creste-cu-un-parinte-instabil-emotional-ce-invata-sa-faca-pentru-a-fi-iubit/',
+    tags: ['Traumă', 'Parentaj', 'Sănătate Emoțională'],
+    source: 'SmartLiving.ro'
+  },
+  {
+    id: 'sl-16',
+    title: 'Cel mai important test pentru un cuplu: Cum știi dacă ești într-o relație sigură',
+    excerpt: 'Pe baza cercetărilor și literaturii recente, iată câteva semne clare că ai parte de siguranță în relație.',
+    category: 'Relații',
+    readingTime: 8,
+    publishDate: '2025-01-05',
+    externalUrl: 'https://smartliving.ro/cel-mai-important-test-pentru-un-cuplu-cum-stii-daca-esti-intr-o-relatie-sigura/',
+    tags: ['Cuplu', 'Siguranță', 'Relații'],
+    source: 'SmartLiving.ro'
+  },
+  {
+    id: 'sl-17',
+    title: 'Unii copii nu se integrează în colectiv și NU e nevoie să se schimbe. Ce să le spui și ce să eviți',
+    excerpt: '„Ca mamă și ca terapeut, mă întorc deseori la o întrebare simplă, dar puternică.” Ce să facem când copilul nostru nu se simte integrat.',
+    category: 'Parentaj',
+    readingTime: 7,
+    publishDate: '2024-12-28',
+    externalUrl: 'https://smartliving.ro/unii-copii-nu-se-integreaza-in-colectiv-si-nu-e-nevoie-sa-se-schimbe-ce-sa-le-spui-si-ce-sa-eviti/',
+    tags: ['Copii', 'Integrare', 'Parentaj'],
+    source: 'SmartLiving.ro'
+  },
+  {
+    id: 'sl-18',
+    title: 'Prevăzători sau pesimiști? Ce se ascunde în spatele anticipărilor negative',
+    excerpt: 'Le numim anticipări negative, iar dacă nu suntem atenți, pot deveni o profeție care se autoîmplinește.',
+    category: 'Dezvoltare Personală',
+    readingTime: 8,
+    publishDate: '2024-12-20',
+    externalUrl: 'https://smartliving.ro/prevazatori-sau-pesimisti-ce-se-ascunde-in-spatele-anticiparilor-negative/',
+    tags: ['Pesimism', 'Anxietate', 'Dezvoltare'],
+    source: 'SmartLiving.ro'
+  },
+  {
     id: 'sl-1',
     title: 'Epuizarea emoțională: semnale de alarmă și reguli de igienă interioară',
     excerpt: 'Cum să recunoști semnalele epuizării emoționale și ce strategii să aplici pentru a te proteja.',
