@@ -100,12 +100,12 @@ const Footer = () => {
                         </div>
                         <div className="flex flex-col items-center sm:items-end gap-4 text-sm">
                             <a
-                                href="https://alfable.com"
+                                href="https://pluriel.ro"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-300 hover:text-white transition-colors duration-300"
                             >
-                                Designed and curated by ALFable.com
+                                Designed and curated by Pluriel.ro
                             </a>
                             <div className="flex flex-col sm:flex-row gap-4">
                             <Link to="/termeni-si-conditii" className="text-gray-200 hover:text-white transition-colors duration-300">
