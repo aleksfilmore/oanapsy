@@ -14,6 +14,7 @@ import ResourcesPage from './pages/ResourcesPage';
 import AdminPage from './pages/AdminPage';
 import SmartLivingSyncAdmin from './components/SmartLivingSyncAdmin';
 import SEO from './components/SEO';
+import CookieConsent from './components/CookieConsent';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -29,6 +30,7 @@ function App() {
           title="Psihoterapeut Oana Tenea - Consiliere și Suport Psihologic"
           description="Oana Tenea, psihoterapeut cu experiență în București și online. Oferă consiliere psihologică, terapie de cuplu și suport pentru anxietate, depresie și alte provocări emoționale."
         />
+        <CookieConsent />
         <Routes>
           {/* Admin routes without header/footer */}
           <Route path="/admin" element={<AdminPage />} />
