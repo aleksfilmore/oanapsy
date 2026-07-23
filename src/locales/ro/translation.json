@@ -18,7 +18,13 @@
     "contact": "Contact",
     "rights": "Toate drepturile rezervate",
     "privacy": "Politica de confidențialitate",
-    "terms": "Termeni și condiții"
+    "terms": "Termeni și condiții",
+    "description": "Fiecare călătorie spre vindecare începe cu un prim pas. Sunt aici să te însoțesc cu empatie, profesionalism și respect în procesul tău de transformare și regăsire a echilibrului interior.",
+    "address": "Calea Dorobanți 116-122, Sector 1, București",
+    "home": "Acasă",
+    "about": "Despre Mine",
+    "resources": "Resurse",
+    "blog": "Blog"
   },
   "cookie": {
     "text": "Acest site folosește cookie-uri pentru a vă asigura cea mai bună experiență pe site-ul nostru. Prin continuarea navigării, sunteți de acord cu utilizarea cookie-urilor conform",
@@ -991,6 +997,58 @@
     "footer": {
       "priority": "Confidențialitatea și siguranța dumneavoastră sunt prioritatea mea.",
       "updates": "Această politică poate fi actualizată periodic. Vă voi informa despre orice modificări importante prin email sau prin publicarea unei notificări pe site."
+    }
+  },
+  "breathing": {
+    "title": "Tehnica Respirației Pătrate",
+    "subtitle": "Pentru reducerea anxietății și relaxare profundă",
+    "inhale": "Inspiră",
+    "hold": "Ține",
+    "exhale": "Expiră",
+    "pause": "Pauză",
+    "start": "Începe exercițiul",
+    "stop": "Oprește exercițiul",
+    "clickHere": "Apasă aici",
+    "howItWorks": "Cum funcționează:",
+    "instructions": "Apasă pătratul pentru a începe. Urmează instrucțiunile și respiră în ritmul indicat pentru a-ți calma mintea.",
+    "progress": "Progres",
+    "cycles": "cicluri",
+    "inProgress": "În desfășurare:",
+    "followSquare": "Urmează pătratul și respiră în ritmul indicat. Apasă din nou pentru a opri."
+  },
+  "testimonials": {
+    "title": "Ce spun persoanele cu care lucrez",
+    "subtitle": "Fiecare poveste de vindecare și transformare este unică și prețioasă",
+    "t1_name": "Maria T.",
+    "t1_location": "București",
+    "t1_text": "După doar câteva ședințe cu Oana, am început să înțeleg și să gestionez mult mai bine anxietatea mea. Abordarea ei caldă și profesională m-a ajutat să îmi recapăt încrederea în mine.",
+    "t1_type": "Anxietate",
+    "t1_time": "3 luni de terapie",
+    "t2_name": "Alexandru și Cristina",
+    "t2_location": "Online",
+    "t2_text": "Terapia de cuplu cu Oana ne-a salvat relația. Ne-a învățat să comunicăm mai bine și să ne înțelegem nevoile reciproce. Suntem recunoscători pentru transformarea pe care am trăit-o.",
+    "t2_type": "Terapie de cuplu",
+    "t2_time": "6 luni de terapie",
+    "t3_name": "Andrei M.",
+    "t3_location": "București",
+    "t3_text": "Oana m-a ajutat să trec prin una dintre cele mai dificile perioade din viața mea. Prin terapie am învățat să îmi procesez emoțiile și să dezvolt strategii sănătoase de coping.",
+    "t3_type": "Depresie",
+    "t3_time": "8 luni de terapie",
+    "t4_name": "Ioana P.",
+    "t4_location": "Online",
+    "t4_text": "Sesiunile online cu Oana au fost o revelație. Chiar și la distanță, am simțit o conexiune puternică și am făcut progrese remarcabile în gestionarea atacurilor de panică.",
+    "t4_type": "Atacuri de panică",
+    "t4_time": "4 luni de terapie",
+    "t5_name": "Mihai și Elena",
+    "t5_location": "București",
+    "t5_text": "Ca părinți noi, ne confruntam cu multe provocări în relația noastră. Oana ne-a ghidat cu înțelepciune și empatie, ajutându-ne să ne redescoperim ca echipă.",
+    "t5_type": "Consiliere familială",
+    "t5_time": "5 luni de terapie",
+    "stats": {
+      "peopleHelped": "Persoane ajutate",
+      "yearsExperience": "Experiență clinică",
+      "positiveResults": "Rezultate pozitive",
+      "years": "ani"
     }
   }
 }

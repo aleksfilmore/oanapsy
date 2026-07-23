@@ -18,7 +18,13 @@
     "contact": "Contact",
     "rights": "All rights reserved",
     "privacy": "Privacy Policy",
-    "terms": "Terms and Conditions"
+    "terms": "Terms and Conditions",
+    "description": "Every healing journey begins with a first step. I am here to accompany you with empathy, professionalism, and respect in your process of transformation and finding inner balance.",
+    "address": "Calea Dorobanti 116-122, Sector 1, Bucharest",
+    "home": "Home",
+    "about": "About Me",
+    "resources": "Resources",
+    "blog": "Blog"
   },
   "cookie": {
     "text": "This site uses cookies to ensure you get the best experience on our website. By continuing to browse, you agree to our use of cookies according to the",
@@ -991,6 +997,58 @@
     "footer": {
       "priority": "Your privacy and safety are my priority.",
       "updates": "This policy may be updated periodically. I will inform you of any important changes by email or by publishing a notice on the site."
+    }
+  },
+  "breathing": {
+    "title": "Box Breathing Technique",
+    "subtitle": "For anxiety reduction and deep relaxation",
+    "inhale": "Inhale",
+    "hold": "Hold",
+    "exhale": "Exhale",
+    "pause": "Pause",
+    "start": "Start exercise",
+    "stop": "Stop exercise",
+    "clickHere": "Click here",
+    "howItWorks": "How it works:",
+    "instructions": "Click the square to begin. Follow the instructions and breathe at the indicated rhythm to calm your mind.",
+    "progress": "Progress",
+    "cycles": "cycles",
+    "inProgress": "In progress:",
+    "followSquare": "Follow the square and breathe at the indicated rhythm. Click again to stop."
+  },
+  "testimonials": {
+    "title": "What the people I work with say",
+    "subtitle": "Every story of healing and transformation is unique and precious",
+    "t1_name": "Maria T.",
+    "t1_location": "Bucharest",
+    "t1_text": "After just a few sessions with Oana, I started to understand and manage my anxiety much better. Her warm and professional approach helped me regain my self-confidence.",
+    "t1_type": "Anxiety",
+    "t1_time": "3 months of therapy",
+    "t2_name": "Alexandru and Cristina",
+    "t2_location": "Online",
+    "t2_text": "Couples therapy with Oana saved our relationship. She taught us to communicate better and understand each other's mutual needs. We are grateful for the transformation we experienced.",
+    "t2_type": "Couples therapy",
+    "t2_time": "6 months of therapy",
+    "t3_name": "Andrei M.",
+    "t3_location": "Bucharest",
+    "t3_text": "Oana helped me get through one of the most difficult periods of my life. Through therapy, I learned to process my emotions and develop healthy coping strategies.",
+    "t3_type": "Depression",
+    "t3_time": "8 months of therapy",
+    "t4_name": "Ioana P.",
+    "t4_location": "Online",
+    "t4_text": "Online sessions with Oana were a revelation. Even from a distance, I felt a strong connection and made remarkable progress in managing panic attacks.",
+    "t4_type": "Panic attacks",
+    "t4_time": "4 months of therapy",
+    "t5_name": "Mihai and Elena",
+    "t5_location": "Bucharest",
+    "t5_text": "As new parents, we faced many challenges in our relationship. Oana guided us with wisdom and empathy, helping us rediscover ourselves as a team.",
+    "t5_type": "Family counseling",
+    "t5_time": "5 months of therapy",
+    "stats": {
+      "peopleHelped": "People helped",
+      "yearsExperience": "Clinical experience",
+      "positiveResults": "Positive results",
+      "years": "years"
     }
   }
 }

@@ -1,17 +1,19 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const BreathingExercise = () => {
+    const { t } = useTranslation();
     const [isActive, setIsActive] = useState(false);
     const [phase, setPhase] = useState('inhale'); // 'inhale', 'hold', 'exhale', 'pause'
     const [timeLeft, setTimeLeft] = useState(4);
     const [cycle, setCycle] = useState(0);
 
     const phases = useMemo(() => ({
-        inhale: { duration: 4, next: 'hold', text: 'Inspiră' },
-        hold: { duration: 4, next: 'exhale', text: 'Ține' },
-        exhale: { duration: 4, next: 'pause', text: 'Expiră' },
-        pause: { duration: 4, next: 'inhale', text: 'Pauză' }
-    }), []);
+        inhale: { duration: 4, next: 'hold', text: t('breathing.inhale') },
+        hold: { duration: 4, next: 'exhale', text: t('breathing.hold') },
+        exhale: { duration: 4, next: 'pause', text: t('breathing.exhale') },
+        pause: { duration: 4, next: 'inhale', text: t('breathing.pause') }
+    }), [t]);
 
     const handlePhaseTransition = useCallback(() => {
         const currentPhase = phases[phase];
@@ -87,10 +89,10 @@ const BreathingExercise = () => {
                         </svg>
                     </div>
                     <h3 className="text-2xl font-bold text-deep-earth mb-2">
-                        Tehnica Respirației Pătrate
+                        {t('breathing.title')}
                     </h3>
                     <p className="text-warm-gray text-sm">
-                        Pentru reducerea anxietății și relaxare profundă
+                        {t('breathing.subtitle')}
                     </p>
                 </div>
                 
@@ -106,7 +108,7 @@ const BreathingExercise = () => {
                         >
                             <div className="text-center px-4 py-2">
                                 <div className="text-white font-bold text-lg mb-2">
-                                    {isActive ? phases[phase].text : 'Începe exercițiul'}
+                                    {isActive ? phases[phase].text : t('breathing.start')}
                                 </div>
                                 {isActive && (
                                     <div className="text-white text-4xl font-bold animate-pulse mb-1">
@@ -115,7 +117,7 @@ const BreathingExercise = () => {
                                 )}
                                 {!isActive && (
                                     <div className="text-white text-sm opacity-90 leading-relaxed">
-                                        Apasă aici ↑
+                                        {t('breathing.clickHere')} ↑
                                     </div>
                                 )}
                             </div>
@@ -126,8 +128,8 @@ const BreathingExercise = () => {
                 {isActive && (
                     <div className="mb-6 p-4 bg-sage/10 rounded-xl">
                         <div className="flex justify-between items-center">
-                            <span className="text-sm font-medium text-deep-earth">Progres:</span>
-                            <span className="text-lg font-bold text-sage">{cycle}/5 cicluri</span>
+                            <span className="text-sm font-medium text-deep-earth">{t('breathing.progress')}:</span>
+                            <span className="text-lg font-bold text-sage">{cycle}/5 {t('breathing.cycles')}</span>
                         </div>
                         <div className="w-full bg-sage/20 rounded-full h-2 mt-2">
                             <div 
@@ -142,13 +144,13 @@ const BreathingExercise = () => {
                 <div className="text-center">
                     {!isActive ? (
                         <div className="text-sm text-warm-gray bg-soft-yellow/20 rounded-lg p-3">
-                            <p className="font-medium"> Cum funcționează:</p>
-                            <p className="mt-1">Apasă pătratul pentru a începe. Urmează instrucțiunile și respiră în ritmul indicat pentru a-ți calma mintea.</p>
+                            <p className="font-medium"> {t('breathing.howItWorks')}</p>
+                            <p className="mt-1">{t('breathing.instructions')}</p>
                         </div>
                     ) : (
                         <div className="text-sm text-warm-gray bg-sage/10 rounded-lg p-3">
-                            <p className="font-medium">‍️ În desfășurare:</p>
-                            <p className="mt-1">Urmează pătratul și respiră în ritmul indicat. Apasă din nou pentru a opri.</p>
+                            <p className="font-medium">‍️ {t('breathing.inProgress')}</p>
+                            <p className="mt-1">{t('breathing.followSquare')}</p>
                         </div>
                     )}
                 </div>

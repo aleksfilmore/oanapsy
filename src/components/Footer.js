@@ -27,7 +27,7 @@ const Footer = () => {
                     
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-4 text-orange-400">{t('footer.quick_links')}</h4>
+                        <h4 className="text-lg font-semibold mb-4 text-orange-400">{t('footer.quickLinks')}</h4>
                         <ul className="space-y-3">
                             <li>
                                 <Link to="/" className="text-gray-200 hover:text-white transition-colors duration-300 flex items-center">

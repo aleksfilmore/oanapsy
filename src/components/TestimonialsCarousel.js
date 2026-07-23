@@ -1,54 +1,56 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const TestimonialsCarousel = () => {
+    const { t } = useTranslation();
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
     const testimonials = [
         {
             id: 1,
-            name: "Maria T.",
-            location: "București",
-            text: "După doar câteva ședințe cu Oana, am început să înțeleg și să gestionez mult mai bine anxietatea mea. Abordarea ei caldă și profesională m-a ajutat să îmi recapăt încrederea în mine.",
+            name: t('testimonials.t1_name'),
+            location: t('testimonials.t1_location'),
+            text: t('testimonials.t1_text'),
             rating: 5,
-            sessionType: "Anxietate",
-            timeframe: "3 luni de terapie"
+            sessionType: t('testimonials.t1_type'),
+            timeframe: t('testimonials.t1_time')
         },
         {
             id: 2,
-            name: "Alexandru și Cristina",
-            location: "Online",
-            text: "Terapia de cuplu cu Oana ne-a salvat relația. Ne-a învățat să comunicăm mai bine și să ne înțelegem nevoile reciproce. Suntem recunoscători pentru transformarea pe care am trăit-o.",
+            name: t('testimonials.t2_name'),
+            location: t('testimonials.t2_location'),
+            text: t('testimonials.t2_text'),
             rating: 5,
-            sessionType: "Terapie de cuplu",
-            timeframe: "6 luni de terapie"
+            sessionType: t('testimonials.t2_type'),
+            timeframe: t('testimonials.t2_time')
         },
         {
             id: 3,
-            name: "Andrei M.",
-            location: "București",
-            text: "Oana m-a ajutat să trec prin una dintre cele mai dificile perioade din viața mea. Prin terapie am învățat să îmi procesez emoțiile și să dezvolt strategii sănătoase de coping.",
+            name: t('testimonials.t3_name'),
+            location: t('testimonials.t3_location'),
+            text: t('testimonials.t3_text'),
             rating: 5,
-            sessionType: "Depresie",
-            timeframe: "8 luni de terapie"
+            sessionType: t('testimonials.t3_type'),
+            timeframe: t('testimonials.t3_time')
         },
         {
             id: 4,
-            name: "Ioana P.",
-            location: "Online",
-            text: "Sesiunile online cu Oana au fost o revelație. Chiar și la distanță, am simțit o conexiune puternică și am făcut progrese remarcabile în gestionarea atacurilor de panică.",
+            name: t('testimonials.t4_name'),
+            location: t('testimonials.t4_location'),
+            text: t('testimonials.t4_text'),
             rating: 5,
-            sessionType: "Atacuri de panică",
-            timeframe: "4 luni de terapie"
+            sessionType: t('testimonials.t4_type'),
+            timeframe: t('testimonials.t4_time')
         },
         {
             id: 5,
-            name: "Mihai și Elena",
-            location: "București",
-            text: "Ca părinți noi, ne confruntam cu multe provocări în relația noastră. Oana ne-a ghidat cu înțelepciune și empatie, ajutându-ne să ne redescoperim ca echipă.",
+            name: t('testimonials.t5_name'),
+            location: t('testimonials.t5_location'),
+            text: t('testimonials.t5_text'),
             rating: 5,
-            sessionType: "Consiliere familială",
-            timeframe: "5 luni de terapie"
+            sessionType: t('testimonials.t5_type'),
+            timeframe: t('testimonials.t5_time')
         }
     ];
 
@@ -104,10 +106,10 @@ const TestimonialsCarousel = () => {
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-sage-800 mb-4">
-                        Ce spun persoanele cu care lucrez
+                        {t('testimonials.title')}
                     </h2>
                     <p className="text-xl text-sage-600 max-w-2xl mx-auto">
-                        Fiecare poveste de vindecare și transformare este unică și prețioasă
+                        {t('testimonials.subtitle')}
                     </p>
                 </div>
 
@@ -190,15 +192,15 @@ const TestimonialsCarousel = () => {
                         <div className="grid md:grid-cols-3 gap-6 max-w-2xl mx-auto">
                             <div className="text-center">
                                 <div className="text-2xl font-bold text-terracotta mb-1">200+</div>
-                                <div className="text-sm text-sage-600">Persoane ajutate</div>
+                                <div className="text-sm text-sage-600">{t('testimonials.stats.peopleHelped')}</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl font-bold text-terracotta mb-1">5 ani</div>
-                                <div className="text-sm text-sage-600">Experiență clinică</div>
+                                <div className="text-2xl font-bold text-terracotta mb-1">5 {t('testimonials.stats.years')}</div>
+                                <div className="text-sm text-sage-600">{t('testimonials.stats.yearsExperience')}</div>
                             </div>
                             <div className="text-center">
                                 <div className="text-2xl font-bold text-terracotta mb-1">95%</div>
-                                <div className="text-sm text-sage-600">Rezultate pozitive</div>
+                                <div className="text-sm text-sage-600">{t('testimonials.stats.positiveResults')}</div>
                             </div>
                         </div>
                     </div>
