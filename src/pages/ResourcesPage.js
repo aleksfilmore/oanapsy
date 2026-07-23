@@ -40,17 +40,17 @@ const ResourcesPage = () => {
                             
                             <div className="grid md:grid-cols-3 gap-6 mb-10">
                                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-                                    <div className="text-3xl mb-3">🧠</div>
+                                    <div className="text-3xl mb-3"></div>
                                     <h3 className="font-semibold text-white mb-2">{t('resources_page.feat1_title')}</h3>
                                     <p className="text-white/80 text-sm">{t('resources_page.feat1_desc')}</p>
                                 </div>
                                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-                                    <div className="text-3xl mb-3">📚</div>
+                                    <div className="text-3xl mb-3"></div>
                                     <h3 className="font-semibold text-white mb-2">{t('resources_page.feat2_title')}</h3>
                                     <p className="text-white/80 text-sm">{t('resources_page.feat2_desc')}</p>
                                 </div>
                                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-                                    <div className="text-3xl mb-3">❓</div>
+                                    <div className="text-3xl mb-3"></div>
                                     <h3 className="font-semibold text-white mb-2">{t('resources_page.feat3_title')}</h3>
                                     <p className="text-white/80 text-sm">{t('resources_page.feat3_desc')}</p>
                                 </div>

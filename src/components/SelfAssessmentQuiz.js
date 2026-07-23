@@ -78,7 +78,7 @@ const SelfAssessmentQuiz = () => {
                 <div className={`${result.bgColor} ${result.borderColor} border-2 rounded-3xl p-8 text-center`}>
                     <div className="mb-6">
                         <div className="w-20 h-20 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-lg">
-                            <span className="text-3xl">📊</span>
+                            <span className="text-3xl"></span>
                         </div>
                         <h3 className="text-2xl font-bold text-deep-earth mb-2">{t('quiz.ui.your_results')}</h3>
                         <div className={`${result.color} text-xl font-semibold mb-4`}>

@@ -10,7 +10,7 @@ const InstagramFeed = () => {
     const realInstagramPosts = [
       {
         id: '1',
-        caption: '🌱 Psihoterapia nu este doar despre vorbire, ci despre înțelegere și vindecare.\n\nFiecare pas mic contează în călătoria către un eu mai autentic.\n\n#psihoterapie #mentalhealth #growth #vindecarea',
+        caption: ' Psihoterapia nu este doar despre vorbire, ci despre înțelegere și vindecare.\n\nFiecare pas mic contează în călătoria către un eu mai autentic.\n\n#psihoterapie #mentalhealth #growth #vindecarea',
         type: 'text',
         backgroundColor: 'bg-gradient-to-br from-sage-400 to-sage-600',
         textColor: 'text-white',
@@ -20,7 +20,7 @@ const InstagramFeed = () => {
       },
       {
         id: '2',
-        caption: '💛 Când ne permitem să simțim, ne permitem să vindecăm.\n\nEmoțiile sunt ghiduri, nu dușmani. Ele ne ajută să înțelegem ce avem nevoie pentru a ne simți în siguranță și iubiți.\n\n#emotii #vindecarea #selfcompassion',
+        caption: ' Când ne permitem să simțim, ne permitem să vindecăm.\n\nEmoțiile sunt ghiduri, nu dușmani. Ele ne ajută să înțelegem ce avem nevoie pentru a ne simți în siguranță și iubiți.\n\n#emotii #vindecarea #selfcompassion',
         type: 'text',
         backgroundColor: 'bg-gradient-to-br from-warm-orange to-golden-honey',
         textColor: 'text-white',
@@ -30,7 +30,7 @@ const InstagramFeed = () => {
       },
       {
         id: '3',
-        caption: '✨ Fiecare pas mic către îngrijirea de sine contează.\n\nAi grija de tine cu aceeași compasiune cu care ai avea grija de un prieten drag.\n\n#selfcare #wellbeing #mindfulness #compasiune',
+        caption: ' Fiecare pas mic către îngrijirea de sine contează.\n\nAi grija de tine cu aceeași compasiune cu care ai avea grija de un prieten drag.\n\n#selfcare #wellbeing #mindfulness #compasiune',
         type: 'text',
         backgroundColor: 'bg-gradient-to-br from-terracotta to-soft-yellow',
         textColor: 'text-white',
@@ -40,7 +40,7 @@ const InstagramFeed = () => {
       },
       {
         id: '4',
-        caption: '🌸 Anxietatea ne spune că ne pasă.\n\nÎnvață să asculți mesajul fără să îți pierzi echilibrul. Anxietatea poate fi transformată în înțelepciune.\n\n#anxietate #echilibru #mentalhealth',
+        caption: ' Anxietatea ne spune că ne pasă.\n\nÎnvață să asculți mesajul fără să îți pierzi echilibrul. Anxietatea poate fi transformată în înțelepciune.\n\n#anxietate #echilibru #mentalhealth',
         type: 'text',
         backgroundColor: 'bg-gradient-to-br from-pink-400 to-purple-500',
         textColor: 'text-white',
@@ -50,7 +50,7 @@ const InstagramFeed = () => {
       },
       {
         id: '5',
-        caption: '🧠 Relațiile sănătoase încep cu relația pe care o avem cu noi înșine.\n\nInvestește în propria ta înțelegere. Când te cunoști pe tine, poți fi autentic cu alții.\n\n#relatii #autointelegere #growth',
+        caption: ' Relațiile sănătoase încep cu relația pe care o avem cu noi înșine.\n\nInvestește în propria ta înțelegere. Când te cunoști pe tine, poți fi autentic cu alții.\n\n#relatii #autointelegere #growth',
         type: 'text',
         backgroundColor: 'bg-gradient-to-br from-blue-400 to-indigo-600',
         textColor: 'text-white',
@@ -60,7 +60,7 @@ const InstagramFeed = () => {
       },
       {
         id: '6',
-        caption: '🌿 Vindecarea nu înseamnă să uiți, ci să integrezi experiențele într-un mod care te împuternicește.\n\nTrauma poate deveni o sursă de înțelepciune și reziliență.\n\n#vindecare #trauma #resilience',
+        caption: ' Vindecarea nu înseamnă să uiți, ci să integrezi experiențele într-un mod care te împuternicește.\n\nTrauma poate deveni o sursă de înțelepciune și reziliență.\n\n#vindecare #trauma #resilience',
         type: 'text',
         backgroundColor: 'bg-gradient-to-br from-green-400 to-teal-600',
         textColor: 'text-white',

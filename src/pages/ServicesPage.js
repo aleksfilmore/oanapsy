@@ -39,14 +39,14 @@ const ServicesPage = () => {
     const serviceAreas = [
         { 
             title: t('services.areas_data.panic.title'), 
-            icon: "🌊",
+            icon: "",
             content: t('services.areas_data.panic.content'),
             techniques: [t('services.areas_data.panic.t1'), t('services.areas_data.panic.t2'), t('services.areas_data.panic.t3')],
             highlight: t('services.areas_data.panic.highlight')
         },
         { 
             title: t('services.areas_data.anxiety.title'), 
-            icon: "🧘‍♀️",
+            icon: "‍️",
             content: t('services.areas_data.anxiety.content'),
             techniques: [t('services.areas_data.anxiety.t1'), t('services.areas_data.anxiety.t2'), t('services.areas_data.anxiety.t3')],
             highlight: t('services.areas_data.anxiety.highlight')
@@ -60,7 +60,7 @@ const ServicesPage = () => {
         },
         { 
             title: t('services.areas_data.couple.title'), 
-            icon: "💕",
+            icon: "",
             content: t('services.areas_data.couple.content'),
             techniques: [t('services.areas_data.couple.t1'), t('services.areas_data.couple.t2'), t('services.areas_data.couple.t3')],
             highlight: t('services.areas_data.couple.highlight')
@@ -74,7 +74,7 @@ const ServicesPage = () => {
         },
         { 
             title: t('services.areas_data.growth.title'), 
-            icon: "🌱",
+            icon: "",
             content: t('services.areas_data.growth.content'),
             techniques: [t('services.areas_data.growth.t1'), t('services.areas_data.growth.t2'), t('services.areas_data.growth.t3')],
             highlight: t('services.areas_data.growth.highlight')
@@ -94,17 +94,17 @@ const ServicesPage = () => {
         },
         { 
             q: t('services.faqs_data.q3.q'), 
-            icon: "🔒",
+            icon: "",
             a: t('services.faqs_data.q3.a') 
         },
         { 
             q: t('services.faqs_data.q4.q'), 
-            icon: "📅",
+            icon: "",
             a: t('services.faqs_data.q4.a') 
         },
         { 
             q: t('services.faqs_data.q5.q'), 
-            icon: "💻",
+            icon: "",
             a: t('services.faqs_data.q5.a')
         }
     ];
@@ -136,7 +136,7 @@ const ServicesPage = () => {
                             <div className="relative">
                                 <div className="flex items-center mb-6">
                                     <div className="w-12 h-12 bg-gradient-to-r from-terracotta to-warm-orange rounded-xl flex items-center justify-center text-white text-xl mr-4">
-                                        🏢
+                                        
                                     </div>
                                     <h2 className="text-2xl font-bold text-sage-800">{t('services.in_person')}</h2>
                                 </div>
@@ -172,7 +172,7 @@ const ServicesPage = () => {
                             <div className="relative">
                                 <div className="flex items-center mb-6">
                                     <div className="w-12 h-12 bg-gradient-to-r from-sage-500 to-sage-600 rounded-xl flex items-center justify-center text-white text-xl mr-4">
-                                        💻
+                                        
                                     </div>
                                     <h2 className="text-2xl font-bold text-sage-800">{t('services.online')}</h2>
                                 </div>
@@ -214,7 +214,7 @@ const ServicesPage = () => {
                             <div className="grid md:grid-cols-2 gap-8">
                                 <div>
                                     <h3 className="text-xl font-bold text-sage-800 mb-4 flex items-center">
-                                        <div className="w-8 h-8 bg-terracotta rounded-lg flex items-center justify-center text-white text-sm mr-3">🎯</div>
+                                        <div className="w-8 h-8 bg-terracotta rounded-lg flex items-center justify-center text-white text-sm mr-3"></div>
                                         {t('services.app1_title')}
                                     </h3>
                                     <p className="text-sage-600 leading-relaxed">
@@ -224,7 +224,7 @@ const ServicesPage = () => {
                                 
                                 <div>
                                     <h3 className="text-xl font-bold text-sage-800 mb-4 flex items-center">
-                                        <div className="w-8 h-8 bg-terracotta rounded-lg flex items-center justify-center text-white text-sm mr-3">💝</div>
+                                        <div className="w-8 h-8 bg-terracotta rounded-lg flex items-center justify-center text-white text-sm mr-3"></div>
                                         {t('services.app2_title')}
                                     </h3>
                                     <p className="text-sage-600 leading-relaxed">
@@ -234,7 +234,7 @@ const ServicesPage = () => {
                                 
                                 <div>
                                     <h3 className="text-xl font-bold text-sage-800 mb-4 flex items-center">
-                                        <div className="w-8 h-8 bg-terracotta rounded-lg flex items-center justify-center text-white text-sm mr-3">🌱</div>
+                                        <div className="w-8 h-8 bg-terracotta rounded-lg flex items-center justify-center text-white text-sm mr-3"></div>
                                         {t('services.app3_title')}
                                     </h3>
                                     <p className="text-sage-600 leading-relaxed">
@@ -244,7 +244,7 @@ const ServicesPage = () => {
                                 
                                 <div>
                                     <h3 className="text-xl font-bold text-sage-800 mb-4 flex items-center">
-                                        <div className="w-8 h-8 bg-terracotta rounded-lg flex items-center justify-center text-white text-sm mr-3">🤝</div>
+                                        <div className="w-8 h-8 bg-terracotta rounded-lg flex items-center justify-center text-white text-sm mr-3"></div>
                                         {t('services.app4_title')}
                                     </h3>
                                     <p className="text-sage-600 leading-relaxed">

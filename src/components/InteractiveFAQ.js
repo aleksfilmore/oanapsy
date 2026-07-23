@@ -113,7 +113,7 @@ const InteractiveFAQ = () => {
                     <div className="space-y-4">
                         {filteredFAQs.length === 0 ? (
                             <div className="text-center py-12">
-                                <div className="text-sage-400 text-lg mb-2">🤔</div>
+                                <div className="text-sage-400 text-lg mb-2"></div>
                                 <p className="text-sage-500">{t('faq.ui.not_found_msg')}</p>
                                 <button
                                     onClick={() => {

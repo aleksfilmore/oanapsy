@@ -117,7 +117,7 @@ const PrivacyPolicyPage = () => {
                   {t('privacy.legal_basis.items', { returnObjects: true }).map((item, i) => (
                     <div key={i} className="flex items-start">
                       <div className="w-6 h-6 bg-terracotta rounded-full flex items-center justify-center mr-3 mt-1 shrink-0">
-                        <span className="text-white text-xs font-bold">✓</span>
+                        <span className="text-white text-xs font-bold"></span>
                       </div>
                       <div>
                         <h3 className="font-semibold text-sage-800">{item.title}</h3>
@@ -164,7 +164,7 @@ const PrivacyPolicyPage = () => {
                 {t('privacy.rights.items', { returnObjects: true }).map((right, index) => (
                   <div key={index} className="bg-white border border-sage-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-start">
-                      <span className="text-2xl mr-4">{right.icon}</span>
+                      {right.icon && <span className="text-2xl mr-4">{right.icon}</span>}
                       <div>
                         <h3 className="text-lg font-semibold text-sage-800 mb-2">{right.title}</h3>
                         <p className="text-sage-600">{right.description || right.desc}</p>

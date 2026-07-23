@@ -142,12 +142,12 @@ const BreathingExercise = () => {
                 <div className="text-center">
                     {!isActive ? (
                         <div className="text-sm text-warm-gray bg-soft-yellow/20 rounded-lg p-3">
-                            <p className="font-medium">💡 Cum funcționează:</p>
+                            <p className="font-medium"> Cum funcționează:</p>
                             <p className="mt-1">Apasă pătratul pentru a începe. Urmează instrucțiunile și respiră în ritmul indicat pentru a-ți calma mintea.</p>
                         </div>
                     ) : (
                         <div className="text-sm text-warm-gray bg-sage/10 rounded-lg p-3">
-                            <p className="font-medium">🧘‍♀️ În desfășurare:</p>
+                            <p className="font-medium">‍️ În desfășurare:</p>
                             <p className="mt-1">Urmează pătratul și respiră în ritmul indicat. Apasă din nou pentru a opri.</p>
                         </div>
                     )}

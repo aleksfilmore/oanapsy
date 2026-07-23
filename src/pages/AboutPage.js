@@ -144,12 +144,12 @@ const AboutPage = () => {
                                 
                                 <div className="grid md:grid-cols-2 gap-4">
                                     {[
-                                        { icon: "💭", title: t('about.s1_title'), desc: t('about.s1_desc') },
-                                        { icon: "🌧️", title: t('about.s2_title'), desc: t('about.s2_desc') },
-                                        { icon: "❤️", title: t('about.s3_title'), desc: t('about.s3_desc') },
-                                        { icon: "🧠", title: t('about.s4_title'), desc: t('about.s4_desc') },
-                                        { icon: "🍽️", title: t('about.s5_title'), desc: t('about.s5_desc') },
-                                        { icon: "👨‍👩‍👧‍👦", title: t('about.s6_title'), desc: t('about.s6_desc') }
+                                        { icon: "", title: t('about.s1_title'), desc: t('about.s1_desc') },
+                                        { icon: "️", title: t('about.s2_title'), desc: t('about.s2_desc') },
+                                        { icon: "️", title: t('about.s3_title'), desc: t('about.s3_desc') },
+                                        { icon: "", title: t('about.s4_title'), desc: t('about.s4_desc') },
+                                        { icon: "️", title: t('about.s5_title'), desc: t('about.s5_desc') },
+                                        { icon: "‍‍‍", title: t('about.s6_title'), desc: t('about.s6_desc') }
                                     ].map((item, index) => (
                                         <div key={index} className="bg-sage-50 rounded-xl p-4 hover:bg-sage-100 transition-colors duration-200">
                                             <div className="text-2xl mb-2">{item.icon}</div>

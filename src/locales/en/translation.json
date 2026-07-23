@@ -21,13 +21,13 @@
     "terms": "Terms and Conditions"
   },
   "cookie": {
-    "text": "This site uses cookies to ensure you get the best experience on our website. By continuing to browse, you agree to our use of cookies according to the ",
+    "text": "This site uses cookies to ensure you get the best experience on our website. By continuing to browse, you agree to our use of cookies according to the",
     "policyLink": "Privacy Policy",
     "acceptBtn": "Got it"
   },
   "home": {
-    "tag": "💛 Psychotherapy & Counseling",
-    "title1": "The first step towards ",
+    "tag": "Psychotherapy & Counseling",
+    "title1": "The first step towards",
     "title2": "yourself",
     "desc_mobile": "I'm <1>Oana Tenea</1>, certified psychotherapist. I help with anxiety, depression, and emotional challenges.",
     "desc_desktop": "I'm <1>Oana Tenea</1>, psychotherapist experienced in psychological counseling, couple therapy, and support for anxiety, depression, and other emotional challenges.",
@@ -36,10 +36,10 @@
     "cred3": "Empathetic and professional approach",
     "btn_book": "Book a session",
     "btn_about": "About me",
-    "breathe_tag": "🌸 Relaxation techniques",
+    "breathe_tag": "Relaxation techniques",
     "breathe_title": "Breathing exercise for anxiety",
     "breathe_desc": "Start now with this simple breathing technique to calm your mind and reduce stress.",
-    "blog_title": "Recent articles from the ",
+    "blog_title": "Recent articles from the",
     "blog_title_highlight": "blog",
     "blog_desc": "Discover practical tips and professional perspectives for your mental health",
     "blog_collab": "In collaboration with SmartLiving.ro",
@@ -52,7 +52,7 @@
     "cta_desc": "Contact me to schedule a consultation and discuss how I can help you achieve your mental health goals.",
     "cta_btn_book": "Schedule a consultation",
     "cta_btn_services": "About services",
-    "quiz_tag": "🧠 Self-assessment",
+    "quiz_tag": "Self-assessment",
     "quiz_title": "Anxiety self-assessment quiz",
     "quiz_desc": "Take this short quiz to better understand your anxiety level and learn how I can help.",
     "ig_title": "@psihoterapeut.oanatenea",
@@ -71,7 +71,7 @@
     "contact_title": "Let's talk!",
     "contact_desc": "I am here to listen and support you on your journey towards emotional healing.",
     "contact_btn": "Book a session",
-    "welcome": "Welcome! 👋",
+    "welcome": "Welcome!",
     "story1": "I am a cognitive-behavioral psychotherapist, a schema therapy psychotherapist, a couple (family) psychotherapist, and a member of the Romanian College of Psychologists.",
     "story2": "But last but not least, I am a <1>wife, mother, and friend</1>. The desire to interact with a wide range of people from different multicultural backgrounds directed me towards choosing this profession. Curiosity, by my nature, supports me as a companion on the path of self-knowledge and of those around me.",
     "story3": "Starting from the mysteries of understanding the human psyche and the emotions related to each of our experiences, I discovered, through a long process, a path that enriched my life and relationships at the same time.",
@@ -224,7 +224,7 @@
     "program": "Schedule",
     "monday_thursday": "Monday - Thursday:",
     "available": "Available",
-    "tip": "💡 <1>Tip:</1> Appointments must be made at least 48h in advance. For emergencies, please email.",
+    "tip": "<1>Tip:</1> Appointments must be made at least 48h in advance. For emergencies, please email.",
     "privacy_title": "Confidentiality",
     "privacy_desc": "All shared information is <1>strictly confidential</1> and protected under GDPR norms. The therapeutic relationship is based on mutual trust and respect. Personal data will never be shared with third parties without explicit consent."
   },
@@ -238,13 +238,13 @@
     "feat2_desc": "Books, apps, and exercises",
     "feat3_title": "Interactive FAQ",
     "feat3_desc": "Answers to frequently asked questions",
-    "nav1": "🧠 Self-assessment",
-    "nav2": "📚 Resources",
-    "nav3": "❓ FAQ",
+    "nav1": "Self-assessment",
+    "nav2": "Resources",
+    "nav3": "FAQ",
     "cta_title": "Ready for the next step?",
     "cta_desc": "These resources are a start. For personalized and professional support, let's discuss your specific needs.",
-    "cta_btn1": "📞 Schedule a consultation",
-    "cta_btn2": "👩‍⚕️ About me",
+    "cta_btn1": "Schedule a consultation",
+    "cta_btn2": "‍️ About me",
     "seo_title": "Mental Health Resources - Oana Tenea Psychotherapist",
     "seo_desc": "Interactive tools, self-assessment tests, emergency resources and practical guides for your mental health. Developed by psychotherapist Oana Tenea."
   },
@@ -382,7 +382,7 @@
     "ui": {
       "your_results": "Your results",
       "score": "Score",
-      "recommendations": "💡 General recommendations:",
+      "recommendations": "General recommendations:",
       "rec1": "• Practice breathing and relaxation exercises",
       "rec2": "• Maintain a healthy lifestyle (exercise, sleep, diet)",
       "rec3": "• Talk to close ones about how you feel",
@@ -399,33 +399,33 @@
       {
         "id": "emergency",
         "name": "Emergencies",
-        "icon": "🚨"
+        "icon": ""
       },
       {
         "id": "support",
         "name": "Support",
-        "icon": "🤝"
+        "icon": ""
       },
       {
         "id": "books",
         "name": "Books",
-        "icon": "📚"
+        "icon": ""
       },
       {
         "id": "apps",
         "name": "Apps",
-        "icon": "📱"
+        "icon": ""
       },
       {
         "id": "exercises",
         "name": "Exercises",
-        "icon": "🧘"
+        "icon": ""
       }
     ],
     "items": {
       "emergency": {
         "title": "Emergency resources",
-        "icon": "🚨",
+        "icon": "",
         "color": "bg-red-500",
         "items": [
           {
@@ -460,7 +460,7 @@
       },
       "support": {
         "title": "Support lines",
-        "icon": "🤝",
+        "icon": "",
         "color": "bg-terracotta",
         "items": [
           {
@@ -495,7 +495,7 @@
       },
       "books": {
         "title": "Recommended books",
-        "icon": "📚",
+        "icon": "",
         "color": "bg-sage",
         "items": [
           {
@@ -537,7 +537,7 @@
       },
       "apps": {
         "title": "Useful apps",
-        "icon": "📱",
+        "icon": "",
         "color": "bg-golden-honey",
         "items": [
           {
@@ -588,7 +588,7 @@
       },
       "exercises": {
         "title": "Practical exercises",
-        "icon": "🧘",
+        "icon": "",
         "color": "bg-soft-coral",
         "items": [
           {
@@ -647,7 +647,7 @@
       "visit_site": "Visit website",
       "by": "by",
       "steps": "Steps:",
-      "important_title": "⚠️ Important",
+      "important_title": "️ Important",
       "important_desc": "These resources are complementary and do not replace professional therapy. In emergency situations, contact emergency services or go to the nearest medical facility."
     }
   },
@@ -730,37 +730,37 @@
       {
         "id": "all",
         "name": "All",
-        "icon": "🌟"
+        "icon": ""
       },
       {
         "id": "terapie",
         "name": "About therapy",
-        "icon": "💭"
+        "icon": ""
       },
       {
         "id": "programare",
         "name": "Appointments",
-        "icon": "📅"
+        "icon": ""
       },
       {
         "id": "online",
         "name": "Online sessions",
-        "icon": "💻"
+        "icon": ""
       },
       {
         "id": "costuri",
         "name": "Costs",
-        "icon": "💰"
+        "icon": ""
       },
       {
         "id": "confidentialitate",
         "name": "Confidentiality",
-        "icon": "🔒"
+        "icon": ""
       },
       {
         "id": "cuplu",
         "name": "Couples therapy",
-        "icon": "💕"
+        "icon": ""
       }
     ],
     "ui": {
@@ -775,8 +775,8 @@
       "reset_filters": "Reset filters",
       "cta_title": "Did not find the answer to your question?",
       "cta_desc": "Contact me directly and I will reply personally as soon as possible.",
-      "cta_btn1": "📧 Send a message",
-      "cta_btn2": "📞 View all contact methods"
+      "cta_btn1": "Send a message",
+      "cta_btn2": "View all contact methods"
     }
   },
   "legal": {
@@ -859,7 +859,7 @@
       "title": "1. Introduction",
       "p1": "This Privacy Policy explains how <strong>Oana Tenea</strong>, authorized psychotherapist, collects, uses, stores and protects your personal information as part of the psychotherapy services offered.",
       "p2": "Respect for confidentiality and personal data protection represents the foundation of my professional practice, in accordance with <strong>GDPR</strong> (General Data Protection Regulation) and current Romanian legislation.",
-      "date": "📅 Date of last update: January 2025",
+      "date": "Date of last update: January 2025",
       "applies": "This policy applies to all services offered through the website and psychotherapy consultations."
     },
     "data_collected": {
@@ -885,15 +885,15 @@
       "title": "3. Purpose of Data Processing",
       "items": [
         {
-          "title": "🎯 Providing Psychotherapy Services",
+          "title": "Providing Psychotherapy Services",
           "desc": "Data is used for planning, conducting and monitoring progress in the therapeutic process."
         },
         {
-          "title": "📞 Communication with Clients",
+          "title": "Communication with Clients",
           "desc": "For scheduling sessions, confirmations, rescheduling and important therapy-related communications."
         },
         {
-          "title": "⚖️ Compliance with Legal Obligations",
+          "title": "️ Compliance with Legal Obligations",
           "desc": "Compliance with professional and legal regulations applicable to the psychotherapy profession."
         }
       ]
@@ -938,32 +938,32 @@
         {
           "title": "Right of Access",
           "desc": "You can request a copy of all personal data I hold about you.",
-          "icon": "👁️"
+          "icon": "️"
         },
         {
           "title": "Right to Rectification",
           "desc": "You can request the correction of inaccurate data or completion of incomplete data.",
-          "icon": "✏️"
+          "icon": "️"
         },
         {
           "title": "Right to Erasure",
           "desc": "Under certain conditions, you can request the deletion of personal data (subject to legal retention obligations).",
-          "icon": "🗑️"
+          "icon": "️"
         },
         {
           "title": "Right to Portability",
           "desc": "You can request the transfer of data to another service provider in a structured format.",
-          "icon": "📤"
+          "icon": ""
         },
         {
           "title": "Right to Object",
           "desc": "You can object to data processing in certain specific circumstances.",
-          "icon": "🛑"
+          "icon": ""
         },
         {
           "title": "Right to Restriction",
           "desc": "You can request the limitation of data processing in certain situations.",
-          "icon": "⏸️"
+          "icon": "️"
         }
       ]
     },
@@ -978,11 +978,11 @@
     },
     "contact": {
       "title": "8. Contact and Exercising Rights",
-      "gdpr_title": "📧 Contact for GDPR",
+      "gdpr_title": "Contact for GDPR",
       "email": "psihoterapeut@oanatenea.ro",
       "address": "Calea Dorobanti 116-122, Sector 1, Bucharest",
       "response_time": "Maximum 30 calendar days",
-      "auth_title": "⚖️ Supervisory Authority",
+      "auth_title": "️ Supervisory Authority",
       "auth_name": "ANSPDCP",
       "auth_desc": "(National Supervisory Authority for Personal Data Processing)",
       "auth_website": "Website: dataprotection.ro",

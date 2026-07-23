@@ -21,13 +21,13 @@
     "terms": "Termeni și condiții"
   },
   "cookie": {
-    "text": "Acest site folosește cookie-uri pentru a vă asigura cea mai bună experiență pe site-ul nostru. Prin continuarea navigării, sunteți de acord cu utilizarea cookie-urilor conform ",
+    "text": "Acest site folosește cookie-uri pentru a vă asigura cea mai bună experiență pe site-ul nostru. Prin continuarea navigării, sunteți de acord cu utilizarea cookie-urilor conform",
     "policyLink": "Politicii de Confidențialitate",
     "acceptBtn": "Am înțeles"
   },
   "home": {
-    "tag": "💛 Psihoterapie & Consiliere",
-    "title1": "Primul pas către ",
+    "tag": "Psihoterapie & Consiliere",
+    "title1": "Primul pas către",
     "title2": "tine",
     "desc_mobile": "Sunt <1>Oana Tenea</1>, psihoterapeut certificat. Te ajut cu anxietate, depresie și provocări emoționale.",
     "desc_desktop": "Sunt <1>Oana Tenea</1>, psihoterapeut cu experiență în consiliere psihologică, terapie de cuplu și suport pentru anxietate, depresie și alte provocări emoționale.",
@@ -36,10 +36,10 @@
     "cred3": "Abordare empată și profesională",
     "btn_book": "Programează consultație",
     "btn_about": "Despre mine",
-    "breathe_tag": "🌸 Tehnici de relaxare",
+    "breathe_tag": "Tehnici de relaxare",
     "breathe_title": "Exercițiu de respirație pentru anxietate",
     "breathe_desc": "Începe acum cu această tehnică simplă de respirație pentru a-ți calma mintea și a reduce stresul.",
-    "blog_title": "Articole recente din ",
+    "blog_title": "Articole recente din",
     "blog_title_highlight": "blog",
     "blog_desc": "Descoperă sfaturi practice și perspective profesionale pentru sănătatea ta mentală",
     "blog_collab": "În colaborare cu SmartLiving.ro",
@@ -52,7 +52,7 @@
     "cta_desc": "Contactează-mă pentru a programa o consultație și să discutăm cum te pot ajuta să-ți atingi obiectivele de sănătate mentală.",
     "cta_btn_book": "Programează o consultație",
     "cta_btn_services": "Despre servicii",
-    "quiz_tag": "🧠 Evaluare personală",
+    "quiz_tag": "Evaluare personală",
     "quiz_title": "Test de autoevaluare pentru anxietate",
     "quiz_desc": "Completează acest scurt test pentru a înțelege mai bine nivelul tău de anxietate și pentru a afla cum te pot ajuta.",
     "ig_title": "@psihoterapeut.oanatenea",
@@ -71,7 +71,7 @@
     "contact_title": "Hai să vorbim!",
     "contact_desc": "Sunt aici să te ascult și să te sprijin în călătoria ta către vindecarea emoțională.",
     "contact_btn": "Programează",
-    "welcome": "Bine ai venit! 👋",
+    "welcome": "Bine ai venit!",
     "story1": "Sunt psihoterapeut de formare cognitiv–comportamentală, psihoterapeut de formare în terapia centrată pe scheme cognitive, psihoterapeut de cuplu (familie) și membru al Colegiului Psihologilor din România.",
     "story2": "Dar nu în ultimul rând, sunt <1>soție, mamă și prietenă</1>. Dorința de a relaționa cu o gamă largă de oameni, din diferite medii multiculturale, m-a îndreptat către alegerea acestei profesii. Curiozitatea, prin natura mea, mă sprijină ca un tovarăș în calea cunoașterii de sine și a celor din jurul meu.",
     "story3": "Pornind de la misterele cunoașterii psihicului uman și a emoțiilor ce țin de fiecare trăire a noastră, am descoperit, printr-un lung proces, o cale care mi-a îmbogățit viața și relațiile în același timp.",
@@ -224,7 +224,7 @@
     "program": "Program",
     "monday_thursday": "Luni - Joi:",
     "available": "Disponibil",
-    "tip": "💡 <1>Sfat:</1> Programările se fac cu minim 48h înainte. Pentru urgențe, scrieți prin email.",
+    "tip": "<1>Sfat:</1> Programările se fac cu minim 48h înainte. Pentru urgențe, scrieți prin email.",
     "privacy_title": "Confidențialitate",
     "privacy_desc": "Toate informațiile partajate sunt <1>strict confidențiale</1> și protejate conform normelor GDPR. Relația terapeutică se bazează pe încredere și respect mutual. Datele personale nu vor fi niciodată partajate cu terțe părți fără consimțământul explicit."
   },
@@ -238,13 +238,13 @@
     "feat2_desc": "Cărți, aplicații și exerciții",
     "feat3_title": "FAQ interactiv",
     "feat3_desc": "Răspunsuri la întrebările frecvente",
-    "nav1": "🧠 Auto-evaluare",
-    "nav2": "📚 Resurse",
-    "nav3": "❓ FAQ",
+    "nav1": "Auto-evaluare",
+    "nav2": "Resurse",
+    "nav3": "FAQ",
     "cta_title": "Ești gata pentru următorul pas?",
     "cta_desc": "Aceste resurse sunt un început. Pentru un sprijin personalizat și profesional, să discutăm despre nevoile tale specifice.",
-    "cta_btn1": "📞 Programează o consultație",
-    "cta_btn2": "👩‍⚕️ Despre mine",
+    "cta_btn1": "Programează o consultație",
+    "cta_btn2": "‍️ Despre mine",
     "seo_title": "Resurse pentru Sănătatea Mintală - Oana Tenea Psihoterapeut",
     "seo_desc": "Instrumente interactive, teste de auto-evaluare, resurse de urgență și ghiduri practice pentru sănătatea ta mentală. Dezvoltate de psihoterapeutul Oana Tenea."
   },
@@ -382,7 +382,7 @@
     "ui": {
       "your_results": "Rezultatele tale",
       "score": "Scor",
-      "recommendations": "💡 Recomandări generale:",
+      "recommendations": "Recomandări generale:",
       "rec1": "• Practică exerciții de respirație și relaxare",
       "rec2": "• Menține un stil de viață sănătos (exerciții, somn, alimentație)",
       "rec3": "• Vorbește cu apropiații despre cum te simți",
@@ -399,33 +399,33 @@
       {
         "id": "emergency",
         "name": "Urgențe",
-        "icon": "🚨"
+        "icon": ""
       },
       {
         "id": "support",
         "name": "Suport",
-        "icon": "🤝"
+        "icon": ""
       },
       {
         "id": "books",
         "name": "Cărți",
-        "icon": "📚"
+        "icon": ""
       },
       {
         "id": "apps",
         "name": "Aplicații",
-        "icon": "📱"
+        "icon": ""
       },
       {
         "id": "exercises",
         "name": "Exerciții",
-        "icon": "🧘"
+        "icon": ""
       }
     ],
     "items": {
       "emergency": {
         "title": "Resurse de urgență",
-        "icon": "🚨",
+        "icon": "",
         "color": "bg-red-500",
         "items": [
           {
@@ -460,7 +460,7 @@
       },
       "support": {
         "title": "Linii de suport",
-        "icon": "🤝",
+        "icon": "",
         "color": "bg-terracotta",
         "items": [
           {
@@ -495,7 +495,7 @@
       },
       "books": {
         "title": "Cărți recomandate",
-        "icon": "📚",
+        "icon": "",
         "color": "bg-sage",
         "items": [
           {
@@ -537,7 +537,7 @@
       },
       "apps": {
         "title": "Aplicații utile",
-        "icon": "📱",
+        "icon": "",
         "color": "bg-golden-honey",
         "items": [
           {
@@ -588,7 +588,7 @@
       },
       "exercises": {
         "title": "Exerciții practice",
-        "icon": "🧘",
+        "icon": "",
         "color": "bg-soft-coral",
         "items": [
           {
@@ -647,7 +647,7 @@
       "visit_site": "Vizitează site-ul",
       "by": "de",
       "steps": "Pași:",
-      "important_title": "⚠️ Important",
+      "important_title": "️ Important",
       "important_desc": "Aceste resurse sunt complementare și nu înlocuiesc terapia profesională. În situații de urgență, contactează serviciile de urgență sau mergi la cea mai apropiată unitate medicală."
     }
   },
@@ -730,37 +730,37 @@
       {
         "id": "all",
         "name": "Toate",
-        "icon": "🌟"
+        "icon": ""
       },
       {
         "id": "terapie",
         "name": "Despre terapie",
-        "icon": "💭"
+        "icon": ""
       },
       {
         "id": "programare",
         "name": "Programări",
-        "icon": "📅"
+        "icon": ""
       },
       {
         "id": "online",
         "name": "Ședințe online",
-        "icon": "💻"
+        "icon": ""
       },
       {
         "id": "costuri",
         "name": "Costuri",
-        "icon": "💰"
+        "icon": ""
       },
       {
         "id": "confidentialitate",
         "name": "Confidențialitate",
-        "icon": "🔒"
+        "icon": ""
       },
       {
         "id": "cuplu",
         "name": "Terapie cuplu",
-        "icon": "💕"
+        "icon": ""
       }
     ],
     "ui": {
@@ -775,8 +775,8 @@
       "reset_filters": "Resetează filtrele",
       "cta_title": "Nu ai găsit răspunsul la întrebarea ta?",
       "cta_desc": "Contactează-mă direct și îți voi răspunde personal în cel mai scurt timp.",
-      "cta_btn1": "📧 Trimite un mesaj",
-      "cta_btn2": "📞 Vezi toate modalitățile de contact"
+      "cta_btn1": "Trimite un mesaj",
+      "cta_btn2": "Vezi toate modalitățile de contact"
     }
   },
   "legal": {
@@ -859,7 +859,7 @@
       "title": "1. Introducere",
       "p1": "Această Politică de Confidențialitate explică modul în care <strong>Oana Tenea</strong>, psihoterapeut autorizat, colectează, utilizează, stochează și protejează informațiile dumneavoastră personale în cadrul serviciilor de psihoterapie oferite.",
       "p2": "Respectul pentru confidențialitatea și protecția datelor personale reprezintă fundația practicii mele profesionale, în conformitate cu <strong>GDPR</strong> (Regulamentul General privind Protecția Datelor) și legislația română în vigoare.",
-      "date": "📅 Data ultimei actualizări: Ianuarie 2025",
+      "date": "Data ultimei actualizări: Ianuarie 2025",
       "applies": "Această politică se aplică tuturor serviciilor oferite prin intermediul site-ului web și consultațiilor de psihoterapie."
     },
     "data_collected": {
@@ -885,15 +885,15 @@
       "title": "3. Scopul Procesării Datelor",
       "items": [
         {
-          "title": "🎯 Furnizarea Serviciilor de Psihoterapie",
+          "title": "Furnizarea Serviciilor de Psihoterapie",
           "desc": "Datele sunt utilizate pentru planificarea, desfășurarea și monitorizarea progresului în procesul terapeutic."
         },
         {
-          "title": "📞 Comunicarea cu Clienții",
+          "title": "Comunicarea cu Clienții",
           "desc": "Pentru programarea sesiunilor, confirmări, reschedulări și comunicări importante legate de terapie."
         },
         {
-          "title": "⚖️ Respectarea Obligațiilor Legale",
+          "title": "️ Respectarea Obligațiilor Legale",
           "desc": "Conformarea cu reglementările profesionale și legale aplicabile profesiei de psihoterapeut."
         }
       ]
@@ -938,32 +938,32 @@
         {
           "title": "Dreptul de Acces",
           "desc": "Puteți solicita o copie a tuturor datelor personale pe care le dețin despre dumneavoastră.",
-          "icon": "👁️"
+          "icon": "️"
         },
         {
           "title": "Dreptul de Rectificare",
           "desc": "Puteți cere corectarea datelor inexacte sau completarea datelor incomplete.",
-          "icon": "✏️"
+          "icon": "️"
         },
         {
           "title": "Dreptul la Ștergere",
           "desc": "În anumite condiții, puteți solicita ștergerea datelor personale (cu respectarea obligațiilor legale de păstrare).",
-          "icon": "🗑️"
+          "icon": "️"
         },
         {
           "title": "Dreptul la Portabilitate",
           "desc": "Puteți solicita transferul datelor către un alt furnizor de servicii în format structurat.",
-          "icon": "📤"
+          "icon": ""
         },
         {
           "title": "Dreptul de Opoziție",
           "desc": "Puteți vă opune procesării datelor în anumite circumstanțe specifice.",
-          "icon": "🛑"
+          "icon": ""
         },
         {
           "title": "Dreptul de Restricționare",
           "desc": "Puteți solicita limitarea procesării datelor în anumite situații.",
-          "icon": "⏸️"
+          "icon": "️"
         }
       ]
     },
@@ -978,11 +978,11 @@
     },
     "contact": {
       "title": "8. Contact și Exercitarea Drepturilor",
-      "gdpr_title": "📧 Contact pentru GDPR",
+      "gdpr_title": "Contact pentru GDPR",
       "email": "psihoterapeut@oanatenea.ro",
       "address": "Calea Dorobanti 116-122, Sector 1, București",
       "response_time": "Maxim 30 de zile calendaristice",
-      "auth_title": "⚖️ Autoritatea de Supraveghere",
+      "auth_title": "️ Autoritatea de Supraveghere",
       "auth_name": "ANSPDCP",
       "auth_desc": "(Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal)",
       "auth_website": "Website: dataprotection.ro",
