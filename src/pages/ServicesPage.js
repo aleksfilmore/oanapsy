@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO';
 
 const AccordionItem = ({ title, children, icon }) => {
@@ -34,76 +35,77 @@ const AccordionItem = ({ title, children, icon }) => {
 };
 
 const ServicesPage = () => {
+    const { t } = useTranslation();
     const serviceAreas = [
         { 
-            title: "Atacuri de panică", 
+            title: t('services.areas_data.panic.title'), 
             icon: "🌊",
-            content: "Te ajut să înțelegi și să gestionezi atacurile de panică prin tehnici dovedite științific. Împreună vom identifica trigger-urile și vom construi strategii personalizate pentru a-ți recâștiga controlul.",
-            techniques: ["Tehnici de respirație controlată", "Restructurare cognitivă", "Expunere graduală și sigură"],
-            highlight: "Rezultate vizibile în 6-8 ședințe"
+            content: t('services.areas_data.panic.content'),
+            techniques: [t('services.areas_data.panic.t1'), t('services.areas_data.panic.t2'), t('services.areas_data.panic.t3')],
+            highlight: t('services.areas_data.panic.highlight')
         },
         { 
-            title: "Anxietate", 
+            title: t('services.areas_data.anxiety.title'), 
             icon: "🧘‍♀️",
-            content: "Anxietatea nu trebuie să-ți controleze viața. Îți ofer instrumente practice pentru a transforma grija în claritate și liniștea în putere interioară.",
-            techniques: ["Mindfulness și meditație", "Managementul gândurilor anxioase", "Tehnici de relaxare progresivă"],
-            highlight: "Abordare holistică și personalizată"
+            content: t('services.areas_data.anxiety.content'),
+            techniques: [t('services.areas_data.anxiety.t1'), t('services.areas_data.anxiety.t2'), t('services.areas_data.anxiety.t3')],
+            highlight: t('services.areas_data.anxiety.highlight')
         },
         { 
-            title: "Depresie", 
-            icon: "�",
-            content: "Înțeleg că depresia poate face totul să pară imposibil. Sunt aici să te acompaniez pas cu pas către redescoperirea bucuriei și a sensului în viața ta.",
-            techniques: ["Activarea comportamentală", "Reevaluarea gândurilor negative", "Dezvoltarea strategiilor de coping"],
-            highlight: "Sprijin empatic și profesional"
+            title: t('services.areas_data.depression.title'), 
+            icon: "",
+            content: t('services.areas_data.depression.content'),
+            techniques: [t('services.areas_data.depression.t1'), t('services.areas_data.depression.t2'), t('services.areas_data.depression.t3')],
+            highlight: t('services.areas_data.depression.highlight')
         },
         { 
-            title: "Terapie de cuplu și familie", 
+            title: t('services.areas_data.couple.title'), 
             icon: "💕",
-            content: "Relațiile au nevoie de îngrijire. Te ajut să construiești punți de comunicare autentică și să întărești legăturile care contează cu adevărat pentru tine.",
-            techniques: ["Comunicare nonviolentă", "Rezolvarea constructivă a conflictelor", "Întărirea intimității emoționale"],
-            highlight: "Focus pe conexiune și înțelegere"
+            content: t('services.areas_data.couple.content'),
+            techniques: [t('services.areas_data.couple.t1'), t('services.areas_data.couple.t2'), t('services.areas_data.couple.t3')],
+            highlight: t('services.areas_data.couple.highlight')
         },
         { 
-            title: "Traumă și doliu", 
-            icon: "�️",
-            content: "Durerea pierderii este una dintre cele mai profunde experiențe umane. Îți ofer un spațiu sigur pentru a procesa trauma și a găsi drumul către vindecare.",
-            techniques: ["Procesarea traumei prin EMDR", "Tehnici de doliu adaptate", "Reconstruirea sensului și speranței"],
-            highlight: "Abordare delicată și specializată"
+            title: t('services.areas_data.trauma.title'), 
+            icon: "️",
+            content: t('services.areas_data.trauma.content'),
+            techniques: [t('services.areas_data.trauma.t1'), t('services.areas_data.trauma.t2'), t('services.areas_data.trauma.t3')],
+            highlight: t('services.areas_data.trauma.highlight')
         },
         { 
-            title: "Dezvoltare personală", 
+            title: t('services.areas_data.growth.title'), 
             icon: "🌱",
-            content: "Te susțin în călătoria spre cea mai bună versiune a ta. Împreună explorăm potențialul tău și construim strategii pentru o viață mai împlinită și autentică.",
-            techniques: ["Autocunoaștere profundă", "Stabilirea și atingerea obiectivelor", "Îmbunătățirea relațiilor interpersonale"],
-            highlight: "Creștere sustenabilă și autentică"
+            content: t('services.areas_data.growth.content'),
+            techniques: [t('services.areas_data.growth.t1'), t('services.areas_data.growth.t2'), t('services.areas_data.growth.t3')],
+            highlight: t('services.areas_data.growth.highlight')
         },
     ];
     
     const faqs = [
         { 
-            q: "Cum știu dacă am nevoie de terapie?", 
-            icon: "�",
-            a: "Dacă simți că provocările din viața ta te depășesc, dacă emoțiile negative persistă mai mult de două săptămâni, sau pur și simplu dorești să te cunoști mai bine și să creezi schimbări pozitive, terapia poate fi un sprijin valoros. Nu trebuie să aștepți până când lucrurile devin foarte dificile." 
+            q: t('services.faqs_data.q1.q'), 
+            icon: "",
+            a: t('services.faqs_data.q1.a')
         },
         { 
-            q: "Cât durează o ședință și cum se desfășoară?", 
+            q: t('services.faqs_data.q2.q'), 
             icon: "⏰",
-            a: "Ședințele individuale durează 50 de minute, iar cele de cuplu 75 de minute. În prima ședință ne cunoaștem și explorăm împreună situația ta. Stabilim obiective clare și discutăm despre așteptările tale. Fiecare ședință ulterioară este adaptată nevoilor tale specifice." 
+            a: t('services.faqs_data.q2.a') 
         },
         { 
-            q: "Este confidențialitatea garantată?", 
+            q: t('services.faqs_data.q3.q'), 
             icon: "🔒",
-            a: "Absolut da. Tot ce îmi spui rămâne între noi, conform codului deontologic profesional. Confidențialitatea este fundamentul încrederii terapeutice și o respect cu strictețe. Singurul caz când aș putea divulga informații este dacă există un risc iminent pentru siguranța ta sau a altora." 
+            a: t('services.faqs_data.q3.a') 
         },
         { 
-            q: "Cât durează procesul terapeutic?", 
+            q: t('services.faqs_data.q4.q'), 
             icon: "📅",
-            a: "Durata variază în funcție de obiectivele tale și de natura provocărilor cu care te confrunți. Unele situații se îmbunătățesc în câteva ședințe, altele necesită mai mult timp. De obicei, primele schimbări pozitive le observi după 6-8 ședințe. Voi fi transparentă cu tine în privința progresului și vom evalua periodic cum evoluzăm." 
+            a: t('services.faqs_data.q4.a') 
         },
         { 
-            q: "Diferă terapia online de cea față în față?", 
+            q: t('services.faqs_data.q5.q'), 
             icon: "💻",
-            a: "Eficacitatea este aceeași, iar confidențialitatea la fel de strictă. Mulți dintre clienții mei preferă terapia online pentru flexibilitatea oferită. Important este să ai un spațiu privat și o conexiune stabilă la internet. Îți voi explica cum să îți pregătești mediul pentru a beneficia la maximum de ședințe." 
+            a: t('services.faqs_data.q5.a')
         }
     ];
 
@@ -118,10 +120,10 @@ const ServicesPage = () => {
                     {/* Hero Section */}
                     <div className="text-center mb-16">
                         <h1 className="text-4xl md:text-5xl font-bold text-sage-800 mb-6">
-                            Cum te pot ajuta
+                            {t('services.title')}
                         </h1>
                         <p className="text-lg text-sage-600 max-w-3xl mx-auto">
-                            Îți ofer un spațiu sigur și confidențial pentru a explora provocările cu care te confrunți și pentru a descoperi resurse noi pentru o viață mai împlinită.
+                            {t('services.subtitle')}
                         </p>
                         <div className="w-24 h-1 bg-gradient-to-r from-terracotta to-warm-orange mx-auto mt-6 rounded-full"></div>
                     </div>
@@ -136,29 +138,29 @@ const ServicesPage = () => {
                                     <div className="w-12 h-12 bg-gradient-to-r from-terracotta to-warm-orange rounded-xl flex items-center justify-center text-white text-xl mr-4">
                                         🏢
                                     </div>
-                                    <h2 className="text-2xl font-bold text-sage-800">Ședințe în Cabinet</h2>
+                                    <h2 className="text-2xl font-bold text-sage-800">{t('services.in_person')}</h2>
                                 </div>
                                 <p className="text-sage-600 mb-6 leading-relaxed">
-                                    Te întampin în cabinetul meu din București, într-un mediu calm și primitor, special amenajat pentru a facilita un dialog deschis și autentic. Aici poți vorbi liber despre orice te preocupă.
+                                    {t('services.in_person_desc')}
                                 </p>
                                 <div className="space-y-4">
                                     <div className="flex items-center text-sage-700">
                                         <svg className="w-5 h-5 text-terracotta mr-3" fill="currentColor" viewBox="0 0 20 20">
                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                         </svg>
-                                        Ședință individuală (50 minute)
+                                        {t('services.individual')}
                                     </div>
                                     <div className="flex items-center text-sage-700">
                                         <svg className="w-5 h-5 text-terracotta mr-3" fill="currentColor" viewBox="0 0 20 20">
                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                         </svg>
-                                        Ședință de cuplu (75 minute)
+                                        {t('services.couple')}
                                     </div>
                                     <div className="flex items-center text-sage-700">
                                         <svg className="w-5 h-5 text-terracotta mr-3" fill="currentColor" viewBox="0 0 20 20">
                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                         </svg>
-                                        Consultație inițială
+                                        {t('services.initial')}
                                     </div>
                                 </div>
                             </div>
@@ -172,29 +174,29 @@ const ServicesPage = () => {
                                     <div className="w-12 h-12 bg-gradient-to-r from-sage-500 to-sage-600 rounded-xl flex items-center justify-center text-white text-xl mr-4">
                                         💻
                                     </div>
-                                    <h2 className="text-2xl font-bold text-sage-800">Ședințe Online</h2>
+                                    <h2 className="text-2xl font-bold text-sage-800">{t('services.online')}</h2>
                                 </div>
                                 <p className="text-sage-600 mb-6 leading-relaxed">
-                                    Înțeleg că nu întotdeauna este posibil să ajungi fizic la cabinet. De aceea ofer și ședințe online, care au aceeași eficacitate și confidențialitate, dar îți permit să participi din confortul casei tale.
+                                    {t('services.online_desc')}
                                 </p>
                                 <div className="space-y-4">
                                     <div className="flex items-center text-sage-700">
                                         <svg className="w-5 h-5 text-sage-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                         </svg>
-                                        Acces din confortul casei
+                                        {t('services.home_access')}
                                     </div>
                                     <div className="flex items-center text-sage-700">
                                         <svg className="w-5 h-5 text-sage-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                         </svg>
-                                        Program flexibil
+                                        {t('services.flex_schedule')}
                                     </div>
                                     <div className="flex items-center text-sage-700">
                                         <svg className="w-5 h-5 text-sage-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                         </svg>
-                                        Aceeași calitate și confidențialitate
+                                        {t('services.quality')}
                                     </div>
                                 </div>
                             </div>
@@ -205,48 +207,48 @@ const ServicesPage = () => {
                     <div className="max-w-4xl mx-auto mb-20">
                         <div className="bg-gradient-to-br from-sage-50 to-cream rounded-2xl p-8 shadow-warm">
                             <div className="text-center mb-8">
-                                <h2 className="text-3xl font-bold text-sage-800 mb-4">Abordarea mea terapeutică</h2>
-                                <p className="text-sage-600 text-lg">Fiecare persoană este unică, la fel și călătoria ei către vindecare</p>
+                                <h2 className="text-3xl font-bold text-sage-800 mb-4">{t('services.approach')}</h2>
+                                <p className="text-sage-600 text-lg">{t('services.approach_sub')}</p>
                             </div>
                             
                             <div className="grid md:grid-cols-2 gap-8">
                                 <div>
                                     <h3 className="text-xl font-bold text-sage-800 mb-4 flex items-center">
                                         <div className="w-8 h-8 bg-terracotta rounded-lg flex items-center justify-center text-white text-sm mr-3">🎯</div>
-                                        Personalizat și adaptat
+                                        {t('services.app1_title')}
                                     </h3>
                                     <p className="text-sage-600 leading-relaxed">
-                                        Nu există soluții universale. Îmi adaptez metodele în funcție de personalitatea ta, stilul de învățare și obiectivele specifice. Combin elemente din terapia cognitiv-comportamentală, mindfulness și alte abordări dovedite științific.
+                                        {t('services.app1_desc')}
                                     </p>
                                 </div>
                                 
                                 <div>
                                     <h3 className="text-xl font-bold text-sage-800 mb-4 flex items-center">
                                         <div className="w-8 h-8 bg-terracotta rounded-lg flex items-center justify-center text-white text-sm mr-3">💝</div>
-                                        Empatic și fără judecăți
+                                        {t('services.app2_title')}
                                     </h3>
                                     <p className="text-sage-600 leading-relaxed">
-                                        Îți ofer un spațiu complet sigur, unde poți fi autentic fără teamă de judecată. Cred că vindecarea se întâmplă în relații de încredere, unde te simți văzut, înțeles și acceptat exact așa cum ești.
+                                        {t('services.app2_desc')}
                                     </p>
                                 </div>
                                 
                                 <div>
                                     <h3 className="text-xl font-bold text-sage-800 mb-4 flex items-center">
                                         <div className="w-8 h-8 bg-terracotta rounded-lg flex items-center justify-center text-white text-sm mr-3">🌱</div>
-                                        Orientat spre soluții
+                                        {t('services.app3_title')}
                                     </h3>
                                     <p className="text-sage-600 leading-relaxed">
-                                        Deși explorăm trecutul pentru înțelegere, focusul nostru principal este pe prezent și viitor. Împreună identificăm resurse și construim strategii practice care te ajută să te simți mai puternic și mai echilibrat.
+                                        {t('services.app3_desc')}
                                     </p>
                                 </div>
                                 
                                 <div>
                                     <h3 className="text-xl font-bold text-sage-800 mb-4 flex items-center">
                                         <div className="w-8 h-8 bg-terracotta rounded-lg flex items-center justify-center text-white text-sm mr-3">🤝</div>
-                                        Colaborativ și transparent
+                                        {t('services.app4_title')}
                                     </h3>
                                     <p className="text-sage-600 leading-relaxed">
-                                        Tu ești expertul propriei vieți, iar eu aduc expertiza terapeutică. Lucrăm împreună ca parteneri, iar tu ești mereu informat despre progresul nostru și direcția în care mergem.
+                                        {t('services.app4_desc')}
                                     </p>
                                 </div>
                             </div>
@@ -256,8 +258,8 @@ const ServicesPage = () => {
                     {/* Service Areas */}
                     <div className="max-w-6xl mx-auto mb-20">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl font-bold text-sage-800 mb-4">Domeniile mele de expertiză</h2>
-                            <p className="text-sage-600 text-lg">Îmi dedic experiența și cunoștințele pentru a te sprijini în aceste arii:</p>
+                            <h2 className="text-3xl font-bold text-sage-800 mb-4">{t('services.areas')}</h2>
+                            <p className="text-sage-600 text-lg">{t('services.areas_sub')}</p>
                         </div>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {serviceAreas.map((area, index) => (
@@ -273,7 +275,7 @@ const ServicesPage = () => {
                                     )}
                                     
                                     <div className="space-y-2">
-                                        <p className="text-xs font-semibold text-terracotta uppercase tracking-wider">Metode folosite:</p>
+                                        <p className="text-xs font-semibold text-terracotta uppercase tracking-wider">{t('services.methods')}</p>
                                         {area.techniques.map((technique, idx) => (
                                             <div key={idx} className="flex items-center text-xs text-sage-700">
                                                 <div className="w-1.5 h-1.5 bg-terracotta rounded-full mr-2 flex-shrink-0"></div>
@@ -289,8 +291,8 @@ const ServicesPage = () => {
                     {/* FAQ Section */}
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl font-bold text-sage-800 mb-4">Întrebări Frecvente</h2>
-                            <p className="text-sage-600 text-lg">Răspunsuri la cele mai comune întrebări despre psihoterapie</p>
+                            <h2 className="text-3xl font-bold text-sage-800 mb-4">{t('services.faq')}</h2>
+                            <p className="text-sage-600 text-lg">{t('services.faq_sub')}</p>
                         </div>
                         <div className="space-y-4">
                             {faqs.map((faq, index) => (
@@ -304,9 +306,9 @@ const ServicesPage = () => {
                     {/* CTA Section */}
                     <div className="max-w-4xl mx-auto mt-20 text-center">
                         <div className="bg-gradient-to-r from-terracotta to-warm-orange rounded-2xl p-8 shadow-warm text-white">
-                            <h3 className="text-2xl font-bold mb-4">Ești gata să faci primul pas?</h3>
+                            <h3 className="text-2xl font-bold mb-4">{t('services.cta_title')}</h3>
                             <p className="mb-6 text-white/90">
-                                Știu că poate fi intimidant să cauți ajutor, dar curajul tău de a fi aici este deja un pas important. Sunt aici să te însoțesc în această călătorie către o viață mai împlinită.
+                                {t('services.cta_desc')}
                             </p>
                             <a 
                                 href="/contact" 
@@ -315,7 +317,7 @@ const ServicesPage = () => {
                                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                                 </svg>
-                                Hai să vorbim!
+                                {t('services.cta_btn')}
                             </a>
                         </div>
                     </div>

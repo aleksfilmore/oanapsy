@@ -1,0 +1,996 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About Me",
+    "services": "Psychotherapy Services",
+    "resources": "Resources",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "footer": {
+    "title": "Oana Tenea",
+    "subtitle": "Clinical Psychologist and Psychotherapist",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "individualTherapy": "Individual Therapy",
+    "coupleTherapy": "Couple Therapy",
+    "onlineTherapy": "Online Therapy",
+    "contact": "Contact",
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms and Conditions"
+  },
+  "cookie": {
+    "text": "This site uses cookies to ensure you get the best experience on our website. By continuing to browse, you agree to our use of cookies according to the ",
+    "policyLink": "Privacy Policy",
+    "acceptBtn": "Got it"
+  },
+  "home": {
+    "tag": "💛 Psychotherapy & Counseling",
+    "title1": "The first step towards ",
+    "title2": "yourself",
+    "desc_mobile": "I'm <1>Oana Tenea</1>, certified psychotherapist. I help with anxiety, depression, and emotional challenges.",
+    "desc_desktop": "I'm <1>Oana Tenea</1>, psychotherapist experienced in psychological counseling, couple therapy, and support for anxiety, depression, and other emotional challenges.",
+    "cred1": "Certified Psychotherapist",
+    "cred2": "Bucharest and online",
+    "cred3": "Empathetic and professional approach",
+    "btn_book": "Book a session",
+    "btn_about": "About me",
+    "breathe_tag": "🌸 Relaxation techniques",
+    "breathe_title": "Breathing exercise for anxiety",
+    "breathe_desc": "Start now with this simple breathing technique to calm your mind and reduce stress.",
+    "blog_title": "Recent articles from the ",
+    "blog_title_highlight": "blog",
+    "blog_desc": "Discover practical tips and professional perspectives for your mental health",
+    "blog_collab": "In collaboration with SmartLiving.ro",
+    "blog_collab_desc": "Articles published by Oana Tenea about psychology, relationships, and personal development.",
+    "blog_read_smartliving": "Read on SmartLiving",
+    "blog_read_more": "Read more",
+    "blog_btn_all": "View all articles",
+    "cta_title1": "Are you ready to take",
+    "cta_title2": "the first step?",
+    "cta_desc": "Contact me to schedule a consultation and discuss how I can help you achieve your mental health goals.",
+    "cta_btn_book": "Schedule a consultation",
+    "cta_btn_services": "About services",
+    "quiz_tag": "🧠 Self-assessment",
+    "quiz_title": "Anxiety self-assessment quiz",
+    "quiz_desc": "Take this short quiz to better understand your anxiety level and learn how I can help.",
+    "ig_title": "@psihoterapeut.oanatenea",
+    "ig_desc": "Follow me on Instagram for daily insights on psychology and wellbeing",
+    "ig_follow": "Follow",
+    "ig_view": "View on Instagram",
+    "ig_view_all": "View all posts"
+  },
+  "about": {
+    "title": "I am Oana",
+    "qualifications": "Professional Qualifications",
+    "q1": "Cognitive-Behavioral Psychotherapist",
+    "q2": "Schema Therapy Specialist",
+    "q3": "Couple and Family Psychotherapist",
+    "q4": "Member of the Romanian College of Psychologists",
+    "contact_title": "Let's talk!",
+    "contact_desc": "I am here to listen and support you on your journey towards emotional healing.",
+    "contact_btn": "Book a session",
+    "welcome": "Welcome! 👋",
+    "story1": "I am a cognitive-behavioral psychotherapist, a schema therapy psychotherapist, a couple (family) psychotherapist, and a member of the Romanian College of Psychologists.",
+    "story2": "But last but not least, I am a <1>wife, mother, and friend</1>. The desire to interact with a wide range of people from different multicultural backgrounds directed me towards choosing this profession. Curiosity, by my nature, supports me as a companion on the path of self-knowledge and of those around me.",
+    "story3": "Starting from the mysteries of understanding the human psyche and the emotions related to each of our experiences, I discovered, through a long process, a path that enriched my life and relationships at the same time.",
+    "approach_title": "My Therapeutic Approach",
+    "approach_desc1": "I use an <1>integrative approach</1>, with a solid foundation in cognitive-behavioral therapy (CBT), complemented by techniques from compassion-focused therapy and mindfulness. This means that we will work together collaboratively to identify the thinking and behavioral patterns that cause you distress and replace them with new, healthier, and more adaptive ones.",
+    "approach_quote": "\"I place a special emphasis on the <1>therapeutic relationship</1>, considering it the foundation of any successful change process.\"",
+    "spec_title": "Specializations",
+    "s1_title": "Anxiety and Panic Attacks",
+    "s1_desc": "CBT techniques for anxiety management",
+    "s2_title": "Depression and Mood",
+    "s2_desc": "Support in overcoming depressive episodes",
+    "s3_title": "Couple Therapy",
+    "s3_desc": "Improving communication and intimacy",
+    "s4_title": "Trauma and PTSD",
+    "s4_desc": "Processing traumatic experiences",
+    "s5_title": "Eating Disorders",
+    "s5_desc": "Support for binge eating and other disorders",
+    "s6_title": "Family Relationships",
+    "s6_desc": "Family dynamics and communication"
+  },
+  "services": {
+    "title": "How can I help you",
+    "subtitle": "I offer you a safe and confidential space to explore the challenges you face and discover new resources for a more fulfilled life.",
+    "in_person": "In-Person Sessions",
+    "in_person_desc": "I welcome you to my office in Bucharest, in a calm and welcoming environment, specially designed to facilitate an open and authentic dialogue. Here you can talk freely about anything that concerns you.",
+    "individual": "Individual session (50 minutes)",
+    "couple": "Couple session (75 minutes)",
+    "initial": "Initial consultation",
+    "online": "Online Sessions",
+    "online_desc": "I understand that it is not always possible to physically get to the office. That's why I also offer online sessions, which have the same effectiveness and confidentiality, but allow you to participate from the comfort of your home.",
+    "home_access": "Access from the comfort of home",
+    "flex_schedule": "Flexible schedule",
+    "quality": "Same quality and confidentiality",
+    "approach": "My therapeutic approach",
+    "approach_sub": "Each person is unique, and so is their journey to healing",
+    "app1_title": "Personalized and adapted",
+    "app1_desc": "There are no one-size-fits-all solutions. I adapt my methods according to your personality, learning style, and specific goals. I combine elements of cognitive-behavioral therapy, mindfulness, and other scientifically proven approaches.",
+    "app2_title": "Empathetic and non-judgmental",
+    "app2_desc": "I offer you a completely safe space where you can be authentic without fear of judgment. I believe that healing happens in trusting relationships, where you feel seen, understood, and accepted exactly as you are.",
+    "app3_title": "Solution-oriented",
+    "app3_desc": "While we explore the past for understanding, our main focus is on the present and future. Together we identify resources and build practical strategies that help you feel stronger and more balanced.",
+    "app4_title": "Collaborative and transparent",
+    "app4_desc": "You are the expert of your own life, and I bring therapeutic expertise. We work together as partners, and you are always informed about our progress and the direction we are heading.",
+    "areas": "My areas of expertise",
+    "areas_sub": "I dedicate my experience and knowledge to support you in these areas:",
+    "methods": "Methods used:",
+    "faq": "Frequently Asked Questions",
+    "faq_sub": "Answers to the most common questions about psychotherapy",
+    "cta_title": "Are you ready to take the first step?",
+    "cta_desc": "I know it can be intimidating to seek help, but your courage to be here is already an important step. I am here to accompany you on this journey towards a more fulfilled life.",
+    "cta_btn": "Let's talk!",
+    "areas_data": {
+      "panic": {
+        "title": "Panic attacks",
+        "content": "I help you understand and manage panic attacks through scientifically proven techniques. Together we will identify triggers and build personalized strategies to regain control.",
+        "t1": "Controlled breathing techniques",
+        "t2": "Cognitive restructuring",
+        "t3": "Gradual and safe exposure",
+        "highlight": "Visible results in 6-8 sessions"
+      },
+      "anxiety": {
+        "title": "Anxiety",
+        "content": "Anxiety doesn't have to control your life. I offer you practical tools to turn worry into clarity and peace into inner strength.",
+        "t1": "Mindfulness and meditation",
+        "t2": "Anxious thought management",
+        "t3": "Progressive relaxation techniques",
+        "highlight": "Holistic and personalized approach"
+      },
+      "depression": {
+        "title": "Depression",
+        "content": "I understand that depression can make everything seem impossible. I am here to accompany you step by step towards rediscovering joy and meaning in your life.",
+        "t1": "Behavioral activation",
+        "t2": "Re-evaluating negative thoughts",
+        "t3": "Developing coping strategies",
+        "highlight": "Empathetic and professional support"
+      },
+      "couple": {
+        "title": "Couple and family therapy",
+        "content": "Relationships need care. I help you build bridges of authentic communication and strengthen the bonds that truly matter to you.",
+        "t1": "Nonviolent communication",
+        "t2": "Constructive conflict resolution",
+        "t3": "Strengthening emotional intimacy",
+        "highlight": "Focus on connection and understanding"
+      },
+      "trauma": {
+        "title": "Trauma and grief",
+        "content": "The pain of loss is one of the deepest human experiences. I offer you a safe space to process trauma and find the path to healing.",
+        "t1": "Trauma processing through EMDR",
+        "t2": "Adapted grief techniques",
+        "t3": "Rebuilding meaning and hope",
+        "highlight": "Delicate and specialized approach"
+      },
+      "growth": {
+        "title": "Personal development",
+        "content": "I support you in your journey to the best version of yourself. Together we explore your potential and build strategies for a more fulfilled and authentic life.",
+        "t1": "Deep self-knowledge",
+        "t2": "Setting and achieving goals",
+        "t3": "Improving interpersonal relationships",
+        "highlight": "Sustainable and authentic growth"
+      }
+    },
+    "faqs_data": {
+      "q1": {
+        "q": "How do I know if I need therapy?",
+        "a": "If you feel overwhelmed by the challenges in your life, if negative emotions persist for more than two weeks, or if you simply want to know yourself better and create positive changes, therapy can be a valuable support. You don't have to wait until things get very difficult."
+      },
+      "q2": {
+        "q": "How long does a session last and how is it conducted?",
+        "a": "Individual sessions last 50 minutes, and couple sessions 75 minutes. In the first session, we get to know each other and explore your situation together. We set clear goals and discuss your expectations. Each subsequent session is adapted to your specific needs."
+      },
+      "q3": {
+        "q": "Is confidentiality guaranteed?",
+        "a": "Absolutely yes. Everything you tell me stays between us, according to the professional code of ethics. Confidentiality is the foundation of therapeutic trust and I strictly respect it. The only case I might disclose information is if there is an imminent risk to your safety or the safety of others."
+      },
+      "q4": {
+        "q": "How long does the therapeutic process take?",
+        "a": "The duration varies depending on your goals and the nature of the challenges you face. Some situations improve in a few sessions, others require more time. Usually, you notice the first positive changes after 6-8 sessions. I will be transparent with you about progress and we will regularly evaluate how we are evolving."
+      },
+      "q5": {
+        "q": "Is online therapy different from face-to-face therapy?",
+        "a": "The effectiveness is the same, and the confidentiality just as strict. Many of my clients prefer online therapy for the flexibility it offers. It is important to have a private space and a stable internet connection. I will explain how to prepare your environment to get the most out of the sessions."
+      }
+    }
+  },
+  "contact": {
+    "title": "Scheduling & Contact",
+    "subtitle": "I am here to listen and support you on your journey towards emotional healing.",
+    "schedule": "Schedule a session",
+    "err_captcha": "Please complete the anti-spam verification.",
+    "err_spam": "You sent too many messages. Please wait {{min}} minutes before trying again.",
+    "err_generic": "An unexpected error occurred. Please try again or contact me directly at psihoterapeut@oanatenea.ro",
+    "f_name": "Full name *",
+    "f_name_ph": "Enter full name",
+    "f_email": "Email *",
+    "f_phone": "Phone",
+    "f_type": "Session type",
+    "opt_individual": "Individual session",
+    "opt_couple": "Couple therapy",
+    "opt_consultation": "Initial consultation",
+    "opt_online": "Online session",
+    "f_msg": "Message *",
+    "f_msg_ph": "Briefly describe the reason you want a psychotherapy session...",
+    "btn_sending": "Sending...",
+    "btn_send": "Send message",
+    "info_title": "Contact information",
+    "email": "Email",
+    "office": "Office",
+    "address1": "CALEA DOROBANTI 116-122",
+    "address2": "SECTOR 1 - BUCHAREST",
+    "program": "Schedule",
+    "monday_thursday": "Monday - Thursday:",
+    "available": "Available",
+    "tip": "💡 <1>Tip:</1> Appointments must be made at least 48h in advance. For emergencies, please email.",
+    "privacy_title": "Confidentiality",
+    "privacy_desc": "All shared information is <1>strictly confidential</1> and protected under GDPR norms. The therapeutic relationship is based on mutual trust and respect. Personal data will never be shared with third parties without explicit consent."
+  },
+  "resources_page": {
+    "title1": "Mental Health",
+    "title2": "Resources",
+    "subtitle": "Interactive tools, practical guides, and resources to support you on your journey towards inner balance and emotional well-being.",
+    "feat1_title": "Self-assessment",
+    "feat1_desc": "Tests to understand your emotional state",
+    "feat2_title": "Useful resources",
+    "feat2_desc": "Books, apps, and exercises",
+    "feat3_title": "Interactive FAQ",
+    "feat3_desc": "Answers to frequently asked questions",
+    "nav1": "🧠 Self-assessment",
+    "nav2": "📚 Resources",
+    "nav3": "❓ FAQ",
+    "cta_title": "Ready for the next step?",
+    "cta_desc": "These resources are a start. For personalized and professional support, let's discuss your specific needs.",
+    "cta_btn1": "📞 Schedule a consultation",
+    "cta_btn2": "👩‍⚕️ About me",
+    "seo_title": "Mental Health Resources - Oana Tenea Psychotherapist",
+    "seo_desc": "Interactive tools, self-assessment tests, emergency resources and practical guides for your mental health. Developed by psychotherapist Oana Tenea."
+  },
+  "quiz": {
+    "questions": [
+      {
+        "id": 1,
+        "question": "How often do you feel worried or anxious?",
+        "options": [
+          {
+            "text": "Never or very rarely",
+            "score": 0
+          },
+          {
+            "text": "A few days a month",
+            "score": 1
+          },
+          {
+            "text": "A few days a week",
+            "score": 2
+          },
+          {
+            "text": "Almost daily",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "question": "How difficult is it for you to relax?",
+        "options": [
+          {
+            "text": "Not at all difficult",
+            "score": 0
+          },
+          {
+            "text": "A bit difficult",
+            "score": 1
+          },
+          {
+            "text": "Quite difficult",
+            "score": 2
+          },
+          {
+            "text": "Very difficult",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "question": "How often do you worry excessively about different things?",
+        "options": [
+          {
+            "text": "Never",
+            "score": 0
+          },
+          {
+            "text": "Sometimes",
+            "score": 1
+          },
+          {
+            "text": "Quite often",
+            "score": 2
+          },
+          {
+            "text": "Very often",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "question": "How often do you feel restless, as if you cannot sit still?",
+        "options": [
+          {
+            "text": "Never",
+            "score": 0
+          },
+          {
+            "text": "Sometimes",
+            "score": 1
+          },
+          {
+            "text": "Quite often",
+            "score": 2
+          },
+          {
+            "text": "Almost always",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "question": "How often is it difficult to concentrate because of worries?",
+        "options": [
+          {
+            "text": "Never",
+            "score": 0
+          },
+          {
+            "text": "Sometimes",
+            "score": 1
+          },
+          {
+            "text": "Quite often",
+            "score": 2
+          },
+          {
+            "text": "Very often",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "results": {
+      "minimal": {
+        "level": "Minimal anxiety",
+        "message": "Your anxiety level seems to be within normal limits. Continue to take care of your mental health through self-care practices."
+      },
+      "mild": {
+        "level": "Mild anxiety",
+        "message": "You are experiencing a mild level of anxiety. It might be helpful to learn relaxation techniques and talk to a specialist."
+      },
+      "moderate": {
+        "level": "Moderate anxiety",
+        "message": "Your anxiety level is moderate. I encourage you to seek professional support to learn effective management strategies."
+      },
+      "severe": {
+        "level": "Severe anxiety",
+        "message": "The results indicate a high level of anxiety. It is important to contact a mental health specialist for evaluation and treatment."
+      }
+    },
+    "ui": {
+      "your_results": "Your results",
+      "score": "Score",
+      "recommendations": "💡 General recommendations:",
+      "rec1": "• Practice breathing and relaxation exercises",
+      "rec2": "• Maintain a healthy lifestyle (exercise, sleep, diet)",
+      "rec3": "• Talk to close ones about how you feel",
+      "rec4": "• Consider consulting a psychotherapist",
+      "btn_retake": "Retake quiz",
+      "btn_consultation": "Schedule a consultation",
+      "disclaimer": "*This test is for informational purposes only and does not replace a professional evaluation.",
+      "question_x_of_y": "Question {{current}} of {{total}}",
+      "answer_honestly": "Answer honestly for more accurate results"
+    }
+  },
+  "resources_list": {
+    "categories": [
+      {
+        "id": "emergency",
+        "name": "Emergencies",
+        "icon": "🚨"
+      },
+      {
+        "id": "support",
+        "name": "Support",
+        "icon": "🤝"
+      },
+      {
+        "id": "books",
+        "name": "Books",
+        "icon": "📚"
+      },
+      {
+        "id": "apps",
+        "name": "Apps",
+        "icon": "📱"
+      },
+      {
+        "id": "exercises",
+        "name": "Exercises",
+        "icon": "🧘"
+      }
+    ],
+    "items": {
+      "emergency": {
+        "title": "Emergency resources",
+        "icon": "🚨",
+        "color": "bg-red-500",
+        "items": [
+          {
+            "name": "National Emergency Service",
+            "contact": "112",
+            "description": "For medical or psychiatric emergencies",
+            "available": "24/7",
+            "type": "phone"
+          },
+          {
+            "name": "Emotional Help Hotline",
+            "contact": "0800.808.080",
+            "description": "Free psychological assistance hotline",
+            "available": "24/7",
+            "type": "phone"
+          },
+          {
+            "name": "Bucharest Ambulance",
+            "contact": "021.9642",
+            "description": "Emergency medical services in Bucharest",
+            "available": "24/7",
+            "type": "phone"
+          },
+          {
+            "name": "Alliance for Mental Health",
+            "contact": "https://aliantasanatatemintala.ro",
+            "description": "Information and resources for mental health",
+            "available": "Online",
+            "type": "website"
+          }
+        ]
+      },
+      "support": {
+        "title": "Support lines",
+        "icon": "🤝",
+        "color": "bg-terracotta",
+        "items": [
+          {
+            "name": "Suicide Prevention Center",
+            "contact": "0800.801.200",
+            "description": "Specialized counseling for suicide prevention",
+            "available": "Mon-Fri 08:00-20:00",
+            "type": "phone"
+          },
+          {
+            "name": "Childrens Hotline",
+            "contact": "116.111",
+            "description": "Specialized support for children and teenagers",
+            "available": "24/7",
+            "type": "phone"
+          },
+          {
+            "name": "Womens Helpline",
+            "contact": "0800.500.333",
+            "description": "Support for women in abusive situations",
+            "available": "24/7",
+            "type": "phone"
+          },
+          {
+            "name": "FARA - Foundation for Mutual Aid in Alcoholism",
+            "contact": "0264.420.768",
+            "description": "Support for people with addiction problems",
+            "available": "Schedule",
+            "type": "phone"
+          }
+        ]
+      },
+      "books": {
+        "title": "Recommended books",
+        "icon": "📚",
+        "color": "bg-sage",
+        "items": [
+          {
+            "name": "The Power of Now",
+            "author": "Eckhart Tolle",
+            "description": "A guide to spiritual enlightenment",
+            "category": "Mindfulness",
+            "type": "book"
+          },
+          {
+            "name": "Thinking, Fast and Slow",
+            "author": "Daniel Kahneman",
+            "description": "How the human mind works",
+            "category": "Psychology",
+            "type": "book"
+          },
+          {
+            "name": "The Anatomy of Peace",
+            "author": "The Arbinger Institute",
+            "description": "Resolving the heart of conflict",
+            "category": "Personal Development",
+            "type": "book"
+          },
+          {
+            "name": "Emotional Intelligence",
+            "author": "Daniel Goleman",
+            "description": "Why it can matter more than IQ",
+            "category": "Psychology",
+            "type": "book"
+          },
+          {
+            "name": "Mans Search for Meaning",
+            "author": "Viktor Frankl",
+            "description": "Profound lessons on the meaning of existence",
+            "category": "Philosophy",
+            "type": "book"
+          }
+        ]
+      },
+      "apps": {
+        "title": "Useful apps",
+        "icon": "📱",
+        "color": "bg-golden-honey",
+        "items": [
+          {
+            "name": "Headspace",
+            "description": "Guided meditation and mindfulness",
+            "features": [
+              "Meditation for beginners",
+              "Specialized programs",
+              "Breathing exercises"
+            ],
+            "platform": "iOS/Android",
+            "type": "app"
+          },
+          {
+            "name": "Calm",
+            "description": "Relaxation and better sleep",
+            "features": [
+              "Sleep stories",
+              "Relaxing music",
+              "Anti-stress programs"
+            ],
+            "platform": "iOS/Android",
+            "type": "app"
+          },
+          {
+            "name": "MindShift",
+            "description": "Anxiety and stress management",
+            "features": [
+              "CBT techniques",
+              "Mood tracking",
+              "Personalized plans"
+            ],
+            "platform": "iOS/Android",
+            "type": "app"
+          },
+          {
+            "name": "Daylio",
+            "description": "Mood tracking",
+            "features": [
+              "Emotion journal",
+              "Detailed statistics",
+              "Pattern identification"
+            ],
+            "platform": "iOS/Android",
+            "type": "app"
+          }
+        ]
+      },
+      "exercises": {
+        "title": "Practical exercises",
+        "icon": "🧘",
+        "color": "bg-soft-coral",
+        "items": [
+          {
+            "name": "4-7-8 Breathing",
+            "description": "Quick relaxation technique",
+            "steps": [
+              "Inhale through nose 4 seconds",
+              "Hold breath 7 seconds",
+              "Exhale through mouth 8 seconds",
+              "Repeat 3-4 times"
+            ],
+            "duration": "2-3 minutes",
+            "type": "exercise"
+          },
+          {
+            "name": "Gratitude Journaling",
+            "description": "Focus on positive aspects",
+            "steps": [
+              "Write 3 things you are grateful for",
+              "Detail why you are grateful",
+              "Reflect on feelings",
+              "Practice daily"
+            ],
+            "duration": "5-10 minutes",
+            "type": "exercise"
+          },
+          {
+            "name": "Progressive Muscle Relaxation",
+            "description": "Releasing physical tension",
+            "steps": [
+              "Start with your toes",
+              "Tense and relax each muscle group",
+              "Hold tension 5 seconds",
+              "Relax 10 seconds between groups"
+            ],
+            "duration": "15-20 minutes",
+            "type": "exercise"
+          },
+          {
+            "name": "5-4-3-2-1 Technique",
+            "description": "Grounding for anxiety",
+            "steps": [
+              "5 things you can see",
+              "4 things you can feel",
+              "3 things you can hear",
+              "2 things you can smell",
+              "1 thing you can taste"
+            ],
+            "duration": "3-5 minutes",
+            "type": "exercise"
+          }
+        ]
+      }
+    },
+    "ui": {
+      "visit_site": "Visit website",
+      "by": "by",
+      "steps": "Steps:",
+      "important_title": "⚠️ Important",
+      "important_desc": "These resources are complementary and do not replace professional therapy. In emergency situations, contact emergency services or go to the nearest medical facility."
+    }
+  },
+  "faq": {
+    "items": [
+      {
+        "id": 1,
+        "category": "terapie",
+        "question": "What is psychotherapy and how can it help me?",
+        "answer": "Psychotherapy is a collaborative process between therapist and client aimed at improving emotional and mental well-being. Through various techniques and approaches, therapy can help you better understand your emotions, develop healthy coping strategies, and create positive changes in your life. It is a safe space where you can explore thoughts and feelings without judgment."
+      },
+      {
+        "id": 2,
+        "category": "programare",
+        "question": "How can I schedule a session?",
+        "answer": "You can schedule a session through the online contact form. I usually respond within 24 hours to confirm the appointment and discuss the session details."
+      },
+      {
+        "id": 3,
+        "category": "online",
+        "question": "How do online sessions work?",
+        "answer": "Online sessions are held via secure video conferencing platforms (Zoom, Google Meet, or WhatsApp Video). I will send you the link a few hours before the session. Ensure you have a stable internet connection and a private space where you will not be interrupted. The effectiveness of online therapy is comparable to face-to-face therapy."
+      },
+      {
+        "id": 4,
+        "category": "costuri",
+        "question": "How can I find out about fees?",
+        "answer": "For detailed information about fees and payment options, please contact me directly by email or phone. I will be happy to discuss financial aspects during a personalized conversation, taking your specific needs into account."
+      },
+      {
+        "id": 5,
+        "category": "confidentialitate",
+        "question": "How confidential is the information I share?",
+        "answer": "Confidentiality is fundamental in therapy. Everything we discuss remains strictly confidential, according to the code of ethics and laws in force. The only exceptions would be situations where there is an immediate risk to your safety or someone else’s, or when the law requires reporting (e.g. child abuse)."
+      },
+      {
+        "id": 6,
+        "category": "durata",
+        "question": "How long does the therapeutic process take?",
+        "answer": "The duration of therapy varies depending on individual needs, therapeutic goals, and the complexity of the issues addressed. Some people notice improvements after a few sessions, while others benefit from a longer process. I usually evaluate progress after 6-8 sessions and we discuss continuing therapy together."
+      },
+      {
+        "id": 7,
+        "category": "terapie",
+        "question": "What type of therapeutic approach do you use?",
+        "answer": "I use an integrative approach, tailored to each person’s needs. The main methods applied include Cognitive-Behavioral Therapy (CBT), mindfulness techniques, emotion-focused therapy, and systemic therapy elements for couples and families. The approach is personalized based on your specific situation."
+      },
+      {
+        "id": 8,
+        "category": "prima-sedinta",
+        "question": "What should I expect at the first session?",
+        "answer": "The first session is dedicated to getting to know each other and assessment. You will be able to tell me about why you came to therapy, the history of the problems you face, and your goals. I will explain how the therapeutic process works and we will discuss confidentiality. It is normal to feel a little nervous - I will create a warm and non-judgmental environment."
+      },
+      {
+        "id": 9,
+        "category": "urgente",
+        "question": "What do I do if I have a crisis outside of working hours?",
+        "answer": "For emergencies, please contact emergency services (112) or the Emotional Help Hotline (0800.808.080 - free, 24/7). You can write me a message and I will reply as soon as possible, but for acute crises it is important to contact specialized emergency services."
+      },
+      {
+        "id": 10,
+        "category": "cuplu",
+        "question": "How do I know if I need couples therapy?",
+        "answer": "Couples therapy can be beneficial when there are recurring communication problems, unresolved conflicts, crises of trust, reduced intimacy, or when you feel you are drifting apart. You do not have to wait until problems become very serious - preventive therapy can strengthen the relationship and prevent conflict escalation."
+      },
+      {
+        "id": 11,
+        "category": "anulare",
+        "question": "What is the session cancellation policy?",
+        "answer": "Please cancel or reschedule sessions at least 24 hours in advance. Cancellations made with less than 24 hours notice will be charged 100% of the session fee. This policy helps me manage my time and offer available slots to other people."
+      },
+      {
+        "id": 12,
+        "category": "rezultate",
+        "question": "How will I know that therapy is working?",
+        "answer": "Progress in therapy can be seen through several signs: improved mood, developing better stress management strategies, healthier relationships, increased self-confidence, and better self-understanding. We evaluate progress periodically and adjust the approach if necessary. Some changes are immediate, others develop gradually."
+      }
+    ],
+    "categories": [
+      {
+        "id": "all",
+        "name": "All",
+        "icon": "🌟"
+      },
+      {
+        "id": "terapie",
+        "name": "About therapy",
+        "icon": "💭"
+      },
+      {
+        "id": "programare",
+        "name": "Appointments",
+        "icon": "📅"
+      },
+      {
+        "id": "online",
+        "name": "Online sessions",
+        "icon": "💻"
+      },
+      {
+        "id": "costuri",
+        "name": "Costs",
+        "icon": "💰"
+      },
+      {
+        "id": "confidentialitate",
+        "name": "Confidentiality",
+        "icon": "🔒"
+      },
+      {
+        "id": "cuplu",
+        "name": "Couples therapy",
+        "icon": "💕"
+      }
+    ],
+    "ui": {
+      "title": "Frequently asked questions",
+      "subtitle": "Answers to the most common questions about therapy and my services",
+      "search_placeholder": "Search frequently asked questions...",
+      "found_single": "question found",
+      "found_plural": "questions found",
+      "expand_all": "Expand all",
+      "collapse_all": "Collapse all",
+      "not_found_msg": "We did not find any questions matching your search.",
+      "reset_filters": "Reset filters",
+      "cta_title": "Did not find the answer to your question?",
+      "cta_desc": "Contact me directly and I will reply personally as soon as possible.",
+      "cta_btn1": "📧 Send a message",
+      "cta_btn2": "📞 View all contact methods"
+    }
+  },
+  "legal": {
+    "title": "Privacy Policy & GDPR",
+    "subtitle": "The protection of your personal data is a priority for me.",
+    "sections": [
+      {
+        "title": "1. Data protection officer",
+        "content": "Oana Tenea, authorized psychotherapist, based in Bucharest, Romania, is responsible for processing your personal data in accordance with the General Data Protection Regulation (GDPR)."
+      },
+      {
+        "title": "2. Data collected",
+        "content": "As part of psychotherapy services, the following categories of data may be collected:",
+        "list": [
+          "Identification data (name, surname, age)",
+          "Contact data (phone, email, address)",
+          "Medical and psychological information relevant to therapy",
+          "Therapy session notes",
+          "Billing and payment data"
+        ]
+      },
+      {
+        "title": "3. Purpose of processing",
+        "content": "Your data is processed for:",
+        "list": [
+          "Providing psychotherapy services",
+          "Scheduling and managing sessions",
+          "Communicating with you",
+          "Fulfilling legal and professional obligations",
+          "Billing for services"
+        ]
+      },
+      {
+        "title": "4. Legal basis",
+        "content": "Data processing is based on your explicit consent and the necessity to fulfill the therapeutic services contract. Also, processing may be necessary to comply with the legal obligations of the psychotherapy profession."
+      },
+      {
+        "title": "5. Confidentiality",
+        "content": "All information shared within the therapeutic relationship is strictly confidential. Data will not be disclosed to third parties, except when required by law or when there is an imminent risk to your safety or the safety of others."
+      },
+      {
+        "title": "6. Your rights",
+        "content": "Under GDPR, you have the following rights:",
+        "list": [
+          "Right to access personal data",
+          "Right to rectification of inaccurate data",
+          "Right to erasure of data under certain conditions",
+          "Right to restrict processing",
+          "Right to data portability",
+          "Right to object",
+          "Right to complain to the supervisory authority"
+        ]
+      },
+      {
+        "title": "7. Data retention",
+        "content": "Data will be kept for the period necessary to fulfill the purposes for which it was collected and in accordance with legal obligations in clinical psychology. Generally, therapeutic records are kept for 5 years after the end of therapy."
+      },
+      {
+        "title": "8. Data security",
+        "content": "Appropriate technical and organizational measures are implemented to protect your data against unauthorized access, modification, disclosure or destruction."
+      },
+      {
+        "title": "9. Contact",
+        "content": "For any questions regarding the processing of your personal data or to exercise your GDPR rights, you can contact me at: contact@oanatenea.ro or +40 123 456 789."
+      },
+      {
+        "title": "10. Modifications",
+        "content": "This privacy policy may be updated periodically to reflect changes in practices or legal requirements. Date of last update: {{date}}."
+      }
+    ]
+  },
+  "privacy": {
+    "seo_title": "Privacy Policy and GDPR - Oana Tenea Psychotherapist",
+    "seo_desc": "Privacy policy and personal data protection in accordance with GDPR for the psychotherapy services offered by Oana Tenea.",
+    "header": {
+      "title": "Privacy Policy & GDPR",
+      "subtitle": "Personal data protection and confidentiality are priorities in my psychotherapy practice"
+    },
+    "intro": {
+      "title": "1. Introduction",
+      "p1": "This Privacy Policy explains how <strong>Oana Tenea</strong>, authorized psychotherapist, collects, uses, stores and protects your personal information as part of the psychotherapy services offered.",
+      "p2": "Respect for confidentiality and personal data protection represents the foundation of my professional practice, in accordance with <strong>GDPR</strong> (General Data Protection Regulation) and current Romanian legislation.",
+      "date": "📅 Date of last update: January 2025",
+      "applies": "This policy applies to all services offered through the website and psychotherapy consultations."
+    },
+    "data_collected": {
+      "title": "2. What Personal Data I Collect",
+      "id_title": "Identification Data",
+      "id_list": [
+        "First and last name",
+        "Age and date of birth",
+        "Email address",
+        "Phone number",
+        "Home address (if relevant)"
+      ],
+      "clinical_title": "Clinical Data",
+      "clinical_list": [
+        "Information about mental state",
+        "Relevant medical history",
+        "Therapy session notes",
+        "Therapeutic goals",
+        "Progress in therapy"
+      ]
+    },
+    "purpose": {
+      "title": "3. Purpose of Data Processing",
+      "items": [
+        {
+          "title": "🎯 Providing Psychotherapy Services",
+          "desc": "Data is used for planning, conducting and monitoring progress in the therapeutic process."
+        },
+        {
+          "title": "📞 Communication with Clients",
+          "desc": "For scheduling sessions, confirmations, rescheduling and important therapy-related communications."
+        },
+        {
+          "title": "⚖️ Compliance with Legal Obligations",
+          "desc": "Compliance with professional and legal regulations applicable to the psychotherapy profession."
+        }
+      ]
+    },
+    "legal_basis": {
+      "title": "4. Legal Basis for Processing",
+      "items": [
+        {
+          "title": "Explicit Consent",
+          "desc": "You grant explicit consent for processing data for therapeutic purposes."
+        },
+        {
+          "title": "Execution of Contract",
+          "desc": "Processing is necessary for fulfilling the psychotherapy services contract."
+        },
+        {
+          "title": "Legal Obligations",
+          "desc": "Compliance with professional regulations and legal obligations specific to the profession."
+        }
+      ]
+    },
+    "security": {
+      "title": "5. Data Security and Protection",
+      "items": [
+        {
+          "title": "SSL Encryption",
+          "desc": "All communications are protected by enterprise-level SSL encryption."
+        },
+        {
+          "title": "Secure Storage",
+          "desc": "Data is stored on secure servers with restricted access and regular backups."
+        },
+        {
+          "title": "Controlled Access",
+          "desc": "Only authorized personnel have access to your data, on a \"need-to-know\" basis."
+        }
+      ]
+    },
+    "rights": {
+      "title": "6. Your GDPR Rights",
+      "items": [
+        {
+          "title": "Right of Access",
+          "desc": "You can request a copy of all personal data I hold about you.",
+          "icon": "👁️"
+        },
+        {
+          "title": "Right to Rectification",
+          "desc": "You can request the correction of inaccurate data or completion of incomplete data.",
+          "icon": "✏️"
+        },
+        {
+          "title": "Right to Erasure",
+          "desc": "Under certain conditions, you can request the deletion of personal data (subject to legal retention obligations).",
+          "icon": "🗑️"
+        },
+        {
+          "title": "Right to Portability",
+          "desc": "You can request the transfer of data to another service provider in a structured format.",
+          "icon": "📤"
+        },
+        {
+          "title": "Right to Object",
+          "desc": "You can object to data processing in certain specific circumstances.",
+          "icon": "🛑"
+        },
+        {
+          "title": "Right to Restriction",
+          "desc": "You can request the limitation of data processing in certain situations.",
+          "icon": "⏸️"
+        }
+      ]
+    },
+    "retention": {
+      "title": "7. Data Retention Period",
+      "active": "Active files:",
+      "active_desc": "During the therapeutic relationship",
+      "archived": "Archived files:",
+      "archived_desc": "5 years after ending therapy (according to law)",
+      "contact": "Contact data:",
+      "contact_desc": "Until consent is withdrawn"
+    },
+    "contact": {
+      "title": "8. Contact and Exercising Rights",
+      "gdpr_title": "📧 Contact for GDPR",
+      "email": "psihoterapeut@oanatenea.ro",
+      "address": "Calea Dorobanti 116-122, Sector 1, Bucharest",
+      "response_time": "Maximum 30 calendar days",
+      "auth_title": "⚖️ Supervisory Authority",
+      "auth_name": "ANSPDCP",
+      "auth_desc": "(National Supervisory Authority for Personal Data Processing)",
+      "auth_website": "Website: dataprotection.ro",
+      "auth_complaint": "You can file a complaint if you believe your rights are not respected."
+    },
+    "footer": {
+      "priority": "Your privacy and safety are my priority.",
+      "updates": "This policy may be updated periodically. I will inform you of any important changes by email or by publishing a notice on the site."
+    }
+  }
+}

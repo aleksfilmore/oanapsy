@@ -1,62 +1,14 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const SelfAssessmentQuiz = () => {
+    const { t } = useTranslation();
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [answers, setAnswers] = useState([]);
     const [showResults, setShowResults] = useState(false);
 
-    const questions = [
-        {
-            id: 1,
-            question: "Cât de des te simți îngrijorat(ă) sau anxios(ă)?",
-            options: [
-                { text: "Niciodată sau foarte rar", score: 0 },
-                { text: "Câteva zile pe lună", score: 1 },
-                { text: "Câteva zile pe săptămână", score: 2 },
-                { text: "Aproape zilnic", score: 3 }
-            ]
-        },
-        {
-            id: 2,
-            question: "Cât de dificil îți este să te relaxezi?",
-            options: [
-                { text: "Pentru deloc dificil", score: 0 },
-                { text: "Puțin dificil", score: 1 },
-                { text: "Destul de dificil", score: 2 },
-                { text: "Foarte dificil", score: 3 }
-            ]
-        },
-        {
-            id: 3,
-            question: "Cât de des îți faci griji excessive despre diferite lucruri?",
-            options: [
-                { text: "Niciodată", score: 0 },
-                { text: "Câteodată", score: 1 },
-                { text: "Destul de des", score: 2 },
-                { text: "Foarte des", score: 3 }
-            ]
-        },
-        {
-            id: 4,
-            question: "Cât de des te simți nelinștit(ă), ca și cum nu poți sta pe loc?",
-            options: [
-                { text: "Niciodată", score: 0 },
-                { text: "Câteodată", score: 1 },
-                { text: "Destul de des", score: 2 },
-                { text: "Aproape mereu", score: 3 }
-            ]
-        },
-        {
-            id: 5,
-            question: "Cât de des îți este greu să te concentrezi din cauza grijilor?",
-            options: [
-                { text: "Niciodată", score: 0 },
-                { text: "Câteodată", score: 1 },
-                { text: "Destul de des", score: 2 },
-                { text: "Foarte des", score: 3 }
-            ]
-        }
-    ];
+    const questions = t('quiz.questions', { returnObjects: true });
+
 
     const handleAnswerSelect = (score) => {
         const newAnswers = [...answers];
@@ -75,34 +27,35 @@ const SelfAssessmentQuiz = () => {
     };
 
     const getResultMessage = (score) => {
+        const results = t('quiz.results', { returnObjects: true });
         if (score <= 5) {
             return {
-                level: "Anxietate minimă",
-                message: "Nivelul tău de anxietate pare să fie în limitele normale. Continuă să îți îngrijești sănătatea mentală prin practici de self-care.",
+                level: results.minimal.level,
+                message: results.minimal.message,
                 color: "text-green-600",
                 bgColor: "bg-green-50",
                 borderColor: "border-green-200"
             };
         } else if (score <= 10) {
             return {
-                level: "Anxietate ușoară",
-                message: "Experimentezi un nivel ușor de anxietate. Ar putea fi util să înveți tehnici de relaxare și să discuți cu un specialist.",
+                level: results.mild.level,
+                message: results.mild.message,
                 color: "text-yellow-600",
                 bgColor: "bg-yellow-50",
                 borderColor: "border-yellow-200"
             };
         } else if (score <= 15) {
             return {
-                level: "Anxietate moderată",
-                message: "Nivelul tău de anxietate este moderat. Te încurajez să cauți sprijin profesional pentru a învăța strategii de gestionare eficiente.",
+                level: results.moderate.level,
+                message: results.moderate.message,
                 color: "text-orange-600",
                 bgColor: "bg-orange-50",
                 borderColor: "border-orange-200"
             };
         } else {
             return {
-                level: "Anxietate severă",
-                message: "Rezultatele indică un nivel ridicat de anxietate. Este important să contactezi un specialist în sănătate mentală pentru evaluare și tratament.",
+                level: results.severe.level,
+                message: results.severe.message,
                 color: "text-red-600",
                 bgColor: "bg-red-50",
                 borderColor: "border-red-200"
@@ -127,9 +80,9 @@ const SelfAssessmentQuiz = () => {
                         <div className="w-20 h-20 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-lg">
                             <span className="text-3xl">📊</span>
                         </div>
-                        <h3 className="text-2xl font-bold text-deep-earth mb-2">Rezultatele tale</h3>
+                        <h3 className="text-2xl font-bold text-deep-earth mb-2">{t('quiz.ui.your_results')}</h3>
                         <div className={`${result.color} text-xl font-semibold mb-4`}>
-                            {result.level} (Scor: {score}/15)
+                            {result.level} ({t('quiz.ui.score')}: {score}/15)
                         </div>
                     </div>
                     
@@ -138,12 +91,12 @@ const SelfAssessmentQuiz = () => {
                     </p>
 
                     <div className="bg-white/50 rounded-2xl p-6 mb-8">
-                        <h4 className="font-bold text-deep-earth mb-3">💡 Recomandări generale:</h4>
+                        <h4 className="font-bold text-deep-earth mb-3">{t('quiz.ui.recommendations')}</h4>
                         <ul className="text-left space-y-2 text-gray-700">
-                            <li>• Practică exerciții de respirație și relaxare</li>
-                            <li>• Menține un stil de viață sănătos (exerciții, somn, alimentație)</li>
-                            <li>• Vorbește cu apropiații despre cum te simți</li>
-                            <li>• Consideră consultarea unui psihoterapeut</li>
+                            <li>{t('quiz.ui.rec1')}</li>
+                            <li>{t('quiz.ui.rec2')}</li>
+                            <li>{t('quiz.ui.rec3')}</li>
+                            <li>{t('quiz.ui.rec4')}</li>
                         </ul>
                     </div>
 
@@ -152,18 +105,18 @@ const SelfAssessmentQuiz = () => {
                             onClick={resetQuiz}
                             className="px-6 py-3 bg-terracotta text-white font-semibold rounded-xl hover:bg-warm-orange transition-colors duration-300"
                         >
-                            Refă testul
+                            {t('quiz.ui.btn_retake')}
                         </button>
                         <a
                             href="/contact"
                             className="px-6 py-3 bg-deep-earth text-white font-semibold rounded-xl hover:bg-charcoal-text transition-colors duration-300"
                         >
-                            Programează o consultație
+                            {t('quiz.ui.btn_consultation')}
                         </a>
                     </div>
 
                     <p className="text-sm text-gray-600 mt-6">
-                        *Acest test este doar orientativ și nu înlocuiește o evaluare profesională.
+                        {t('quiz.ui.disclaimer')}
                     </p>
                 </div>
             </div>
@@ -188,7 +141,7 @@ const SelfAssessmentQuiz = () => {
                             <span className="text-white text-2xl font-bold">{currentQuestion + 1}</span>
                         </div>
                         <h3 className="text-xl font-bold text-deep-earth mb-2">
-                            Întrebarea {currentQuestion + 1} din {questions.length}
+                            {t('quiz.ui.question_x_of_y', { current: currentQuestion + 1, total: questions.length })}
                         </h3>
                         <div className="w-24 h-1 bg-gradient-to-r from-terracotta to-warm-orange rounded-full mx-auto"></div>
                     </div>
@@ -223,7 +176,7 @@ const SelfAssessmentQuiz = () => {
                     {/* Footer */}
                     <div className="mt-8 text-center">
                         <p className="text-sm text-gray-500">
-                            Răspunde sincer pentru rezultate mai precise
+                            {t('quiz.ui.answer_honestly')}
                         </p>
                     </div>
                 </div>

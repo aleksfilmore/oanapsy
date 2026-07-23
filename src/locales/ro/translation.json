@@ -1,0 +1,996 @@
+{
+  "header": {
+    "home": "Acasă",
+    "about": "Despre Mine",
+    "services": "Servicii Psihoterapie",
+    "resources": "Resurse",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "footer": {
+    "title": "Oana Tenea",
+    "subtitle": "Psiholog clinician și Psihoterapeut",
+    "quickLinks": "Link-uri utile",
+    "services": "Servicii",
+    "individualTherapy": "Psihoterapie individuală",
+    "coupleTherapy": "Terapie de cuplu",
+    "onlineTherapy": "Terapie online",
+    "contact": "Contact",
+    "rights": "Toate drepturile rezervate",
+    "privacy": "Politica de confidențialitate",
+    "terms": "Termeni și condiții"
+  },
+  "cookie": {
+    "text": "Acest site folosește cookie-uri pentru a vă asigura cea mai bună experiență pe site-ul nostru. Prin continuarea navigării, sunteți de acord cu utilizarea cookie-urilor conform ",
+    "policyLink": "Politicii de Confidențialitate",
+    "acceptBtn": "Am înțeles"
+  },
+  "home": {
+    "tag": "💛 Psihoterapie & Consiliere",
+    "title1": "Primul pas către ",
+    "title2": "tine",
+    "desc_mobile": "Sunt <1>Oana Tenea</1>, psihoterapeut certificat. Te ajut cu anxietate, depresie și provocări emoționale.",
+    "desc_desktop": "Sunt <1>Oana Tenea</1>, psihoterapeut cu experiență în consiliere psihologică, terapie de cuplu și suport pentru anxietate, depresie și alte provocări emoționale.",
+    "cred1": "Psihoterapeut autorizat",
+    "cred2": "București și online",
+    "cred3": "Abordare empată și profesională",
+    "btn_book": "Programează consultație",
+    "btn_about": "Despre mine",
+    "breathe_tag": "🌸 Tehnici de relaxare",
+    "breathe_title": "Exercițiu de respirație pentru anxietate",
+    "breathe_desc": "Începe acum cu această tehnică simplă de respirație pentru a-ți calma mintea și a reduce stresul.",
+    "blog_title": "Articole recente din ",
+    "blog_title_highlight": "blog",
+    "blog_desc": "Descoperă sfaturi practice și perspective profesionale pentru sănătatea ta mentală",
+    "blog_collab": "În colaborare cu SmartLiving.ro",
+    "blog_collab_desc": "Articole publicate de Oana Tenea despre psihologie, relații și dezvoltare personală.",
+    "blog_read_smartliving": "Citește pe SmartLiving",
+    "blog_read_more": "Citește mai mult",
+    "blog_btn_all": "Vezi toate articolele",
+    "cta_title1": "Ești gata să faci",
+    "cta_title2": "primul pas?",
+    "cta_desc": "Contactează-mă pentru a programa o consultație și să discutăm cum te pot ajuta să-ți atingi obiectivele de sănătate mentală.",
+    "cta_btn_book": "Programează o consultație",
+    "cta_btn_services": "Despre servicii",
+    "quiz_tag": "🧠 Evaluare personală",
+    "quiz_title": "Test de autoevaluare pentru anxietate",
+    "quiz_desc": "Completează acest scurt test pentru a înțelege mai bine nivelul tău de anxietate și pentru a afla cum te pot ajuta.",
+    "ig_title": "@psihoterapeut.oanatenea",
+    "ig_desc": "Urmărește-mă pe Instagram pentru insights zilnice despre psihologie și wellbeing",
+    "ig_follow": "Follow",
+    "ig_view": "Vezi pe Instagram",
+    "ig_view_all": "Vezi toate postările"
+  },
+  "about": {
+    "title": "Eu sunt Oana",
+    "qualifications": "Calificări Profesionale",
+    "q1": "Psihoterapeut cognitiv-comportamental",
+    "q2": "Specialist în terapia centrată pe scheme cognitive",
+    "q3": "Psihoterapeut de cuplu și familie",
+    "q4": "Membru Colegiul Psihologilor din România",
+    "contact_title": "Hai să vorbim!",
+    "contact_desc": "Sunt aici să te ascult și să te sprijin în călătoria ta către vindecarea emoțională.",
+    "contact_btn": "Programează",
+    "welcome": "Bine ai venit! 👋",
+    "story1": "Sunt psihoterapeut de formare cognitiv–comportamentală, psihoterapeut de formare în terapia centrată pe scheme cognitive, psihoterapeut de cuplu (familie) și membru al Colegiului Psihologilor din România.",
+    "story2": "Dar nu în ultimul rând, sunt <1>soție, mamă și prietenă</1>. Dorința de a relaționa cu o gamă largă de oameni, din diferite medii multiculturale, m-a îndreptat către alegerea acestei profesii. Curiozitatea, prin natura mea, mă sprijină ca un tovarăș în calea cunoașterii de sine și a celor din jurul meu.",
+    "story3": "Pornind de la misterele cunoașterii psihicului uman și a emoțiilor ce țin de fiecare trăire a noastră, am descoperit, printr-un lung proces, o cale care mi-a îmbogățit viața și relațiile în același timp.",
+    "approach_title": "Abordarea Mea Terapeutică",
+    "approach_desc1": "Folosesc o <1>abordare integrativă</1>, cu o bază solidă în terapia cognitiv-comportamentală (CBT), completată de tehnici din terapia centrată pe compasiune și mindfulness. Aceasta înseamnă că vom lucra împreună, în mod colaborativ, pentru a identifica tiparele de gândire și comportament care îți provoacă suferință și le vom înlocui cu altele noi, mai sănătoase și mai adaptative.",
+    "approach_quote": "\"Pun un accent deosebit pe <1>relația terapeutică</1>, considerând-o fundamentul oricărui proces de schimbare reușit.\"",
+    "spec_title": "Specializări",
+    "s1_title": "Anxietate și Atacuri de Panică",
+    "s1_desc": "Tehnici CBT pentru managementul anxietății",
+    "s2_title": "Depresie și Mood",
+    "s2_desc": "Sprijin în depășirea episoadelor depresive",
+    "s3_title": "Terapie de Cuplu",
+    "s3_desc": "Îmbunătățirea comunicării și intimității",
+    "s4_title": "Traumă și PTSD",
+    "s4_desc": "Procesarea experiențelor traumatice",
+    "s5_title": "Tulburări Alimentare",
+    "s5_desc": "Suport pentru binge eating și alte tulburări",
+    "s6_title": "Relații Familiale",
+    "s6_desc": "Dinamici familiale și comunicare"
+  },
+  "services": {
+    "title": "Cum te pot ajuta",
+    "subtitle": "Îți ofer un spațiu sigur și confidențial pentru a explora provocările cu care te confrunți și pentru a descoperi resurse noi pentru o viață mai împlinită.",
+    "in_person": "Ședințe în Cabinet",
+    "in_person_desc": "Te întampin în cabinetul meu din București, într-un mediu calm și primitor, special amenajat pentru a facilita un dialog deschis și autentic. Aici poți vorbi liber despre orice te preocupă.",
+    "individual": "Ședință individuală (50 minute)",
+    "couple": "Ședință de cuplu (75 minute)",
+    "initial": "Consultație inițială",
+    "online": "Ședințe Online",
+    "online_desc": "Înțeleg că nu întotdeauna este posibil să ajungi fizic la cabinet. De aceea ofer și ședințe online, care au aceeași eficacitate și confidențialitate, dar îți permit să participi din confortul casei tale.",
+    "home_access": "Acces din confortul casei",
+    "flex_schedule": "Program flexibil",
+    "quality": "Aceeași calitate și confidențialitate",
+    "approach": "Abordarea mea terapeutică",
+    "approach_sub": "Fiecare persoană este unică, la fel și călătoria ei către vindecare",
+    "app1_title": "Personalizat și adaptat",
+    "app1_desc": "Nu există soluții universale. Îmi adaptez metodele în funcție de personalitatea ta, stilul de învățare și obiectivele specifice. Combin elemente din terapia cognitiv-comportamentală, mindfulness și alte abordări dovedite științific.",
+    "app2_title": "Empatic și fără judecăți",
+    "app2_desc": "Îți ofer un spațiu complet sigur, unde poți fi autentic fără teamă de judecată. Cred că vindecarea se întâmplă în relații de încredere, unde te simți văzut, înțeles și acceptat exact așa cum ești.",
+    "app3_title": "Orientat spre soluții",
+    "app3_desc": "Deși explorăm trecutul pentru înțelegere, focusul nostru principal este pe prezent și viitor. Împreună identificăm resurse și construim strategii practice care te ajută să te simți mai puternic și mai echilibrat.",
+    "app4_title": "Colaborativ și transparent",
+    "app4_desc": "Tu ești expertul propriei vieți, iar eu aduc expertiza terapeutică. Lucrăm împreună ca parteneri, iar tu ești mereu informat despre progresul nostru și direcția în care mergem.",
+    "areas": "Domeniile mele de expertiză",
+    "areas_sub": "Îmi dedic experiența și cunoștințele pentru a te sprijini în aceste arii:",
+    "methods": "Metode folosite:",
+    "faq": "Întrebări Frecvente",
+    "faq_sub": "Răspunsuri la cele mai comune întrebări despre psihoterapie",
+    "cta_title": "Ești gata să faci primul pas?",
+    "cta_desc": "Știu că poate fi intimidant să cauți ajutor, dar curajul tău de a fi aici este deja un pas important. Sunt aici să te însoțesc în această călătorie către o viață mai împlinită.",
+    "cta_btn": "Hai să vorbim!",
+    "areas_data": {
+      "panic": {
+        "title": "Atacuri de panică",
+        "content": "Te ajut să înțelegi și să gestionezi atacurile de panică prin tehnici dovedite științific. Împreună vom identifica trigger-urile și vom construi strategii personalizate pentru a-ți recâștiga controlul.",
+        "t1": "Tehnici de respirație controlată",
+        "t2": "Restructurare cognitivă",
+        "t3": "Expunere graduală și sigură",
+        "highlight": "Rezultate vizibile în 6-8 ședințe"
+      },
+      "anxiety": {
+        "title": "Anxietate",
+        "content": "Anxietatea nu trebuie să-ți controleze viața. Îți ofer instrumente practice pentru a transforma grija în claritate și liniștea în putere interioară.",
+        "t1": "Mindfulness și meditație",
+        "t2": "Managementul gândurilor anxioase",
+        "t3": "Tehnici de relaxare progresivă",
+        "highlight": "Abordare holistică și personalizată"
+      },
+      "depression": {
+        "title": "Depresie",
+        "content": "Înțeleg că depresia poate face totul să pară imposibil. Sunt aici să te acompaniez pas cu pas către redescoperirea bucuriei și a sensului în viața ta.",
+        "t1": "Activarea comportamentală",
+        "t2": "Reevaluarea gândurilor negative",
+        "t3": "Dezvoltarea strategiilor de coping",
+        "highlight": "Sprijin empatic și profesional"
+      },
+      "couple": {
+        "title": "Terapie de cuplu și familie",
+        "content": "Relațiile au nevoie de îngrijire. Te ajut să construiești punți de comunicare autentică și să întărești legăturile care contează cu adevărat pentru tine.",
+        "t1": "Comunicare nonviolentă",
+        "t2": "Rezolvarea constructivă a conflictelor",
+        "t3": "Întărirea intimității emoționale",
+        "highlight": "Focus pe conexiune și înțelegere"
+      },
+      "trauma": {
+        "title": "Traumă și doliu",
+        "content": "Durerea pierderii este una dintre cele mai profunde experiențe umane. Îți ofer un spațiu sigur pentru a procesa trauma și a găsi drumul către vindecare.",
+        "t1": "Procesarea traumei prin EMDR",
+        "t2": "Tehnici de doliu adaptate",
+        "t3": "Reconstruirea sensului și speranței",
+        "highlight": "Abordare delicată și specializată"
+      },
+      "growth": {
+        "title": "Dezvoltare personală",
+        "content": "Te susțin în călătoria spre cea mai bună versiune a ta. Împreună explorăm potențialul tău și construim strategii pentru o viață mai împlinită și autentică.",
+        "t1": "Autocunoaștere profundă",
+        "t2": "Stabilirea și atingerea obiectivelor",
+        "t3": "Îmbunătățirea relațiilor interpersonale",
+        "highlight": "Creștere sustenabilă și autentică"
+      }
+    },
+    "faqs_data": {
+      "q1": {
+        "q": "Cum știu dacă am nevoie de terapie?",
+        "a": "Dacă simți că provocările din viața ta te depășesc, dacă emoțiile negative persistă mai mult de două săptămâni, sau pur și simplu dorești să te cunoști mai bine și să creezi schimbări pozitive, terapia poate fi un sprijin valoros. Nu trebuie să aștepți până când lucrurile devin foarte dificile."
+      },
+      "q2": {
+        "q": "Cât durează o ședință și cum se desfășoară?",
+        "a": "Ședințele individuale durează 50 de minute, iar cele de cuplu 75 de minute. În prima ședință ne cunoaștem și explorăm împreună situația ta. Stabilim obiective clare și discutăm despre așteptările tale. Fiecare ședință ulterioară este adaptată nevoilor tale specifice."
+      },
+      "q3": {
+        "q": "Este confidențialitatea garantată?",
+        "a": "Absolut da. Tot ce îmi spui rămâne între noi, conform codului deontologic profesional. Confidențialitatea este fundamentul încrederii terapeutice și o respect cu strictețe. Singurul caz când aș putea divulga informații este dacă există un risc iminent pentru siguranța ta sau a altora."
+      },
+      "q4": {
+        "q": "Cât durează procesul terapeutic?",
+        "a": "Durata variază în funcție de obiectivele tale și de natura provocărilor cu care te confrunți. Unele situații se îmbunătățesc în câteva ședințe, altele necesită mai mult timp. De obicei, primele schimbări pozitive le observi după 6-8 ședințe. Voi fi transparentă cu tine în privința progresului și vom evalua periodic cum evoluzăm."
+      },
+      "q5": {
+        "q": "Diferă terapia online de cea față în față?",
+        "a": "Eficacitatea este aceeași, iar confidențialitatea la fel de strictă. Mulți dintre clienții mei preferă terapia online pentru flexibilitatea oferită. Important este să ai un spațiu privat și o conexiune stabilă la internet. Îți voi explica cum să îți pregătești mediul pentru a beneficia la maximum de ședințe."
+      }
+    }
+  },
+  "contact": {
+    "title": "Programare & Contact",
+    "subtitle": "Sunt aici să te ascult și să te sprijin în călătoria ta către vindecarea emoțională.",
+    "schedule": "Programează o ședință",
+    "err_captcha": "Te rog să completezi verificarea anti-spam.",
+    "err_spam": "Ai trimis prea multe mesaje. Te rog să aștepți {{min}} minute înainte să încerci din nou.",
+    "err_generic": "A apărut o eroare neașteptată. Te rog să încerci din nou sau să mă contactezi direct la psihoterapeut@oanatenea.ro",
+    "f_name": "Nume complet *",
+    "f_name_ph": "Introduceti numele complet",
+    "f_email": "Email *",
+    "f_phone": "Telefon",
+    "f_type": "Tip ședință",
+    "opt_individual": "Ședință individuală",
+    "opt_couple": "Terapie de cuplu",
+    "opt_consultation": "Consultație inițială",
+    "opt_online": "Ședință online",
+    "f_msg": "Mesaj *",
+    "f_msg_ph": "Descrieti pe scurt motivul pentru care doriti o sedinta de psihoterapie...",
+    "btn_sending": "Se trimite...",
+    "btn_send": "Trimite mesajul",
+    "info_title": "Informații de contact",
+    "email": "Email",
+    "office": "Cabinet",
+    "address1": "CALEA DOROBANTI 116-122",
+    "address2": "SECTOR 1 - BUCURESTI",
+    "program": "Program",
+    "monday_thursday": "Luni - Joi:",
+    "available": "Disponibil",
+    "tip": "💡 <1>Sfat:</1> Programările se fac cu minim 48h înainte. Pentru urgențe, scrieți prin email.",
+    "privacy_title": "Confidențialitate",
+    "privacy_desc": "Toate informațiile partajate sunt <1>strict confidențiale</1> și protejate conform normelor GDPR. Relația terapeutică se bazează pe încredere și respect mutual. Datele personale nu vor fi niciodată partajate cu terțe părți fără consimțământul explicit."
+  },
+  "resources_page": {
+    "title1": "Resurse pentru",
+    "title2": "Sănătatea Mintală",
+    "subtitle": "Instrumente interactive, ghiduri practice și resurse pentru a te sprijini în călătoria ta către echilibrul interior și bunăstarea emoțională.",
+    "feat1_title": "Auto-evaluare",
+    "feat1_desc": "Teste pentru a-ți înțelege starea emoțională",
+    "feat2_title": "Resurse utile",
+    "feat2_desc": "Cărți, aplicații și exerciții",
+    "feat3_title": "FAQ interactiv",
+    "feat3_desc": "Răspunsuri la întrebările frecvente",
+    "nav1": "🧠 Auto-evaluare",
+    "nav2": "📚 Resurse",
+    "nav3": "❓ FAQ",
+    "cta_title": "Ești gata pentru următorul pas?",
+    "cta_desc": "Aceste resurse sunt un început. Pentru un sprijin personalizat și profesional, să discutăm despre nevoile tale specifice.",
+    "cta_btn1": "📞 Programează o consultație",
+    "cta_btn2": "👩‍⚕️ Despre mine",
+    "seo_title": "Resurse pentru Sănătatea Mintală - Oana Tenea Psihoterapeut",
+    "seo_desc": "Instrumente interactive, teste de auto-evaluare, resurse de urgență și ghiduri practice pentru sănătatea ta mentală. Dezvoltate de psihoterapeutul Oana Tenea."
+  },
+  "quiz": {
+    "questions": [
+      {
+        "id": 1,
+        "question": "Cât de des te simți îngrijorat(ă) sau anxios(ă)?",
+        "options": [
+          {
+            "text": "Niciodată sau foarte rar",
+            "score": 0
+          },
+          {
+            "text": "Câteva zile pe lună",
+            "score": 1
+          },
+          {
+            "text": "Câteva zile pe săptămână",
+            "score": 2
+          },
+          {
+            "text": "Aproape zilnic",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "question": "Cât de dificil îți este să te relaxezi?",
+        "options": [
+          {
+            "text": "Pentru deloc dificil",
+            "score": 0
+          },
+          {
+            "text": "Puțin dificil",
+            "score": 1
+          },
+          {
+            "text": "Destul de dificil",
+            "score": 2
+          },
+          {
+            "text": "Foarte dificil",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "question": "Cât de des îți faci griji excessive despre diferite lucruri?",
+        "options": [
+          {
+            "text": "Niciodată",
+            "score": 0
+          },
+          {
+            "text": "Câteodată",
+            "score": 1
+          },
+          {
+            "text": "Destul de des",
+            "score": 2
+          },
+          {
+            "text": "Foarte des",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "question": "Cât de des te simți nelinștit(ă), ca și cum nu poți sta pe loc?",
+        "options": [
+          {
+            "text": "Niciodată",
+            "score": 0
+          },
+          {
+            "text": "Câteodată",
+            "score": 1
+          },
+          {
+            "text": "Destul de des",
+            "score": 2
+          },
+          {
+            "text": "Aproape mereu",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Cât de des îți este greu să te concentrezi din cauza grijilor?",
+        "options": [
+          {
+            "text": "Niciodată",
+            "score": 0
+          },
+          {
+            "text": "Câteodată",
+            "score": 1
+          },
+          {
+            "text": "Destul de des",
+            "score": 2
+          },
+          {
+            "text": "Foarte des",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "results": {
+      "minimal": {
+        "level": "Anxietate minimă",
+        "message": "Nivelul tău de anxietate pare să fie în limitele normale. Continuă să îți îngrijești sănătatea mentală prin practici de self-care."
+      },
+      "mild": {
+        "level": "Anxietate ușoară",
+        "message": "Experimentezi un nivel ușor de anxietate. Ar putea fi util să înveți tehnici de relaxare și să discuți cu un specialist."
+      },
+      "moderate": {
+        "level": "Anxietate moderată",
+        "message": "Nivelul tău de anxietate este moderat. Te încurajez să cauți sprijin profesional pentru a învăța strategii de gestionare eficiente."
+      },
+      "severe": {
+        "level": "Anxietate severă",
+        "message": "Rezultatele indică un nivel ridicat de anxietate. Este important să contactezi un specialist în sănătate mentală pentru evaluare și tratament."
+      }
+    },
+    "ui": {
+      "your_results": "Rezultatele tale",
+      "score": "Scor",
+      "recommendations": "💡 Recomandări generale:",
+      "rec1": "• Practică exerciții de respirație și relaxare",
+      "rec2": "• Menține un stil de viață sănătos (exerciții, somn, alimentație)",
+      "rec3": "• Vorbește cu apropiații despre cum te simți",
+      "rec4": "• Consideră consultarea unui psihoterapeut",
+      "btn_retake": "Refă testul",
+      "btn_consultation": "Programează o consultație",
+      "disclaimer": "*Acest test este doar orientativ și nu înlocuiește o evaluare profesională.",
+      "question_x_of_y": "Întrebarea {{current}} din {{total}}",
+      "answer_honestly": "Răspunde sincer pentru rezultate mai precise"
+    }
+  },
+  "resources_list": {
+    "categories": [
+      {
+        "id": "emergency",
+        "name": "Urgențe",
+        "icon": "🚨"
+      },
+      {
+        "id": "support",
+        "name": "Suport",
+        "icon": "🤝"
+      },
+      {
+        "id": "books",
+        "name": "Cărți",
+        "icon": "📚"
+      },
+      {
+        "id": "apps",
+        "name": "Aplicații",
+        "icon": "📱"
+      },
+      {
+        "id": "exercises",
+        "name": "Exerciții",
+        "icon": "🧘"
+      }
+    ],
+    "items": {
+      "emergency": {
+        "title": "Resurse de urgență",
+        "icon": "🚨",
+        "color": "bg-red-500",
+        "items": [
+          {
+            "name": "Serviciul de Urgență Național",
+            "contact": "112",
+            "description": "Pentru situații de urgență medicală sau psihiatrică",
+            "available": "24/7",
+            "type": "phone"
+          },
+          {
+            "name": "Telefonul de Ajutor Emoțional",
+            "contact": "0800.808.080",
+            "description": "Linie gratuită de asistență psihologică",
+            "available": "24/7",
+            "type": "phone"
+          },
+          {
+            "name": "Ambulanța București",
+            "contact": "021.9642",
+            "description": "Servicii medicale de urgență în București",
+            "available": "24/7",
+            "type": "phone"
+          },
+          {
+            "name": "Alianța pentru Sănătate Mintală",
+            "contact": "https://aliantasanatatemintala.ro",
+            "description": "Informații și resurse pentru sănătatea mintală",
+            "available": "Online",
+            "type": "website"
+          }
+        ]
+      },
+      "support": {
+        "title": "Linii de suport",
+        "icon": "🤝",
+        "color": "bg-terracotta",
+        "items": [
+          {
+            "name": "Centrul de Prevenție a Suicidului",
+            "contact": "0800.801.200",
+            "description": "Consiliere specializată pentru prevenirea suicidului",
+            "available": "Luni-Vineri 08:00-20:00",
+            "type": "phone"
+          },
+          {
+            "name": "Telefonul Copilului",
+            "contact": "116.111",
+            "description": "Suport specializat pentru copii și adolescenți",
+            "available": "24/7",
+            "type": "phone"
+          },
+          {
+            "name": "Helpline pentru Femei",
+            "contact": "0800.500.333",
+            "description": "Suport pentru femei în situații de abuz",
+            "available": "24/7",
+            "type": "phone"
+          },
+          {
+            "name": "FARA - Fundația de Ajutor Reciproc în Alcoolism",
+            "contact": "0264.420.768",
+            "description": "Suport pentru persoane cu probleme de dependență",
+            "available": "Program",
+            "type": "phone"
+          }
+        ]
+      },
+      "books": {
+        "title": "Cărți recomandate",
+        "icon": "📚",
+        "color": "bg-sage",
+        "items": [
+          {
+            "name": "Puterea momentului prezent",
+            "author": "Eckhart Tolle",
+            "description": "O cale către libertatea spirituală",
+            "category": "Mindfulness",
+            "type": "book"
+          },
+          {
+            "name": "Gândirea rapidă, gândirea lentă",
+            "author": "Daniel Kahneman",
+            "description": "Cum funcționează mintea umană",
+            "category": "Psihologie",
+            "type": "book"
+          },
+          {
+            "name": "Anatomia păcii",
+            "author": "Eckhart Tolle",
+            "description": "Transformarea suferinței prin puterea prezentului",
+            "category": "Dezvoltare personală",
+            "type": "book"
+          },
+          {
+            "name": "Inteligența emoțională",
+            "author": "Daniel Goleman",
+            "description": "Importanța inteligenței emoționale în viață",
+            "category": "Psihologie",
+            "type": "book"
+          },
+          {
+            "name": "Omul în căutarea sensului vieții",
+            "author": "Viktor Frankl",
+            "description": "Lecții profunde despre sensul existenței",
+            "category": "Filosofie",
+            "type": "book"
+          }
+        ]
+      },
+      "apps": {
+        "title": "Aplicații utile",
+        "icon": "📱",
+        "color": "bg-golden-honey",
+        "items": [
+          {
+            "name": "Headspace",
+            "description": "Meditație ghidată și mindfulness",
+            "features": [
+              "Meditații pentru începători",
+              "Programe specializate",
+              "Exerciții de respirație"
+            ],
+            "platform": "iOS/Android",
+            "type": "app"
+          },
+          {
+            "name": "Calm",
+            "description": "Relaxare și somn mai bun",
+            "features": [
+              "Povești pentru adormit",
+              "Muzică relaxantă",
+              "Programe anti-stres"
+            ],
+            "platform": "iOS/Android",
+            "type": "app"
+          },
+          {
+            "name": "MindShift",
+            "description": "Gestionarea anxietății și stresului",
+            "features": [
+              "Tehnici CBT",
+              "Monitorizarea stării",
+              "Planuri personalizate"
+            ],
+            "platform": "iOS/Android",
+            "type": "app"
+          },
+          {
+            "name": "Daylio",
+            "description": "Urmărirea stării de spirit",
+            "features": [
+              "Jurnalul emoțiilor",
+              "Statistici detaliate",
+              "Identificarea tiparelor"
+            ],
+            "platform": "iOS/Android",
+            "type": "app"
+          }
+        ]
+      },
+      "exercises": {
+        "title": "Exerciții practice",
+        "icon": "🧘",
+        "color": "bg-soft-coral",
+        "items": [
+          {
+            "name": "Respirația 4-7-8",
+            "description": "Tehnică de relaxare rapidă",
+            "steps": [
+              "Inspiră prin nas 4 secunde",
+              "Ține respirația 7 secunde",
+              "Expiră prin gură 8 secunde",
+              "Repetă de 3-4 ori"
+            ],
+            "duration": "2-3 minute",
+            "type": "exercise"
+          },
+          {
+            "name": "Jurnalizarea recunoștinței",
+            "description": "Focalizare pe aspectele pozitive",
+            "steps": [
+              "Scrie 3 lucruri pentru care ești recunoscător",
+              "Detaliază de ce ești recunoscător",
+              "Reflectează asupra sentimentelor",
+              "Practică zilnic"
+            ],
+            "duration": "5-10 minute",
+            "type": "exercise"
+          },
+          {
+            "name": "Relaxarea musculară progresivă",
+            "description": "Eliberarea tensiunii fizice",
+            "steps": [
+              "Începe cu degetele de la picioare",
+              "Contractă și relaxează fiecare grup muscular",
+              "Ține contractia 5 secunde",
+              "Relaxează 10 secunde între grupuri"
+            ],
+            "duration": "15-20 minute",
+            "type": "exercise"
+          },
+          {
+            "name": "Tehnica 5-4-3-2-1",
+            "description": "Grounding pentru anxietate",
+            "steps": [
+              "5 lucruri pe care le vezi",
+              "4 lucruri pe care le simți",
+              "3 lucruri pe care le auzi",
+              "2 lucruri pe care le miroși",
+              "1 lucru pe care îl guști"
+            ],
+            "duration": "3-5 minute",
+            "type": "exercise"
+          }
+        ]
+      }
+    },
+    "ui": {
+      "visit_site": "Vizitează site-ul",
+      "by": "de",
+      "steps": "Pași:",
+      "important_title": "⚠️ Important",
+      "important_desc": "Aceste resurse sunt complementare și nu înlocuiesc terapia profesională. În situații de urgență, contactează serviciile de urgență sau mergi la cea mai apropiată unitate medicală."
+    }
+  },
+  "faq": {
+    "items": [
+      {
+        "id": 1,
+        "category": "terapie",
+        "question": "Ce este psihoterapia și cum poate să mă ajute?",
+        "answer": "Psihoterapia este un proces colaborativ între terapeut și client, care vizează îmbunătățirea bunăstării emoționale și mentale. Prin diverse tehnici și abordări, terapia te poate ajuta să înțelegi mai bine emoțiile, să dezvolți strategii de coping sănătoase și să creezi schimbări pozitive în viața ta. Este un spațiu sigur unde poți explora gândurile și sentimentele fără judecată."
+      },
+      {
+        "id": 2,
+        "category": "programare",
+        "question": "Cum pot programa o ședință?",
+        "answer": "Poți programa o ședință prin formularul de contact online. De obicei răspund în maxim 24 de ore pentru a confirma programarea și a discuta detaliile ședinței."
+      },
+      {
+        "id": 3,
+        "category": "online",
+        "question": "Cum funcționează ședințele online?",
+        "answer": "Ședințele online se desfășoară prin platforme sigure de videoconferință (Zoom, Google Meet sau WhatsApp Video). Îți voi trimite link-ul cu câteva ore înainte de ședință. Asigură-te că ai o conexiune stabilă la internet și un spațiu privat unde să nu fii întrerupt. Eficiența terapiei online este comparabilă cu cea față în față."
+      },
+      {
+        "id": 4,
+        "category": "costuri",
+        "question": "Cum pot afla informații despre tarife?",
+        "answer": "Pentru informații detaliate despre tarife și opțiuni de plată, te rog să mă contactezi direct prin email sau telefon. Voi fi bucuroasă să discutăm despre aspectele financiare în cadrul unei conversații personalizate, ținând cont de nevoile tale specifice."
+      },
+      {
+        "id": 5,
+        "category": "confidentialitate",
+        "question": "Cât de confidențiale sunt informațiile pe care le împărtășesc?",
+        "answer": "Confidențialitatea este fundamentală în terapie. Tot ce discutăm rămâne strict confidențial, conform codului deontologic și legilor în vigoare. Singurele excepții ar fi situațiile în care există risc imediat pentru siguranța ta sau a altcuiva, sau când legea impune raportarea (ex: abuzul asupra minorilor)."
+      },
+      {
+        "id": 6,
+        "category": "durata",
+        "question": "Cât durează procesul terapeutic?",
+        "answer": "Durata terapiei variază în funcție de nevoile individuale, obiectivele terapeutice și complexitatea problemelor abordate. Unele persoane observă îmbunătățiri după câteva ședințe, în timp ce altele beneficiază de un proces mai lung. De obicei, evaluez progresul după 6-8 ședințe și discutăm împreună despre continuarea terapiei."
+      },
+      {
+        "id": 7,
+        "category": "terapie",
+        "question": "Ce tip de abordare terapeutică folosești?",
+        "answer": "Folosesc o abordare integrativă, adaptată nevoilor fiecărei persoane. Principalele metode pe care le aplicăm includ Terapia Cognitiv-Comportamentală (TCC), tehnici de mindfulness, terapia bazată pe emoții și elemente de terapie sistemică pentru cupluri și familii. Abordarea se personalizează în funcție de situația ta specifică."
+      },
+      {
+        "id": 8,
+        "category": "prima-sedinta",
+        "question": "La ce să mă aștept la prima ședință?",
+        "answer": "Prima ședință este dedicată cunoașterii și evaluării. Vei putea să îmi povestești despre motivul pentru care ai venit la terapie, istoricul problemelor pe care le înfrunți și obiectivele tale. Îți voi explica cum funcționează procesul terapeutic și vom discuta despre confidențialitate. Este normal să te simți puțin nervos - voi crea un ambiente cald și lipsit de judecăți."
+      },
+      {
+        "id": 9,
+        "category": "urgente",
+        "question": "Ce fac dacă am o criză în afara programului?",
+        "answer": "Pentru situații de urgență, te rog să contactezi serviciile de urgență (112) sau Telefonul de Ajutor Emoțional (0800.808.080 - gratuit, 24/7). Poți să îmi scrii un mesaj și îți voi răspunde cât mai curând posibil, dar pentru crize acute este important să apelezi la serviciile specializate de urgență."
+      },
+      {
+        "id": 10,
+        "category": "cuplu",
+        "question": "Cum știu dacă am nevoie de terapie de cuplu?",
+        "answer": "Terapia de cuplu poate fi benefică atunci când există probleme de comunicare recurente, conflicte nerezolvate, crize de încredere, intimitate redusă sau când simțiți că vă îndepărtați unul de celălalt. Nu este necesar să așteptați până când problemele devin foarte grave - terapia preventivă poate consolida relația și poate preveni escaladarea conflictelor."
+      },
+      {
+        "id": 11,
+        "category": "anulare",
+        "question": "Care este politica de anulare a ședințelor?",
+        "answer": "Te rog să anulezi sau să reprogramezi ședințele cu cel puțin 24 de ore înainte. Anulările făcute cu mai puțin de 24 de ore notificare vor fi taxate 100% din valoarea ședinței. Această politică mă ajută să îmi gestionez timpul și să ofer slot-uri disponibile altor persoane."
+      },
+      {
+        "id": 12,
+        "category": "rezultate",
+        "question": "Cum voi ști că terapia funcționează?",
+        "answer": "Progresul în terapie poate fi observat prin mai multe semne: îmbunătățirea stării de spirit, dezvoltarea unor strategii mai bune de gestionare a stresului, relații mai sănătoase, creșterea încrederii în sine și o mai bună înțelegere de sine. Evaluăm progresul periodic și ajustăm abordarea dacă este necesar. Unele schimbări sunt imediate, altele se dezvoltă gradual."
+      }
+    ],
+    "categories": [
+      {
+        "id": "all",
+        "name": "Toate",
+        "icon": "🌟"
+      },
+      {
+        "id": "terapie",
+        "name": "Despre terapie",
+        "icon": "💭"
+      },
+      {
+        "id": "programare",
+        "name": "Programări",
+        "icon": "📅"
+      },
+      {
+        "id": "online",
+        "name": "Ședințe online",
+        "icon": "💻"
+      },
+      {
+        "id": "costuri",
+        "name": "Costuri",
+        "icon": "💰"
+      },
+      {
+        "id": "confidentialitate",
+        "name": "Confidențialitate",
+        "icon": "🔒"
+      },
+      {
+        "id": "cuplu",
+        "name": "Terapie cuplu",
+        "icon": "💕"
+      }
+    ],
+    "ui": {
+      "title": "Întrebări frecvente",
+      "subtitle": "Răspunsuri la cele mai comune întrebări despre terapie și serviciile mele",
+      "search_placeholder": "Caută în întrebările frecvente...",
+      "found_single": "întrebare găsită",
+      "found_plural": "întrebări găsite",
+      "expand_all": "Extinde toate",
+      "collapse_all": "Închide toate",
+      "not_found_msg": "Nu am găsit întrebări care să corespundă căutării tale.",
+      "reset_filters": "Resetează filtrele",
+      "cta_title": "Nu ai găsit răspunsul la întrebarea ta?",
+      "cta_desc": "Contactează-mă direct și îți voi răspunde personal în cel mai scurt timp.",
+      "cta_btn1": "📧 Trimite un mesaj",
+      "cta_btn2": "📞 Vezi toate modalitățile de contact"
+    }
+  },
+  "legal": {
+    "title": "Politică de Confidențialitate & GDPR",
+    "subtitle": "Protecția datelor dumneavoastră personale este o prioritate pentru mine.",
+    "sections": [
+      {
+        "title": "1. Responsabilul cu protecția datelor",
+        "content": "Oana Tenea, psihoterapeut autorizat, cu sediul în București, România, este responsabilul pentru prelucrarea datelor dumneavoastră personale în conformitate cu Regulamentul General privind Protecția Datelor (GDPR)."
+      },
+      {
+        "title": "2. Datele colectate",
+        "content": "În cadrul serviciilor de psihoterapie, pot fi colectate următoarele categorii de date:",
+        "list": [
+          "Date de identificare (nume, prenume, vârstă)",
+          "Date de contact (telefon, email, adresă)",
+          "Informații medicale și psihologice relevante pentru terapie",
+          "Notițe din ședințele terapeutice",
+          "Date de facturare și plată"
+        ]
+      },
+      {
+        "title": "3. Scopul prelucrării",
+        "content": "Datele dumneavoastră sunt prelucrate pentru:",
+        "list": [
+          "Furnizarea serviciilor de psihoterapie",
+          "Programarea și gestionarea ședințelor",
+          "Comunicarea cu dumneavoastră",
+          "Îndeplinirea obligațiilor legale și profesionale",
+          "Facturarea serviciilor"
+        ]
+      },
+      {
+        "title": "4. Temei legal",
+        "content": "Prelucrarea datelor se bazează pe consimțământul dumneavoastră explicit și pe necesitatea îndeplinirii contractului de servicii terapeutice. De asemenea, prelucrarea poate fi necesară pentru respectarea obligațiilor legale ale profesiei de psihoterapeut."
+      },
+      {
+        "title": "5. Confidențialitatea",
+        "content": "Toate informațiile partajate în cadrul relației terapeutice sunt strict confidențiale. Datele nu vor fi dezvăluite terților, cu excepția situațiilor în care legea impune acest lucru sau când există un risc iminent pentru siguranța dumneavoastră sau a altora."
+      },
+      {
+        "title": "6. Drepturile dumneavoastră",
+        "content": "Conform GDPR, aveți următoarele drepturi:",
+        "list": [
+          "Dreptul de acces la datele personale",
+          "Dreptul la rectificarea datelor inexacte",
+          "Dreptul la ștergerea datelor în anumite condiții",
+          "Dreptul la restricționarea prelucrării",
+          "Dreptul la portabilitatea datelor",
+          "Dreptul la opoziție",
+          "Dreptul de a vă plânge la autoritatea de supraveghere"
+        ]
+      },
+      {
+        "title": "7. Păstrarea datelor",
+        "content": "Datele vor fi păstrate pentru perioada necesară îndeplinirii scopurilor pentru care au fost colectate și în conformitate cu obligațiile legale din domeniul psihologiei clinice. În general, dosarele terapeutice se păstrează timp de 5 ani de la încheierea terapiei."
+      },
+      {
+        "title": "8. Securitatea datelor",
+        "content": "Sunt implementate măsuri tehnice și organizatorice adecvate pentru a proteja datele dumneavoastră împotriva accesului neautorizat, modificării, dezvăluirii sau distrugerii."
+      },
+      {
+        "title": "9. Contact",
+        "content": "Pentru orice întrebări referitoare la prelucrarea datelor dumneavoastră personale sau pentru exercitarea drepturilor GDPR, mă puteți contacta la: contact@oanatenea.ro sau +40 123 456 789."
+      },
+      {
+        "title": "10. Modificări",
+        "content": "Această politică de confidențialitate poate fi actualizată periodic pentru a reflecta modificările în practici sau în cerințele legale. Data ultimei actualizări: {{date}}."
+      }
+    ]
+  },
+  "privacy": {
+    "seo_title": "Politică de Confidențialitate și GDPR - Oana Tenea Psihoterapeut",
+    "seo_desc": "Politica de confidențialitate și protecția datelor personale în conformitate cu GDPR pentru serviciile de psihoterapie oferite de Oana Tenea.",
+    "header": {
+      "title": "Politică de Confidențialitate & GDPR",
+      "subtitle": "Protecția datelor personale și confidențialitatea sunt priorități în practica mea de psihoterapie"
+    },
+    "intro": {
+      "title": "1. Introducere",
+      "p1": "Această Politică de Confidențialitate explică modul în care <strong>Oana Tenea</strong>, psihoterapeut autorizat, colectează, utilizează, stochează și protejează informațiile dumneavoastră personale în cadrul serviciilor de psihoterapie oferite.",
+      "p2": "Respectul pentru confidențialitatea și protecția datelor personale reprezintă fundația practicii mele profesionale, în conformitate cu <strong>GDPR</strong> (Regulamentul General privind Protecția Datelor) și legislația română în vigoare.",
+      "date": "📅 Data ultimei actualizări: Ianuarie 2025",
+      "applies": "Această politică se aplică tuturor serviciilor oferite prin intermediul site-ului web și consultațiilor de psihoterapie."
+    },
+    "data_collected": {
+      "title": "2. Ce Date Personale Colectez",
+      "id_title": "Date de Identificare",
+      "id_list": [
+        "Nume și prenume",
+        "Vârsta și data nașterii",
+        "Adresa de email",
+        "Numărul de telefon",
+        "Adresa de domiciliu (dacă relevant)"
+      ],
+      "clinical_title": "Date Clinice",
+      "clinical_list": [
+        "Informații despre starea psihică",
+        "Istoricul medical relevant",
+        "Notițe din sesiunile de terapie",
+        "Obiective terapeutice",
+        "Progresul în terapie"
+      ]
+    },
+    "purpose": {
+      "title": "3. Scopul Procesării Datelor",
+      "items": [
+        {
+          "title": "🎯 Furnizarea Serviciilor de Psihoterapie",
+          "desc": "Datele sunt utilizate pentru planificarea, desfășurarea și monitorizarea progresului în procesul terapeutic."
+        },
+        {
+          "title": "📞 Comunicarea cu Clienții",
+          "desc": "Pentru programarea sesiunilor, confirmări, reschedulări și comunicări importante legate de terapie."
+        },
+        {
+          "title": "⚖️ Respectarea Obligațiilor Legale",
+          "desc": "Conformarea cu reglementările profesionale și legale aplicabile profesiei de psihoterapeut."
+        }
+      ]
+    },
+    "legal_basis": {
+      "title": "4. Baza Legală pentru Procesare",
+      "items": [
+        {
+          "title": "Consimțământul Explicat",
+          "desc": "Dumneavoastră acordați consimțământul explicit pentru procesarea datelor în scopuri terapeutice."
+        },
+        {
+          "title": "Executarea Contractului",
+          "desc": "Procesarea este necesară pentru îndeplinirea contractului de servicii de psihoterapie."
+        },
+        {
+          "title": "Obligații Legale",
+          "desc": "Respectarea reglementărilor profesionale și a obligațiilor legale specifice profesiei."
+        }
+      ]
+    },
+    "security": {
+      "title": "5. Securitatea și Protecția Datelor",
+      "items": [
+        {
+          "title": "Criptare SSL",
+          "desc": "Toate comunicările sunt protejate prin criptare SSL de nivel enterprise."
+        },
+        {
+          "title": "Stocare Securizată",
+          "desc": "Datele sunt stocate în servere securizate cu acces restrictionat și backup regulat."
+        },
+        {
+          "title": "Acces Controlat",
+          "desc": "Doar personalul autorizat are acces la datele dumneavoastră, pe baza principiului \"need-to-know\"."
+        }
+      ]
+    },
+    "rights": {
+      "title": "6. Drepturile Dumneavoastră GDPR",
+      "items": [
+        {
+          "title": "Dreptul de Acces",
+          "desc": "Puteți solicita o copie a tuturor datelor personale pe care le dețin despre dumneavoastră.",
+          "icon": "👁️"
+        },
+        {
+          "title": "Dreptul de Rectificare",
+          "desc": "Puteți cere corectarea datelor inexacte sau completarea datelor incomplete.",
+          "icon": "✏️"
+        },
+        {
+          "title": "Dreptul la Ștergere",
+          "desc": "În anumite condiții, puteți solicita ștergerea datelor personale (cu respectarea obligațiilor legale de păstrare).",
+          "icon": "🗑️"
+        },
+        {
+          "title": "Dreptul la Portabilitate",
+          "desc": "Puteți solicita transferul datelor către un alt furnizor de servicii în format structurat.",
+          "icon": "📤"
+        },
+        {
+          "title": "Dreptul de Opoziție",
+          "desc": "Puteți vă opune procesării datelor în anumite circumstanțe specifice.",
+          "icon": "🛑"
+        },
+        {
+          "title": "Dreptul de Restricționare",
+          "desc": "Puteți solicita limitarea procesării datelor în anumite situații.",
+          "icon": "⏸️"
+        }
+      ]
+    },
+    "retention": {
+      "title": "7. Perioada de Păstrare a Datelor",
+      "active": "Dosare active:",
+      "active_desc": "Pe durata relației terapeutice",
+      "archived": "Dosare arhivate:",
+      "archived_desc": "5 ani după încheierea terapiei (conform legii)",
+      "contact": "Date de contact:",
+      "contact_desc": "Până la retragerea consimțământului"
+    },
+    "contact": {
+      "title": "8. Contact și Exercitarea Drepturilor",
+      "gdpr_title": "📧 Contact pentru GDPR",
+      "email": "psihoterapeut@oanatenea.ro",
+      "address": "Calea Dorobanti 116-122, Sector 1, București",
+      "response_time": "Maxim 30 de zile calendaristice",
+      "auth_title": "⚖️ Autoritatea de Supraveghere",
+      "auth_name": "ANSPDCP",
+      "auth_desc": "(Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal)",
+      "auth_website": "Website: dataprotection.ro",
+      "auth_complaint": "Puteți depune o plângere dacă considerați că drepturile dumneavoastră nu sunt respectate."
+    },
+    "footer": {
+      "priority": "Confidențialitatea și siguranța dumneavoastră sunt prioritatea mea.",
+      "updates": "Această politică poate fi actualizată periodic. Vă voi informa despre orice modificări importante prin email sau prin publicarea unei notificări pe site."
+    }
+  }
+}

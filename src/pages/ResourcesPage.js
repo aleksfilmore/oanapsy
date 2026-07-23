@@ -1,15 +1,17 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO';
 import SelfAssessmentQuiz from '../components/SelfAssessmentQuiz';
 import MentalHealthResources from '../components/MentalHealthResources';
 import InteractiveFAQ from '../components/InteractiveFAQ';
 
 const ResourcesPage = () => {
+    const { t } = useTranslation();
     return (
         <>
             <SEO 
-                title="Resurse pentru Sănătatea Mintală - Oana Tenea Psihoterapeut"
-                description="Instrumente interactive, teste de auto-evaluare, resurse de urgență și ghiduri practice pentru sănătatea ta mentală. Dezvoltate de psihoterapeutul Oana Tenea."
+                title={t('resources_page.seo_title')}
+                description={t('resources_page.seo_desc')}
             />
             
             <div className="min-h-screen bg-gradient-to-br from-sage-50 to-golden-honey/20">
@@ -29,29 +31,28 @@ const ResourcesPage = () => {
                     <div className="container mx-auto px-6 text-center relative z-10">
                         <div className="max-w-4xl mx-auto">
                             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                                Resurse pentru
-                                <span className="block">Sănătatea Mintală</span>
+                                {t('resources_page.title1')}
+                                <span className="block">{t('resources_page.title2')}</span>
                             </h1>
                             <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-                                Instrumente interactive, ghiduri practice și resurse pentru a te sprijini 
-                                în călătoria ta către echilibrul interior și bunăstarea emoțională.
+                                {t('resources_page.subtitle')}
                             </p>
                             
                             <div className="grid md:grid-cols-3 gap-6 mb-10">
                                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
                                     <div className="text-3xl mb-3">🧠</div>
-                                    <h3 className="font-semibold text-white mb-2">Auto-evaluare</h3>
-                                    <p className="text-white/80 text-sm">Teste pentru a-ți înțelege starea emoțională</p>
+                                    <h3 className="font-semibold text-white mb-2">{t('resources_page.feat1_title')}</h3>
+                                    <p className="text-white/80 text-sm">{t('resources_page.feat1_desc')}</p>
                                 </div>
                                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
                                     <div className="text-3xl mb-3">📚</div>
-                                    <h3 className="font-semibold text-white mb-2">Resurse utile</h3>
-                                    <p className="text-white/80 text-sm">Cărți, aplicații și exerciții</p>
+                                    <h3 className="font-semibold text-white mb-2">{t('resources_page.feat2_title')}</h3>
+                                    <p className="text-white/80 text-sm">{t('resources_page.feat2_desc')}</p>
                                 </div>
                                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
                                     <div className="text-3xl mb-3">❓</div>
-                                    <h3 className="font-semibold text-white mb-2">FAQ interactiv</h3>
-                                    <p className="text-white/80 text-sm">Răspunsuri la întrebările frecvente</p>
+                                    <h3 className="font-semibold text-white mb-2">{t('resources_page.feat3_title')}</h3>
+                                    <p className="text-white/80 text-sm">{t('resources_page.feat3_desc')}</p>
                                 </div>
                             </div>
                         </div>
@@ -66,19 +67,19 @@ const ResourcesPage = () => {
                                 href="#self-assessment" 
                                 className="bg-sage text-white px-6 py-3 rounded-full hover:bg-sage/90 transition-colors"
                             >
-                                🧠 Auto-evaluare
+                                {t('resources_page.nav1')}
                             </a>
                             <a 
                                 href="#resources" 
                                 className="bg-golden-honey text-white px-6 py-3 rounded-full hover:bg-golden-honey/90 transition-colors"
                             >
-                                📚 Resurse
+                                {t('resources_page.nav2')}
                             </a>
                             <a 
                                 href="#faq" 
                                 className="bg-soft-coral text-white px-6 py-3 rounded-full hover:bg-soft-coral/90 transition-colors"
                             >
-                                ❓ FAQ
+                                {t('resources_page.nav3')}
                             </a>
                         </div>
                     </div>
@@ -104,11 +105,10 @@ const ResourcesPage = () => {
                     <div className="container mx-auto px-6 text-center">
                         <div className="max-w-4xl mx-auto">
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                                Ești gata pentru următorul pas?
+                                {t('resources_page.cta_title')}
                             </h2>
                             <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-                                Aceste resurse sunt un început. Pentru un sprijin personalizat și profesional, 
-                                să discutăm despre nevoile tale specifice.
+                                {t('resources_page.cta_desc')}
                             </p>
                             
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -116,13 +116,13 @@ const ResourcesPage = () => {
                                     href="/contact"
                                     className="bg-white text-sage px-8 py-4 rounded-xl font-semibold hover:bg-warm-white transition-colors"
                                 >
-                                    📞 Programează o consultație
+                                    {t('resources_page.cta_btn1')}
                                 </a>
                                 <a
                                     href="/despre"
                                     className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-sage transition-colors"
                                 >
-                                    👩‍⚕️ Despre mine
+                                    {t('resources_page.cta_btn2')}
                                 </a>
                             </div>
                         </div>

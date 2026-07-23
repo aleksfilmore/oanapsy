@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 import SimpleCaptcha from '../components/SimpleCaptcha';
 import SEO from '../components/SEO';
 import { contactService } from '../services/contactService';
 import { formRateLimiter } from '../utils/security';
 
 const ContactPage = () => {
+    const { t } = useTranslation();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -44,7 +46,7 @@ const ContactPage = () => {
         
         if (!isCaptchaVerified) {
             setSubmitStatus('error');
-            setSubmitMessage('Te rog să completezi verificarea anti-spam.');
+            setSubmitMessage(t('contact.err_captcha'));
             return;
         }
         
@@ -53,7 +55,7 @@ const ContactPage = () => {
         if (!formRateLimiter.isAllowed(userIdentifier)) {
             const remainingTime = Math.ceil(formRateLimiter.getRemainingTime(userIdentifier) / 1000 / 60);
             setSubmitStatus('error');
-            setSubmitMessage(`Ai trimis prea multe mesaje. Te rog să aștepți ${remainingTime} minute înainte să încerci din nou.`);
+            setSubmitMessage(t('contact.err_spam', { min: remainingTime }));
             return;
         }
         
@@ -87,7 +89,7 @@ const ContactPage = () => {
         } catch (error) {
             console.error('Form submission error:', error);
             setSubmitStatus('error');
-            setSubmitMessage('A apărut o eroare neașteptată. Te rog să încerci din nou sau să mă contactezi direct la psihoterapeut@oanatenea.ro');
+            setSubmitMessage(t('contact.err_generic'));
         } finally {
             setIsSubmitting(false);
         }
@@ -107,10 +109,10 @@ const ContactPage = () => {
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h1 className="text-4xl md:text-5xl font-bold text-sage-800 mb-6">
-                            Programare & Contact
+                            {t('contact.title')}
                         </h1>
                         <p className="text-lg text-sage-600 max-w-3xl mx-auto">
-                            Sunt aici să te ascult și să te sprijin în călătoria ta către vindecarea emoțională.
+                            {t('contact.subtitle')}
                         </p>
                     </div>
 
@@ -118,7 +120,7 @@ const ContactPage = () => {
                         {/* Contact Form */}
                         <div className="bg-white rounded-2xl p-8 shadow-warm">
                             <h2 className="text-2xl font-bold text-sage-800 mb-6">
-                                Programează o ședință
+                                {t('contact.schedule')}
                             </h2>
                             
                             <form onSubmit={handleSubmit} className="space-y-6">
@@ -156,7 +158,7 @@ const ContactPage = () => {
 
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-medium text-sage-700 mb-2">
-                                        Nume complet *
+                                        {t('contact.f_name')}
                                     </label>
                                     <input
                                         type="text"
@@ -166,13 +168,13 @@ const ContactPage = () => {
                                         onChange={handleChange}
                                         required
                                         className="w-full px-4 py-3 border border-sage-300 rounded-lg focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-colors"
-                                        placeholder="Introduceti numele complet"
+                                        placeholder={t('contact.f_name_ph')}
                                     />
                                 </div>
 
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium text-sage-700 mb-2">
-                                        Email *
+                                        {t('contact.f_email')}
                                     </label>
                                     <input
                                         type="email"
@@ -188,7 +190,7 @@ const ContactPage = () => {
 
                                 <div>
                                     <label htmlFor="phone" className="block text-sm font-medium text-sage-700 mb-2">
-                                        Telefon
+                                        {t('contact.f_phone')}
                                     </label>
                                     <input
                                         type="tel"
@@ -203,7 +205,7 @@ const ContactPage = () => {
 
                                 <div>
                                     <label htmlFor="sessionType" className="block text-sm font-medium text-sage-700 mb-2">
-                                        Tip ședință
+                                        {t('contact.f_type')}
                                     </label>
                                     <select
                                         id="sessionType"
@@ -212,16 +214,16 @@ const ContactPage = () => {
                                         onChange={handleChange}
                                         className="w-full px-4 py-3 border border-sage-300 rounded-lg focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-colors"
                                     >
-                                        <option value="individual">Ședință individuală</option>
-                                        <option value="couple">Terapie de cuplu</option>
-                                        <option value="consultation">Consultație inițială</option>
-                                        <option value="online">Ședință online</option>
+                                        <option value="individual">{t('contact.opt_individual')}</option>
+                                        <option value="couple">{t('contact.opt_couple')}</option>
+                                        <option value="consultation">{t('contact.opt_consultation')}</option>
+                                        <option value="online">{t('contact.opt_online')}</option>
                                     </select>
                                 </div>
 
                                 <div>
                                     <label htmlFor="message" className="block text-sm font-medium text-sage-700 mb-2">
-                                        Mesaj *
+                                        {t('contact.f_msg')}
                                     </label>
                                     <textarea
                                         id="message"
@@ -231,7 +233,7 @@ const ContactPage = () => {
                                         onChange={handleChange}
                                         required
                                         className="w-full px-4 py-3 border border-sage-300 rounded-lg focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-colors resize-none"
-                                        placeholder="Descrieti pe scurt motivul pentru care doriti o sedinta de psihoterapie..."
+                                        placeholder={t('contact.f_msg_ph')}
                                     />
                                 </div>
 
@@ -256,14 +258,14 @@ const ContactPage = () => {
                                                 <svg className="w-5 h-5 mr-2 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                                                 </svg>
-                                                Se trimite...
+                                                {t('contact.btn_sending')}
                                             </>
                                         ) : (
                                             <>
                                                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                                                 </svg>
-                                                Trimite mesajul
+                                                {t('contact.btn_send')}
                                             </>
                                         )}
                                     </span>
@@ -280,7 +282,7 @@ const ContactPage = () => {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
-                                    Informații de contact
+                                    {t('contact.info_title')}
                                 </h3>
                                 <div className="space-y-6">
                                     <div className="flex items-start space-x-4">
@@ -290,7 +292,7 @@ const ContactPage = () => {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h4 className="font-semibold text-sage-800">Email</h4>
+                                            <h4 className="font-semibold text-sage-800">{t('contact.email')}</h4>
                                             <a href="mailto:psihoterapeut@oanatenea.ro" className="text-sage-600 hover:text-sage-800 transition-colors">
                                                 psihoterapeut@oanatenea.ro
                                             </a>
@@ -305,9 +307,9 @@ const ContactPage = () => {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h4 className="font-semibold text-sage-800">Cabinet</h4>
-                                            <p className="text-sage-600">CALEA DOROBANTI 116-122</p>
-                                            <p className="text-sm text-sage-500">SECTOR 1 - BUCURESTI</p>
+                                            <h4 className="font-semibold text-sage-800">{t('contact.office')}</h4>
+                                            <p className="text-sage-600">{t('contact.address1')}</p>
+                                            <p className="text-sm text-sage-500">{t('contact.address2')}</p>
                                         </div>
                                     </div>
                                     
@@ -338,17 +340,19 @@ const ContactPage = () => {
                                     <svg className="w-6 h-6 mr-3 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                    Program
+                                    {t('contact.program')}
                                 </h3>
                                 <div className="space-y-3 text-sage-600">
                                     <div className="flex justify-between">
-                                        <span className="font-medium">Luni - Joi:</span>
-                                        <span>Disponibil</span>
+                                        <span className="font-medium">{t('contact.monday_thursday')}</span>
+                                        <span>{t('contact.available')}</span>
                                     </div>
                                 </div>
                                 <div className="mt-6 p-4 bg-golden-honey/20 rounded-lg">
                                     <p className="text-sm text-sage-700">
-                                        💡 <strong>Sfat:</strong> Programările se fac cu minim 48h înainte. Pentru urgențe, scrieți prin email.
+                                        <Trans i18nKey="contact.tip">
+                                            💡 <strong>Sfat:</strong> Programările se fac cu minim 48h înainte. Pentru urgențe, scrieți prin email.
+                                        </Trans>
                                     </p>
                                 </div>
                             </div>
@@ -359,12 +363,14 @@ const ContactPage = () => {
                                     <svg className="w-6 h-6 mr-3 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                     </svg>
-                                    Confidențialitate
+                                    {t('contact.privacy_title')}
                                 </h3>
                                 <p className="text-sage-600 text-sm leading-relaxed">
-                                    Toate informațiile partajate sunt <strong>strict confidențiale</strong> și protejate conform normelor GDPR. 
-                                    Relația terapeutică se bazează pe încredere și respect mutual. Datele personale nu vor fi niciodată 
-                                    partajate cu terțe părți fără consimțământul explicit.
+                                    <Trans i18nKey="contact.privacy_desc">
+                                        Toate informațiile partajate sunt <strong>strict confidențiale</strong> și protejate conform normelor GDPR. 
+                                        Relația terapeutică se bazează pe încredere și respect mutual. Datele personale nu vor fi niciodată 
+                                        partajate cu terțe părți fără consimțământul explicit.
+                                    </Trans>
                                 </p>
                             </div>
                         </div>

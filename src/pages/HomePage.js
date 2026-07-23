@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 import { useSmartLivingSync } from '../hooks/useSmartLivingSync';
 import SEO from '../components/SEO';
 import BreathingExercise from '../components/BreathingExercise';
@@ -9,6 +10,7 @@ import TestimonialsCarousel from '../components/TestimonialsCarousel';
 
 const HomePage = () => {
     const { getAllArticles } = useSmartLivingSync();
+    const { t } = useTranslation();
     
     // Get latest articles from all sources
     const allArticles = getAllArticles().slice(0, 3);
@@ -93,26 +95,28 @@ const HomePage = () => {
                                 <div className="w-full max-w-md lg:max-w-lg bg-white/95 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl border border-white/30">
                                     <div className="mb-4 sm:mb-6">
                                         <span className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800 rounded-full font-medium text-xs sm:text-sm border border-amber-200">
-                                            💛 Psihoterapie & Consiliere
+                                            {t('home.tag')}
                                         </span>
                                     </div>
                                     
                                     <h1 className="font-display text-xl sm:text-2xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight mb-3 sm:mb-6">
-                                        Primul pas către
+                                        {t('home.title1')}
                                         <span className="block text-transparent bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text">
-                                            tine
+                                            {t('home.title2')}
                                         </span>
                                     </h1>
                                     
                                     {/* Mobile: Shorter text, Desktop: Full text */}
                                     <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-8">
                                         <span className="block lg:hidden">
-                                            Sunt <strong className="text-gray-900">Oana Tenea</strong>, psihoterapeut certificat. 
-                                            Te ajut cu anxietate, depresie și provocări emoționale.
+                                            <Trans i18nKey="home.desc_mobile">
+                                                Sunt <strong className="text-gray-900">Oana Tenea</strong>, psihoterapeut certificat. Te ajut cu anxietate, depresie și provocări emoționale.
+                                            </Trans>
                                         </span>
                                         <span className="hidden lg:block">
-                                            Sunt <strong className="text-gray-900">Oana Tenea</strong>, psihoterapeut cu experiență în consiliere psihologică, 
-                                            terapie de cuplu și suport pentru anxietate, depresie și alte provocări emoționale.
+                                            <Trans i18nKey="home.desc_desktop">
+                                                Sunt <strong className="text-gray-900">Oana Tenea</strong>, psihoterapeut cu experiență în consiliere psihologică, terapie de cuplu și suport pentru anxietate, depresie și alte provocări emoționale.
+                                            </Trans>
                                         </span>
                                     </p>
                                     
@@ -124,7 +128,7 @@ const HomePage = () => {
                                                     <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                                 </svg>
                                             </div>
-                                            <span className="font-medium">Psihoterapeut autorizat</span>
+                                            <span className="font-medium">{t('home.cred1')}</span>
                                         </div>
                                         <div className="flex items-center gap-2 sm:gap-3 text-gray-700 text-sm sm:text-base">
                                             <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
@@ -132,7 +136,7 @@ const HomePage = () => {
                                                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                                                 </svg>
                                             </div>
-                                            <span className="font-medium">București și online</span>
+                                            <span className="font-medium">{t('home.cred2')}</span>
                                         </div>
                                         {/* Third credential only on larger screens */}
                                         <div className="hidden sm:flex items-center gap-3 text-gray-700">
@@ -141,7 +145,7 @@ const HomePage = () => {
                                                     <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
                                                 </svg>
                                             </div>
-                                            <span className="font-medium">Abordare empată și profesională</span>
+                                            <span className="font-medium">{t('home.cred3')}</span>
                                         </div>
                                     </div>
                                     
@@ -150,13 +154,13 @@ const HomePage = () => {
                                             to="/contact"
                                             className="inline-flex items-center justify-center px-5 sm:px-8 py-2.5 sm:py-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold rounded-xl sm:rounded-2xl hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
                                         >
-                                            Programează consultație
+                                            {t('home.btn_book')}
                                         </Link>
                                         <Link 
                                             to="/despre"
                                             className="inline-flex items-center justify-center px-5 sm:px-8 py-2.5 sm:py-4 border-2 border-white text-gray-700 bg-white/80 hover:bg-white font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 hover:border-orange-300 text-sm sm:text-base"
                                         >
-                                            Despre mine
+                                            {t('home.btn_about')}
                                         </Link>
                                     </div>
                                 </div>
@@ -176,13 +180,13 @@ const HomePage = () => {
                         <div className="max-w-4xl mx-auto">
                             <div className="text-center mb-12 animate-slide-up">
                                 <span className="inline-block px-4 py-2 bg-terracotta/10 text-terracotta rounded-full font-medium text-sm mb-4">
-                                    🌸 Tehnici de relaxare
+                                    {t('home.breathe_tag')}
                                 </span>
                                 <h2 className="font-display text-3xl md:text-4xl font-bold text-deep-earth mb-6">
-                                    Exercițiu de respirație pentru anxietate
+                                    {t('home.breathe_title')}
                                 </h2>
                                 <p className="text-xl text-warm-gray leading-relaxed mb-8">
-                                    Începe acum cu această tehnică simplă de respirație pentru a-ți calma mintea și a reduce stresul.
+                                    {t('home.breathe_desc')}
                                 </p>
                             </div>
                             <div className="flex justify-center">
@@ -202,12 +206,12 @@ const HomePage = () => {
                     <div className="container mx-auto px-6">
                         <div className="text-center mb-16 animate-slide-up">
                             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-                                Articole recente din
-                                <span className="text-terracotta"> blog</span>
+                                {t('home.blog_title')}
+                                <span className="text-terracotta"> {t('home.blog_title_highlight')}</span>
                             </h2>
                             <div className="max-w-3xl mx-auto">
                                 <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                                    Descoperă sfaturi practice și perspective profesionale pentru sănătatea ta mentală
+                                    {t('home.blog_desc')}
                                 </p>
                                 <div className="bg-gradient-to-r from-blue-50/10 to-indigo-50/10 border border-blue-200/20 rounded-2xl p-4 backdrop-blur-sm">
                                     <div className="flex items-center justify-center gap-3 mb-2">
@@ -217,11 +221,11 @@ const HomePage = () => {
                                             </svg>
                                         </div>
                                         <h3 className="text-sm font-medium text-blue-200">
-                                            În colaborare cu SmartLiving.ro
+                                            {t('home.blog_collab')}
                                         </h3>
                                     </div>
                                     <p className="text-gray-300 text-xs leading-relaxed">
-                                        Articole publicate de Oana Tenea despre psihologie, relații și dezvoltare personală.
+                                        {t('home.blog_collab_desc')}
                                     </p>
                                 </div>
                             </div>
@@ -271,7 +275,7 @@ const HomePage = () => {
                                             {...linkProps}
                                             className="inline-flex items-center text-terracotta hover:text-warm-orange font-semibold group-hover:translate-x-2 transition-all duration-300"
                                         >
-                                            {isExternalArticle ? 'Citește pe SmartLiving' : 'Citește mai mult'}
+                                            {isExternalArticle ? t('home.blog_read_smartliving') : t('home.blog_read_more')}
                                             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                             </svg>
@@ -285,7 +289,7 @@ const HomePage = () => {
                                 to="/blog"
                                 className="inline-flex items-center px-8 py-4 bg-white text-deep-earth font-semibold rounded-2xl hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                             >
-                                Vezi toate articolele
+                                {t('home.blog_btn_all')}
                                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                                 </svg>
@@ -310,28 +314,28 @@ const HomePage = () => {
                     
                     <div className="container mx-auto px-6 text-center relative z-10">
                         <div className="max-w-4xl mx-auto animate-slide-up">
-                            <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-6">
-                                Ești gata să faci
-                                <span className="block">primul pas?</span>
-                            </h2>
-                            <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                                Contactează-mă pentru a programa o consultație și să discutăm cum te pot ajuta să-ți atingi obiectivele de sănătate mentală.
-                            </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <Link 
-                                    to="/contact"
-                                    className="px-8 py-4 bg-white text-terracotta font-bold rounded-2xl hover:bg-cream transition-all duration-300 shadow-warm transform hover:scale-105"
-                                >
-                                    Programează o consultație
-                                </Link>
-                                <Link 
-                                    to="/servicii"
-                                    className="px-8 py-4 border-2 border-white text-white font-semibold rounded-2xl hover:bg-white/10 transition-colors duration-300"
-                                >
-                                    Despre servicii
-                                </Link>
+                                <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-6">
+                                    {t('home.cta_title1')}
+                                    <span className="block">{t('home.cta_title2')}</span>
+                                </h2>
+                                <p className="text-xl text-white/90 mb-8 leading-relaxed">
+                                    {t('home.cta_desc')}
+                                </p>
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <Link 
+                                        to="/contact"
+                                        className="px-8 py-4 bg-white text-terracotta font-bold rounded-2xl hover:bg-cream transition-all duration-300 shadow-warm transform hover:scale-105"
+                                    >
+                                        {t('home.cta_btn_book')}
+                                    </Link>
+                                    <Link 
+                                        to="/servicii"
+                                        className="px-8 py-4 border-2 border-white text-white font-semibold rounded-2xl hover:bg-white/10 transition-colors duration-300"
+                                    >
+                                        {t('home.cta_btn_services')}
+                                    </Link>
+                                </div>
                             </div>
-                        </div>
                     </div>
                 </section>
 
@@ -340,13 +344,13 @@ const HomePage = () => {
                     <div className="container mx-auto px-6">
                         <div className="text-center mb-16 animate-slide-up">
                             <span className="inline-block px-4 py-2 bg-terracotta/10 text-terracotta rounded-full font-medium text-sm mb-4">
-                                🧠 Evaluare personală
+                                {t('home.quiz_tag')}
                             </span>
                             <h2 className="font-display text-3xl md:text-4xl font-bold text-deep-earth mb-6">
-                                Test de autoevaluare pentru anxietate
+                                {t('home.quiz_title')}
                             </h2>
                             <p className="text-xl text-warm-gray leading-relaxed max-w-3xl mx-auto">
-                                Completează acest scurt test pentru a înțelege mai bine nivelul tău de anxietate și pentru a afla cum te pot ajuta.
+                                {t('home.quiz_desc')}
                             </p>
                         </div>
                         <div className="flex justify-center">

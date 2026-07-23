@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+    const { t } = useTranslation();
     return (
         <footer className="bg-slate-800 text-white">
             <div className="container mx-auto px-6 py-12">
@@ -10,58 +12,57 @@ const Footer = () => {
                     {/* Brand Section */}
                     <div className="md:col-span-2">
                         <h3 className="text-2xl font-bold mb-4 text-white">Oana Tenea</h3>
-                        <p className="text-lg text-gray-200 mb-4">Psihoterapeut Autorizat</p>
+                        <p className="text-lg text-gray-200 mb-4">{t('footer.subtitle')}</p>
                         <p className="text-gray-300 mb-4 leading-relaxed">
-                            Oferind suport psihologic specializat pentru adulți, cupluri și familii. 
-                            Sesiuni disponibile în cabinet în București și online.
+                            {t('footer.description')}
                         </p>
                         <div className="flex items-center text-gray-200">
                             <svg className="w-5 h-5 mr-2 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            <span>Calea Dorobanti 116-122, Sector 1, București</span>
+                            <span>{t('footer.address')}</span>
                         </div>
                     </div>
                     
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-4 text-orange-400">Navigare Rapidă</h4>
+                        <h4 className="text-lg font-semibold mb-4 text-orange-400">{t('footer.quick_links')}</h4>
                         <ul className="space-y-3">
                             <li>
                                 <Link to="/" className="text-gray-200 hover:text-white transition-colors duration-300 flex items-center">
                                     <span className="w-1 h-1 bg-orange-400 rounded-full mr-3"></span>
-                                    Acasă
+                                    {t('footer.home')}
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/despre" className="text-gray-200 hover:text-white transition-colors duration-300 flex items-center">
                                     <span className="w-1 h-1 bg-orange-400 rounded-full mr-3"></span>
-                                    Despre Mine
+                                    {t('footer.about')}
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/servicii" className="text-gray-200 hover:text-white transition-colors duration-300 flex items-center">
                                     <span className="w-1 h-1 bg-orange-400 rounded-full mr-3"></span>
-                                    Servicii
+                                    {t('footer.services')}
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/resurse" className="text-gray-200 hover:text-white transition-colors duration-300 flex items-center">
                                     <span className="w-1 h-1 bg-orange-400 rounded-full mr-3"></span>
-                                    Resurse
+                                    {t('footer.resources')}
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/blog" className="text-gray-200 hover:text-white transition-colors duration-300 flex items-center">
                                     <span className="w-1 h-1 bg-orange-400 rounded-full mr-3"></span>
-                                    Blog
+                                    {t('footer.blog')}
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/contact" className="text-gray-200 hover:text-white transition-colors duration-300 flex items-center">
                                     <span className="w-1 h-1 bg-orange-400 rounded-full mr-3"></span>
-                                    Contact
+                                    {t('footer.contact')}
                                 </Link>
                             </li>
                         </ul>
@@ -96,7 +97,7 @@ const Footer = () => {
                 <div className="border-t border-gray-600 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <div className="text-gray-300 text-sm mb-4 md:mb-0">
-                            &copy; {new Date().getFullYear()} Oana Tenea. Toate drepturile rezervate.
+                            &copy; {new Date().getFullYear()} Oana Tenea. {t('footer.rights')}
                         </div>
                         <div className="flex flex-col items-center sm:items-end gap-6 text-sm">
                             <div className="flex flex-col sm:flex-row items-center gap-6">
@@ -123,10 +124,10 @@ const Footer = () => {
                             </div>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Link to="/termeni-si-conditii" className="text-gray-200 hover:text-white transition-colors duration-300">
-                                    Termeni și Condiții
+                                    {t('footer.terms')}
                                 </Link>
                                 <Link to="/politica-confidentialitate" className="text-gray-200 hover:text-white transition-colors duration-300">
-                                    Politică de Confidențialitate & GDPR
+                                    {t('footer.privacy')}
                                 </Link>
                             </div>
                         </div>
