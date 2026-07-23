@@ -62,17 +62,17 @@ const Header = ({ isDarkMode, onToggleDarkMode }) => {
                         <div className="flex items-center bg-gray-100 dark:bg-gray-800 rounded-lg p-1 mr-4 border border-gray-200 dark:border-gray-700">
                             <button
                                 onClick={() => changeLanguage('ro')}
-                                className={`flex items-center px-3 py-1.5 text-sm font-semibold rounded-md transition-all duration-200 ${(!i18n.language || i18n.language.startsWith('ro')) ? 'bg-white text-orange-600 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+                                className={`px-3 py-1.5 text-sm font-semibold rounded-md transition-all duration-200 ${(!i18n.language || i18n.language.startsWith('ro')) ? 'bg-white text-orange-600 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
                                 aria-label="Română"
                             >
-                                <span className="mr-2">🇷🇴</span> RO
+                                RO
                             </button>
                             <button
                                 onClick={() => changeLanguage('en')}
-                                className={`flex items-center px-3 py-1.5 text-sm font-semibold rounded-md transition-all duration-200 ${(i18n.language && i18n.language.startsWith('en')) ? 'bg-white text-orange-600 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+                                className={`px-3 py-1.5 text-sm font-semibold rounded-md transition-all duration-200 ${(i18n.language && i18n.language.startsWith('en')) ? 'bg-white text-orange-600 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
                                 aria-label="English"
                             >
-                                <span className="mr-2">🇬🇧</span> EN
+                                EN
                             </button>
                         </div>
 
@@ -91,15 +91,15 @@ const Header = ({ isDarkMode, onToggleDarkMode }) => {
                         <div className="flex items-center bg-gray-100 dark:bg-gray-800 rounded-lg p-0.5 border border-gray-200 dark:border-gray-700">
                             <button
                                 onClick={() => changeLanguage('ro')}
-                                className={`flex items-center px-2 py-1.5 text-xs font-semibold rounded transition-all duration-200 ${(!i18n.language || i18n.language.startsWith('ro')) ? 'bg-white text-orange-600 shadow-sm' : 'text-gray-500'}`}
+                                className={`px-2 py-1.5 text-xs font-semibold rounded transition-all duration-200 ${(!i18n.language || i18n.language.startsWith('ro')) ? 'bg-white text-orange-600 shadow-sm' : 'text-gray-500'}`}
                             >
-                                <span className="mr-1">🇷🇴</span> RO
+                                RO
                             </button>
                             <button
                                 onClick={() => changeLanguage('en')}
-                                className={`flex items-center px-2 py-1.5 text-xs font-semibold rounded transition-all duration-200 ${(i18n.language && i18n.language.startsWith('en')) ? 'bg-white text-orange-600 shadow-sm' : 'text-gray-500'}`}
+                                className={`px-2 py-1.5 text-xs font-semibold rounded transition-all duration-200 ${(i18n.language && i18n.language.startsWith('en')) ? 'bg-white text-orange-600 shadow-sm' : 'text-gray-500'}`}
                             >
-                                <span className="mr-1">🇬🇧</span> EN
+                                EN
                             </button>
                         </div>
                         <button
